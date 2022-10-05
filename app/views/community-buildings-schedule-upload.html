@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">CHARITY TC088</span>
+      <dl>
+      <span class="govuk-caption-xl">HMRC charities reference:</span>
+      <span class="govuk-caption-xl govuk-!-margin-left-9 govuk-!-margin-bottom-5">XR4010</span>
+      <h1 class="govuk-heading-xl">Attach Community Buildings Schedule</h1>
+
+      <form class="form" action="/url/of/next/page" method="post">
+
+        <h2 class="govuk-heading-l">Community building schedule - Confirmation</h2>
+
+        <p>You have successfully attached your community buildings schedule.</p>
+
+        <p>Please click the 'Next' button to continue.</p>
+
+        <button class="govuk-button" data-module="govuk-button">Next</button>
+
+</div>
+
+  <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://local.tax.service.gov.uk/home">
+                Your HMRC services
+              </a>
+          </li>
+        </ul>
+
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
