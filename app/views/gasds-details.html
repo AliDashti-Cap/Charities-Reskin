@@ -1,0 +1,334 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference:
+        XR4010</span>
+    </dl>
+    <h1 class="govuk-heading-xl">Gift Aid Small Donations Scheme (GADS) schedule</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      Donation details
+    </h2>
+
+    <p class="govuk-body">
+      Use this page to claim for payments under the Gift Aid Small Donations Scheme (GASDS). This is separate from your Gift Aid claim.
+    </p>
+
+    <p class="govuk-body">
+      The GASDS is for small cash donations of £20 or less that the charity or Community Amateur Sports Club that you do not have a Gift Aid declaration for. It only applies to donations you have received since 6 April 2013.
+    </p>
+
+    <p class="govuk-body">
+      If you are only claiming under Gift Aid you must not complete any of the boxes on this page. You should return to the 'Repayment Claim Details' screen and answer 'No' to the question' Are you claiming under GASDS?'
+    </p>
+
+    <p class="govuk-body">
+      Indicates required information *
+    </p>
+
+    <p class="govuk-body">
+      If you have claimed too much under GASDS in a previous claim, you can enter the amount of overclaimed top-up payment here. This amount will be deducted from this claim.*
+    </p>
+
+    <form class="form" action="/repayment-claim-summary" method="post">
+
+      <!-- Tax year 1 ending 5 April: -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="tax-year-1">
+          Tax year 1 ending 5 April:
+        </label>
+        <div id="event-name-hint" class="govuk-hint">
+          eg yyyy
+        </div>
+        <input class="govuk-input" id="tax-year-1" name="tax-year-1" type="text" aria-describedby="event-name-hint">
+        <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+          <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help about: Tax year - Current
+          </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Enter the tax year that you would like to make a claim for. You can only claim on donations received in the tax year ending 5 April 2014 onwards.</p>
+
+            <p>From 6 April 2014 you can claim for the current year and one previous tax year and from 6 April 2015 for the current and two previous tax years.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- YEAR 1: Amount of donations on which you are claiming a top up payment under GASDS. -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="donation-top-up-amount-year-1">
+          Amount of donations on which you are claiming a top up payment under GASDS.
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Do not include any donations collected in a community building
+          </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="donation-top-up-amount-year-1" name="donation-top-up-amount-year-1" type="text" spellcheck="false">
+        </div>
+        <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+          <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help about: Donations total
+          </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Enter the total amount of the Gift Aid Small Donations Scheme donations received in the tax year you have entered and which have not been included in any previous claims to HM Revenue & Customs. Make sure that you exclude any amounts you are claiming under the community buildings rules.</p>
+
+            <p><strong>Please note:</strong> The maximum amount of top-up payments that can be claimed in any one tax year is normally £1,250.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Do you want to make a claim for second tax year? -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="claim-second-year-tax">
+          Do you want to make a claim for second tax year?
+        </label>
+        <select class="govuk-select" id="claim-second-year-tax" name="claim-second-year-tax">
+          <option value="default" selected>Please select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help about: Claim for a previous tax year
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+          <p>Select 'Yes' if you want to claim a top-up payment on Gift Aid Small Donations Scheme donations received in a previous tax year. This option does not apply before April 2014.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Tax year 2 ending 5 April -->
+
+      <p class="govuk-body">If you indicated that you want to make a claim for another tax year, you must provide the following information.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="tax-year-2">
+          Tax year 2 ending 5 April:
+        </label>
+        <div id="event-name-hint" class="govuk-hint">
+          eg yyyy
+        </div>
+        <input class="govuk-input" id="tax-year-2" name="tax-year-2" type="text" aria-describedby="event-name-hint">
+        <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+          <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help about: Tax year - Previous
+          </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>You are entitled to make a claim under the Gift Aid Small Donations Scheme in respect of donations received in the current tax year or the two previous tax years only. Please enter the second tax year for which you would like to make a claim. This option does not apply before April 2014.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- YEAR 2: Amount of donations on which you are claiming a top up payment under GASDS.  -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="donation-top-up-amount-year-2">
+          Amount of donations on which you are claiming a top up payment under GASDS.
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Do not include any donations collected in a community building:
+          </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="donation-top-up-amount-year-2" name="donation-top-up-amount-year-2" type="text" spellcheck="false">
+        </div>
+        <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+          <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help about: Gift Aid total
+          </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>Enter the total amount of the Gift Aid Small Donations Scheme donations received in the tax year you have entered and which have not been included in any previous claims to HM Revenue & Customs. Make sure that you exclude any amounts you are claiming under the community buildings rules.</p>
+
+            <p><strong>Please note:</strong> The maximum amount of top-up payments that can be claimed in any one tax year is normally £1,250.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- Do you want to make a claim for third tax year? -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="claim-third-year-tax">
+          Do you want to make a claim for third tax year?
+        </label>
+        <select class="govuk-select" id="claim-third-year-tax" name="claim-third-year-tax">
+          <option value="default" selected>Please select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <!-- Tax year 3 ending 5 April -->
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--s" for="tax-year-3">
+          Tax year 2 ending 5 April:
+        </label>
+        <div id="event-name-hint" class="govuk-hint">
+          eg yyyy
+        </div>
+        <input class="govuk-input" id="tax-year-3" name="tax-year-3" type="text" aria-describedby="event-name-hint">
+      </div>
+
+      <!-- YEAR 3: Amount of donations on which you are claiming a top up payment under GASDS.  -->
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="donation-top-up-amount-year-3">
+            Amount of donations on which you are claiming a top up payment under GASDS.
+            </label>
+            <div id="account-number-hint" class="govuk-hint">
+              Do not include any donations collected in a community building:
+            </div>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="donation-top-up-amount-year-3" name="donation-top-up-amount-year-3" type="text" spellcheck="false">
+          </div>
+        </div>
+
+        <!-- Adjustment for Gift Aid previously over-claimed:  -->
+
+        <p class="govuk-body">If you have claimed too much under GASDS in a previous claim, you can enter the amount of overclaimed top-up payment here. This amount will be deducted from this claim.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--s" for="adjustment-for-gift-aid">
+            Adjustment for Gift Aid previously over-claimed: 
+            </label>
+            <div id="account-number-hint" class="govuk-hint">
+              his amount will be deducted from this claim.
+            </div>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="adjustment-for-gift-aid" name="adjustment-for-gift-aid" type="text" spellcheck="false">
+          </div>
+          <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+            <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help about: Top up payment over claimed
+            </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>If you have over claimed top-up payments on small charitable donations in previous claims then enter the amount of the top-up payment that is to be deducted from this claim.</p>
+            </div>
+          </details>
+        </div>
+
+    <p class="govuk-body">
+      'Next' automatically saves your data.'
+    </p>
+
+    <div class="govuk-button-group">
+      <button class="govuk-button" data-module="govuk-button">
+        Next
+      </button>
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Repayment Claim Summary
+      </button>
+    </div>
+    </form>
+  </div>
+
+
+  <div class="govuk-grid-column-one-third">
+      
+    <h2 class="govuk-heading-m" id="subsection-title">
+      Charity repayment claim
+    </h2>
+    <aside class="app-related-items" role="complementary">
+
+      <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-!-font-size-16">
+              <li>
+                <a href="/at-a-glance" class="govuk-link govuk-link--no-visited-state">
+                  At a glance
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Repayment claim summary
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Question about this claim
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  About the organisation
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Gift Aid schedule
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  Other income schedule
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="govuk-link govuk-link--no-visited-state"><p class="govuk-!-font-size-16 govuk-!-font-weight-bold">
+                  Gift Aid Small Donations Scheme schedule
+                </a>
+                  <ul class="govuk-list govuk-!-font-size-16">
+                    <li>
+                      <a href="#" class="govuk-link govuk-link--no-visited-state">
+                        Donation details
+                    </li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+
+
+              </li>
+              
+              <li>
+                <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
+                  FAQs
+                </a>
+              </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+
+{% endblock %}

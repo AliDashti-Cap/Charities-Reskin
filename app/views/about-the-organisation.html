@@ -13,203 +13,194 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-xl">CHARITY TC088</span>
-      <dl>
-        <span class="govuk-caption-xl">HMRC charities reference:
-          XR4010</span>
-      </dl>
-      <h1 class="govuk-heading-xl">About the organisation</h1>
-
-      <h2 class="govuk-heading-m">
-        Organisation details
-      </h2>
-
-      <p class="govuk-body">
-        You must provide the information below then, click the 'Next' button to continue. The person making this claim must be a recognised authorised official or corporate trustee that has already been notified to HM Revenue & Customs as the authorised official.</p>
-
-
-{{ govukSelect({
-  id: "Name charity regulator",
-  name: "Name charity regulator",
-  label: {
-    text: "Name of charity regulator:"
-  },
-  items: [
-    {
-      value: "Please select",
-      text: "Please select",
-      selected: true
-    },
-    {
-      value: "Charity Commission for England and Wales",
-      text: "Charity Commission for England and Wales"
-    },
-    {
-      value: "Charity Commission for Northern Ireland",
-      text: "Charity Commission for Northern Ireland"
-    },
-    {
-      value: "Office of the Scottish Charity Regulator",
-      text: "Office of the Scottish Charity Regulator"
-    },
-    {
-      value: "None",
-      text: "None"
-    }
-  ]
-}) }}
-
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help about: Charity regulator
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-xl">CHARITY TC088</span>
+  <dl>
+    <span class="govuk-caption-xl">HMRC charities reference: XR4010
     </span>
-  </summary>
+  </dl>
+  <h1 class="govuk-heading-xl">About the organisation</h1>
+    <h2 class="govuk-heading-m">Organisation details
+    </h2>
+    <p class="govuk-body">
+    You must provide the information below then, click the 'Next' button to continue. The person making this claim must be a recognised authorised official or corporate trustee that has already been notified to HM Revenue & Customs as the authorised official.
+  </p>
+
+<!-- Name of charity regulator -->
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="name-charity-regulator">
+    Name of charity regulator:
+  </label>
+    <select class="govuk-select" id="name-charity-regulator" name="name-charity-regulator">
+      <option value="Please select" selected>Please select</option>
+      <option value="Charity Commission for England and Wales" >Charity Commission for England and Wales</option>
+      <option value="Charity Commission for Northern Ireland">Charity Commission for Northern Ireland</option>
+      <option value="Office of the Scottish Charity Regulator">Office of the Scottish Charity Regulator</option>
+      <option value="None">None</option>
+    </select>
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">Help about: Charity regulator
+      </span>
+    </summary>
   <div class="govuk-details__text">
-    <p>If the charity is registered with a UK charity regulator then you must select the name of that regulator from the drop-down list. If the charity is registered with a non-UK charity regulator then please select 'Other'. If the charity is not registered with one of these UK regulators or is not registered with a non-UK regulator then select 'None'.
-<br></br>
-<strong>Please note:</strong>Community Amateur Sports Clubs should always select 'None' from the drop-down list.
-<br></br>
-If dual registered, please include a registration number you have used in previous correspondence with HM Revenue & Customs or complete and submit a change of details form (ChV1) with this information before making your claim.</p>
+    <p>
+      If the charity is registered with a UK charity regulator then you must select the name of that regulator from the drop-down list. If the charity is registered with a non-UK charity regulator then please select 'Other'. If the charity is not registered with one of these UK regulators or is not registered with a non-UK regulator then select 'None'.
+    </p>
+    <p>
+      <strong>Please note:</strong>
+      Community Amateur Sports Clubs should always select 'None' from the drop-down list.
+    </p>
+    <p>
+      If dual registered, please include a registration number you have used in previous correspondence with HM Revenue & Customs or complete and submit a change of details form (ChV1) with this information before making your claim.
+    </p>
   </div>
-</details>
+  </details>
+</div>
 
-{{ govukInput({
-  label: {
-    text: "If you selected Charity Commission for England and Wales, Charity Commission for Northern Ireland or Office of the Scottish Charity Regulator, you must provide the information below.
+<!-- Charity regulator's number -->
 
-Charity regulator's number - enter the numerical characters only (not the HMRC Charities reference number):",
-    isPageHeading: false
-  },
-  id: "charity-regulator-number",
-  name: "charity-regulator-number"
-}) }}
+<p>
+  If you selected Charity Commission for England and Wales, Charity Commission for Northern Ireland or Office of the Scottish Charity Regulator, you must provide the information below.
+</p>
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help about: Charity registration number
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>Where you have selected a regulator from the drop-down list you must enter the registration number the regulator issued to you (this does not apply where you have selected "none" or "other").
-<br></br>
-The registration number from the regulator will be on any paperwork received from that regulator.
-<br></br>
-If the charity is dual registered, please include a registration number you have used in previous correspondence with HMRC or complete and submit a change of details form (ChV1) with this information before making your claim.</p>
-  </div>
-</details>
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="number-charity-regulator">
+      Charity regulator's number - enter the numerical characters only (not the HMRC Charities reference number):
+    </label>
+  </h1>
+  <input class="govuk-input" id="number-charity-regulator" name="number-charity-regulator" type="text">
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Charity registration number
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p>
+        Where you have selected a regulator from the drop-down list you must enter the registration number the regulator issued to you (this does not apply where you have selected "none" or "other").
+      </p>
+      <p>
+        The registration number from the regulator will be on any paperwork received from that regulator.
+      </p>
+      <p>
+        If the charity is dual registered, please include a registration number you have used in previous correspondence with HMRC or complete and submit a change of details form (ChV1) with this information before making your claim.
+      </p>
+    </div>
+  </details>
+</div>
 
-{{ govukSelect({
-  id: "sort",
-  name: "sort",
-  label: {
-    text: "If you selected that this claim is being made by a corporate trustee, you must provide the information below
+<!-- Corporate trustee -->
 
-Name of corporate trustee:"
-  },
-  items: [
-        {
-      value: "please-select",
-      text: "Please select",
-      selected: true
-    },
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "no",
-      text: "No"
-    }
-  ]
-}) }}
+<div class="govuk-form-group">
+    <label class="govuk-label govuk-label--s" for="corporate-trustee">
+      Is this claim being made by a corporate trustee such as the Trust Department of a bank, a Trust Company or a Trust Corporation?
+    </label>
+      <select class="govuk-select" id="corporate-trustee" name="corporate-trustee">
+        <option value="Please select" selected>Please select</option>
+        <option value="Yes" >Yes</option>
+        <option value="No">No</option>
+      </select>
+    <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Help about: Corporate trustee
+            </span>
+        </summary>
+      <div class="govuk-details__text">
+      <p>
+        Only select 'Yes' if you are a company that looks after the day to day administration of the charity
+      </p>
+    </div>
+  </details>
+</div>
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help about: Corporate trustee
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>Only select 'Yes' if you are a company that looks after the day to day administration of the charity.</p>
-  </div>
-</details>
+<!-- Corporate trustee name yes -->
 
-{{ govukInput({
-  label: {
-    text: "If you selected that this claim is being made by a corporate trustee, you must provide the information below
+<p>
+  If you selected that this claim is being made by a corporate trustee, you must provide the information below
+</p>
 
-Name of corporate trustee:",
-    isPageHeading: false
-  },
-  id: "corporate-trustee-name",
-  name: "corporate-trustee-name"
-}) }}
+<div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="name-corporate-trustee">
+    Name of corporate trustee:
+      </label>
+    </h1>
+      <input class="govuk-input" id="name-corporate-trustee" name="name-corporate-trustee" type="text">
+        <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                Help about: Corporate trustee name
+            </span>
+          </summary>
+      <div class="govuk-details__text">
+      <p>
+        This will be the name of the company that looks after the day to day administration of the charity.
+      </p>
+    </div>
+  </details>
+</div>
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help about: Corporate trustee name
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    This will be the name of the company that looks after the day to day administration of the charity.
-</details>
+<!-- Corporate trustee name no -->
 
-{{ govukInput({
-  label: {
-    text: "If you selected that this claim is not being made by a corporate trustee, you must provide details below about your organisation's authorised official.
+<p>
+  If you selected that this claim is not being made by a corporate trustee, you must provide details below about your organisation's authorised official.
+</p>
 
-Title:",
-    isPageHeading: false
-  },
-  id: "organisation-authorised-official-title",
-  name: "organisation-authorised-official-title"
-}) }}
+<!-- Title -->
 
-{{ govukInput({
-  label: {
-    text: "First name:",
-    isPageHeading: false
-  },
-  id: "first-name",
-  name: "first-name"
-}) }}
+<div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="title"> Title:
+        </label>
+      </h1>
+  <input class="govuk-input" id="title" name="title" type="text">
+</div>
 
-{{ govukInput({
-  label: {
-    text: "Last name:",
-    isPageHeading: false
-  },
-  id: "last-name",
-  name: "last-name"
-}) }}
+<!-- First name -->
 
-{{ govukInput({
-  label: {
-    text: "Please enter a postcode or indicate if your address is not in the UK. Postcode:",
-        isPageHeading: false
-         },
-    hint: {
-    text: "For example AB12 3YZ"
-  },
-  id: "postcode",
-  name: "postcode"
-}) }}
+<div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="First name"> First name:
+      </label>
+    </h1>
+  <input class="govuk-input" id="first-name" name="first-name" type="text">
+</div>
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help about: Postcode
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    This should be the postcode of the office in which your organisation is based.
-</details>
+<!-- Last name -->
+
+<div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="last-name"> Last name:
+      </label>
+    </h1>
+  <input class="govuk-input" id="last-name" name="last-name" type="text">
+</div>
+
+<!-- Postcode-->
+
+<p>
+  Please enter a postcode or indicate if your address is not in the UK.
+</p>
+
+<div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="postcode"> Postcode:
+      </label>
+      <div id="postcode-hint" class="govuk-hint">
+        For example AB12 3YZ
+      </div>
+    </h1>
+  <input class="govuk-input" id="postcode" name="postcode" type="text">
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Postcode
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      This should be the postcode of the office in which your organisation is based.
+  </details>
+</div>
 
 {{ govukCheckboxes({
   name: "not-UK-address",
@@ -228,24 +219,26 @@ Title:",
   ]
 }) }}
 
-{{ govukInput({
-  label: {
-    text: "Your daytime telephone number (including international dialling code if outside the UK):",
-    isPageHeading: false
-  },
-  id: "telephone-number",
-  name: "telephone-number"
-}) }}
-
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help about: Daytime telephone number
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    You must provide a telephone number that HM Revenue & Customs can use to discuss any queries that they may have with your claim.
-</details>
+<div class="govuk-form-group">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--s" for="telephone-number">
+      Daytime telephone number:
+      </label>
+    </h1>
+    <input class="govuk-input" id="telephone-number" name="telephone-number" type="text">
+      <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Daytime telephone number
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p>
+      You must provide a telephone number that HM Revenue & Customs can use to discuss any queries that they may have with your claim.
+      </p>
+    </div>
+  </details>
+</div>
 
 <p>'Next' automatically saves your data.</p>
 
@@ -257,44 +250,41 @@ Title:",
   classes: "govuk-button--secondary"
 }) }}
 
-    </div>
-    <div class="govuk-grid-column-one-third">
-
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
+</div>
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="https://local.tax.service.gov.uk/home">
+              Your HMRC services
+            </a>
+        </li>
+      </ul>
           <ul class="govuk-list govuk-!-font-size-16">
+            <li><p class="govuk-body govuk-!-font-weight-bold">Charity repayment claim</p></li>
             <li>
-              <a href="https://local.tax.service.gov.uk/home">
-                Your HMRC services
+              <a href="#">
+                At a glance
               </a>
-          </li>
+            </li>
+
+            <li>
+              <a href="#">
+                Continue with charity repayment claim
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                FAQs
+              </a>
+            </li>
         </ul>
-
-              <ul class="govuk-list govuk-!-font-size-16">
-                <li><p class="govuk-body govuk-!-font-weight-bold">Charity repayment claim</p></li>
-                <li>
-                  <a href="#">
-                    At a glance
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    Continue with charity repayment claim
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    FAQs
-                  </a>
-                </li>
-          </ul>
-        </nav>
-      </aside>
-
-    </div>
+      </nav>
+    </aside>
   </div>
+</div>
 {% endblock %}
