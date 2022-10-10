@@ -23,19 +23,19 @@
 </div>
 
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-m">
         Community buildings schedule
       </h2>
 
-      <h4 class="govuk-heading-s">
+      <p class="govuk-body govuk-!-font-weight-bold">
         Download a community buildings schedule
-      </h4>
+      </p>
 
       <p class="govuk-body">
-        You've indicated that you want to make a claim for a top-up payment under the Gift Aid Small Donations Scheme (GASDS) on small donations you've collected in your community building(s). Your claim must be supported by details of the community building(s) in which the donations were collected and the amounts collected. This is the only place in this claim that you should include these amounts.
+        You've indicated that you want to make a claim for a top-up payment under the Gift Aid Small Donations Scheme (GASDS) on small donations you've collected in your community building(s). Your claim must be supported by details of the community building(s) in which the donations were collected and the amounts collected. This is the only place in this claim that you should include these amounts. </p>
 
       <p class="govuk-body">
         You must have already completed and saved an HM Revenue and Customs (HMRC) community buildings schedule on your computer with details of your community building(s) on to support this claim.
@@ -83,7 +83,7 @@
           Further information about community buildings schedules can be found in the online guidance. HMRC recommend you read this guidance before you complete and save your schedule.
         </p>
 
-        <form class="form" action="/at-a-glance" method="post">
+        <form class="form" action="/REPLACE-ME" method="post">
 
         <p class="govuk-body govuk-!-font-weight-bold">Attach your community buildings schedule</p>
 
@@ -94,8 +94,8 @@
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
         {{ govukFileUpload({
-          id: "file-upload-1",
-          name: "file-upload-1",
+          id: "community-building-schedule-upload",
+          name: "ommunity-building-schedule-upload",
           label: {
             text: "Community building schedule"
           }
@@ -151,42 +151,64 @@
     </div>
 
     <div class="govuk-grid-column-one-third">
-
+      
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Charity repayment claim
+      </h2>
       <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="https://local.tax.service.gov.uk/home">
-                Your HMRC services
-              </a>
-          </li>
-        </ul>
 
+        <nav role="navigation" aria-labelledby="subsection-title">
               <ul class="govuk-list govuk-!-font-size-16">
-                <li><p class="govuk-body govuk-!-font-weight-bold">Charity repayment claim</p></li>
                 <li>
-                  <a href="#">
+                  <a href="/at-a-glance" class="govuk-link govuk-link--no-visited-state">
                     At a glance
                   </a>
                 </li>
 
                 <li>
-                  <a href="#">
-                    Continue with charity repayment claim
+                  <a href="" class="govuk-link govuk-link--no-visited-state">
+                    Repayment claim summary
                   </a>
                 </li>
 
                 <li>
-                  <a href="#">
+                  <a href="/about-the-charity" class="govuk-link govuk-link--no-visited-state">
+                    Question about this claim
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                    About the organisation
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                    Gift Aid schedule
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                    Other income schedule
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state"><p class="govuk-!-font-size-16 govuk-!-font-weight-bold">
+                    Gift Aid Small Donations Scheme schedule
+                  </a>
+                </li>
+                
+                <li>
+                  <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
                     FAQs
                   </a>
                 </li>
           </ul>
         </nav>
       </aside>
-
     </div>
   </div>
 {% endblock %}
