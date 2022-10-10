@@ -126,6 +126,144 @@
   ]
 }) }}
 
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "Help about: Claim for a previous tax year",
+  text: "Need Ali & Sarah help here, please update accordingly."
+}) }}
+
+<p class="govuk-body">
+  If you indicated that you want to make a claim for another tax year, you must provide the following information. *
+</p>
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Tax year 2 ending 5 April: (optional)",
+    classes: "govuk-body",
+    isPageHeading: true
+  },
+  hint: {
+    text: "eg yyyy"
+  },
+  id: "event-name",
+  name: "event-name"
+}) }}
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "Help about: Tax year - Previous",
+  text: "Need Ali & Sarah help here, please update accordingly."
+}) }}
+
+<p class="govuk-body">
+  Amount of donations on which you are claiming a top up payment under GASDS. Do not incude any donations collected in a community building: (optional)
+</p>
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  id: "cost",
+  name: "cost",
+  label: {
+    text: "",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  },
+  prefix: {
+    text: "£"
+  },
+  classes: "govuk-input--width-5",
+  spellcheck: false
+}) }}
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "Help about: Gift Aid total",
+  text: "Need Ali & Sarah help here, please update accordingly."
+}) }}
+
+<p class="govuk-body">
+  Do you want to make a claim for third tax year?* (optional)
+</p>
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: ""
+  },
+  items: [
+    {
+      value: "published",
+      text: "Recently published"
+    },
+    {
+      value: "updated",
+      text: "Recently updated",
+      selected: true
+    },
+    {
+      value: "views",
+      text: "Most views"
+    },
+    {
+      value: "comments",
+      text: "Most comments"
+    }
+  ]
+}) }}
+
+<p class="govuk-body">
+  If you indicated that you want to make a claim for another tax year, you must provide the following information. *
+</p>
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Tax year 3 ending 5 April: (optional)",
+    classes: "govuk-body",
+    isPageHeading: true
+  },
+  hint: {
+    text: "eg yyyy"
+  },
+  id: "event-name",
+  name: "event-name"
+}) }}
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukInput({
+  id: "gift-aid-adjustment",
+  name: "gift-aid-adjustment",
+  label: {
+    text: "AAmount of donations on which you are claiming a top up payment under GASDS. Do not include any donations collected in a community building: (optional)",
+    classes: "govuk-body govuk-!-margin-bottom-4",
+    isPageHeading: true
+  },
+  prefix: {
+    text: "£"
+  },
+  classes: "govuk-input--width-5",
+  spellcheck: false
+}) }}
+
+<p class="govuk-body">
+  If you have claimed too much under GASDS in a previous claim, you can enter the amount of overclaimed top-up payment here. This amount will be deducted from this claim. *
+</p>
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
 {{ govukInput({
   id: "gift-aid-adjustment",
   name: "gift-aid-adjustment",
