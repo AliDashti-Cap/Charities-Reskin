@@ -18,7 +18,7 @@
       <span class="govuk-caption-xl">HMRC charities reference:
         XR4010</span>
     </dl>
-    <h1 class="govuk-heading-xl">Attach community buildings schedule</h1>
+    <h1 class="govuk-heading-xl">Attach connected charities schedule</h1>
   </div>
 </div>
 
@@ -27,44 +27,23 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-m">
-        Community buildings schedule
+        Connected charities schedule
       </h2>
 
       <h4 class="govuk-heading-s">
-        Download a community buildings schedule
+        Download a connected charities schedule
       </h4>
 
       <p class="govuk-body">
-        You've indicated that you want to make a claim for a top-up payment under the Gift Aid Small Donations Scheme (GASDS) on small donations you've collected in your community building(s). Your claim must be supported by details of the community building(s) in which the donations were collected and the amounts collected. This is the only place in this claim that you should include these amounts.
-
-      <p class="govuk-body">
-        You must have already completed and saved an HM Revenue and Customs (HMRC) community buildings schedule on your computer with details of your community building(s) on to support this claim.
+        You have indicated that you would like to claim a top-up payment under the Gift Aid Small Donations Scheme (GASDS) on small cash donations you have received and that your organisation is connected to one or more charities or Community Amateur Sports Clubs (CASCs) under the GASDS rules. Your claim must be supported by the name(s) and HM Revenue & Customs (HMRC) charities reference number(s) of these charities or CASCs you are connected to.
       </p>
 
       <p class="govuk-body">
-        <strong>Please note:</strong> If you haven't already done so follow the link below to download the HMRC community buildings schedule.
+        You must have already completed and saved an HMRC connected charities schedule on your computer with details of your connected charities or CASCs on to support this claim.
       </p>
 
       <p class="govuk-body">
-        To complete the schedule now you'll need to sign out of this service. Any information you have already entered will be saved.
-      </p>
-
-      <p class="govuk-body">
-        Once you've completed the schedule you'll be able to sign back into this service and attach it to your claim.
-      </p>
-
-      <p class="govuk-body govuk-!-font-weight-bold">Download a Gift Aid schedule</p>
-
-      <p class="govuk-body">
-        You have indicated that you want to claim a repayment of tax on Gift Aid donations. Your claim must include full details of the donors and their donations on which you are claiming a repayment of tax.
-      </p>
-
-      <p class="govuk-body">
-        You must have already completed and saved an HM Revenue & Customs (HMRC) Gift Aid schedule on your computer with details of your Gift Aid donations to support this claim.
-      </p>
-
-      <p class="govuk-body">
-        <strong>Please note:</strong> If you haven't already done so please follow the link below to download the HMRC Gift Aid schedule.
+        <strong>Please note:</strong> If you haven't already done so follow the link below to download the HMRC connected charities schedule.
       </p>
 
       <p class="govuk-body">
@@ -76,38 +55,36 @@
       </p>
 
         <ul class="govuk-list govuk-list--bullet">
-          <li><a href="https://www.gov.uk/guidance/schedule-spreadsheet-for-community-building-gasds-claims" class="govuk-link">Download a community buildings schedule</a></li>
+          <li><a href="https://www.gov.uk/guidance/schedule-spreadsheet-for-connected-charities-gasds-claims" class="govuk-link">Download a connected charities schedule</a></li>
         </ul>
 
         <p class="govuk-body">
-          Further information about community buildings schedules can be found in the online guidance. HMRC recommend you read this guidance before you complete and save your schedule.
+          Further information about connected charities schedules can be found in the online guidance. HMRC recommend you read this guidance before you complete and save your schedule.
         </p>
 
         <form class="form" action="/at-a-glance" method="post">
 
-        <p class="govuk-body govuk-!-font-weight-bold">Attach your community buildings schedule</p>
+        <p class="govuk-body govuk-!-font-weight-bold">Attach your connected charities schedule</p>
 
         <p class="govuk-body">
-          When you are ready to attach your community buildings schedule to this claim, click on the 'Browse' button below to find and select the completed schedule on your computer.
+          When you are ready to attach your connected charities schedule to this claim, click on the 'Browse' button below to find and select the completed schedule on your computer.
         </p>
-
-        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
         {{ govukFileUpload({
           id: "file-upload-1",
           name: "file-upload-1",
           label: {
-            text: "Community building schedule"
+            text: "Connected charities schedule:"
           }
         }) }}
 
 
         <p class="govuk-body">
-          If you don't want to attach a community buildings schedule now please tick the checkbox below, then click the 'Next' button to continue.
+          If you don't want to attach a connected charities schedule now please tick the checkbox below, then click the 'Next' button to continue.
         </p>
 
         <p class="govuk-body">
-          <strong>Please note:</strong> You must attach a community buildings schedule before you can submit your charity repayment claim.
+          <strong>Please note:</strong> You must attach a connected charities schedule before you can submit your charity repayment claim.
         </p>
 
         {{ govukCheckboxes({
@@ -128,7 +105,7 @@
           items: [
             {
               value: "no-attach",
-              text: "I do not want to attach a community schedule schedule at this time.",
+              text: "I do not want to attach a connected charities schedule at this time.",
               hint: {
                 text: ""
               }

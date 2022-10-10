@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -9,20 +9,18 @@
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">CHARITY TC088</span>
     <dl>
-      <span class="govuk-caption-xl">HMRC charities reference:
-        XR4010</span>
+      <span class="govuk-caption-xl">HMRC charities reference: XR4010
+        </span>
     </dl>
     <h1 class="govuk-heading-xl">Repayment claim summary</h1>
   </div>
   </div>
 
-
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 8 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 8 sections.</p>
 
       <p class="govuk-body">
         You have not completed all the required sections of your claim. You must complete all the sections shown below with an arrow or cross beside them before you can finalise your claim.
@@ -40,90 +38,98 @@
         
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number"></span> 
             Question about this claim
           </h2>
-          <ul class="app-task-list__items">
+          <ul class="app-task-list__items" style="padding-left: 0px;">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="eligibility-status">
+                <a href="/about-the-charity" aria-describedby="repayment-claim-details" class="govuk-link govuk-link--no-visited-state">
                   Repayment claim details
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="eligibility-status">Completed</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="repayment-claim-details">Incomplete</strong>
             </li>
           </ul>
         </li>
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number"></span> About the organisation
+            About the organisation
           </h2>
-          <ul class="app-task-list__items">
+          <ul class="app-task-list__items" style="padding-left: 0px;">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="company-information-status">
+                <a href="#" aria-describedby="organisation-details" class="govuk-link govuk-link--no-visited-state">
                   Organisation details
                 </a>
               </span>
-              <strong class="govuk-tag govuk-tag--green app-task-list__tag"  id="company-information-status">Completed</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag"  id="organisation-details">Incomplete</strong>
             </li>
             </ul>
           </li>
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number"></span> Gift Aid schedule
+            Gift Aid schedule
           </h2>
-          <ul class="app-task-list__items">
+          <ul class="app-task-list__items" style="padding-left: 0px;">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Attach Gift Aid schedule
+                <a href="/gas-schedule-upload" aria-describedby="attach-gift-aid-schedule" class="govuk-link govuk-link--no-visited-state">
+                  Attach Gift Aid schedule
+                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Incomplete</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-gift-aid-schedule">Incomplete</strong>
             </li>
           </ul>
         </li>
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number"></span> Other income schedule
+            Other income schedule
           </h2>
-          <ul class="app-task-list__items">
+          <ul class="app-task-list__items" style="padding-left: 0px;">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                Attach other income schedule
+                <a href="#" aria-describedby="attach-other-income-schedule" class="govuk-link govuk-link--no-visited-state">
+                  Attach other income schedule
+                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Incomplete</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-other-income-schedule">Incomplete</strong>
             </li>
           </ul>
         </li>
 
         <li>
           <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number"></span> 
           Gift Aid Small Donations Scheme schedule
           </h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item">
+          <ul class="app-task-list__items" style="padding-left: 0px;">
+            <li class="app-task-list__item" style="padding-left: 0px;">
               <span class="app-task-list__task-name">
-                Donation details
+                <a href="#" aria-describedby="donation-details" class="govuk-link govuk-link--no-visited-state">
+                  Donation details
+                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Incomplete</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="donation-details">Incomplete</strong>
             </li>
 
-            <li class="app-task-list__item">
+            <li class="app-task-list__item" style="padding-left: 0px;">
               <span class="app-task-list__task-name">
-                Attach community buildings schedule
+                <a href="#" aria-describedby="attach-community-buildings-schedule" class="govuk-link govuk-link--no-visited-state">
+                  Attach community buildings schedule
+                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Incomplete</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-community-buildings-schedule">Incomplete</strong>
             </li>
 
-            <li class="app-task-list__item">
+            <li class="app-task-list__item" style="padding-left: 0px;">
               <span class="app-task-list__task-name">
-                Attach connected charities schedule
+                <a href="#" aria-describedby="attach-connected-charities-schedule" class="govuk-link govuk-link--no-visited-state">
+                  Attach connected charities schedule
+                </a>
               </span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Incomplete</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-connected-charities-schedule">Incomplete</strong>
             </li>
           </ul>
         </li>
@@ -131,71 +137,58 @@
     </div>
 
     <div class="govuk-grid-column-one-third">
-
+      
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Charity repayment claim
+      </h2>
       <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="https://local.tax.service.gov.uk/home">
-                Your HMRC services
-              </a>
-          </li>
-        </ul>
 
+        <nav role="navigation" aria-labelledby="subsection-title">
               <ul class="govuk-list govuk-!-font-size-16">
-                <li><p class="govuk-body govuk-!-font-weight-bold">Charity repayment claim</p></li>
                 <li>
-                  <a href="#">
+                  <a href="/at-a-glance" class="govuk-link govuk-link--no-visited-state">
                     At a glance
                   </a>
                 </li>
 
                 <li>
-                  <a href="#">
-                    Continue with charity repayment claim
+                  <a href="" class="govuk-link govuk-link--no-visited-state"><p class="govuk-!-font-size-16 govuk-!-font-weight-bold">
+                    Repayment claim summary
                   </a>
                 </li>
 
                 <li>
-                  <a href="#">
+                  <a href="/about-the-charity" class="govuk-link govuk-link--no-visited-state">
+                    Question about this claim
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">
                     About the organisation
                   </a>
                 </li>
 
                 <li>
-                  <a href="#">
-                    Attach Gift Aid schedule
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                    Gift Aid schedule
                   </a>
                 </li>
 
                 <li>
-                  <a href="#"><p class="govuk-!-font-size-16 govuk-!-font-weight-bold">
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                    Other income schedule
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="govuk-link govuk-link--no-visited-state">
                     Gift Aid Small Donations Scheme schedule
                   </a>
                 </li>
-
+                
                 <li>
-                  <a href="#"><p class="govuk-!-padding-left-5 govuk-!-font-size-16 govuk-!-font-weight-bold">
-                    Donation Details
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#"><p class="govuk-!-font-size-16 govuk-!-padding-left-5">
-                    Attach community buildings schedule
-                  </a>
-                </li>
-
-
-                  <a href="#"><p class="govuk-!-font-size-16 govuk-!-padding-left-5">
-                    Attach connected charities schedule
-                  </a>
-
-
-                <li>
-                  <a href="#">
+                  <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
                     FAQs
                   </a>
                 </li>
