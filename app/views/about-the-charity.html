@@ -34,16 +34,19 @@
       </p>
 
 
-      <form class="form" action="/repayment-claim-summary" method="post">
+      <form class="form" action="/repayment-claim-summary" method="post" id="about-charity-form">
 
 
           <!-- Are you claiming Gift Aid? -->
 
-            <div class="govuk-form-group">
+            <div class="govuk-form-group" id="claiming-gift-aid-group">
               <label class="govuk-label govuk-label--s" for="claiming-gift-aid">
                 Are you claiming Gift Aid?
               </label>
-              <select class="govuk-select" id="claiming-gift-aid" name="claiming-gift-aid">
+              <p class="govuk-error-message" id="claiming-gift-aid-error-message" style="display: none">
+                <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              </p>
+              <select class="govuk-select" id="claiming-gift-aid-select" name="claiming-gift-aid-select">
                 <option value="default" selected>Please select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -55,7 +58,7 @@
                   </span>
                 </summary>
                 <div class="govuk-details__text">
-                <p>'Yes' if you want to claim a repayment of tax on donations from individuals who have made a    valid Gift Aid declaration.</p>
+                <p>'Yes' if you want to claim a repayment of tax on donations from individuals who have made a valid Gift Aid declaration.</p>
 
                 <p><strong>Please note:</strong> To submit your claim, you'll need your completed HM Revenue and Customs schedule of Gift Aid donations ready to attach when requested during this process.</p>
 
@@ -68,11 +71,14 @@
             
           <!-- Are you claiming UK tax deducted from other income? -->
 
-          <div class="govuk-form-group">
+          <div class="govuk-form-group" id="other-income-group">
             <label class="govuk-label govuk-label--s" for="other-income">
               Are you claiming UK tax deducted from other income?
             </label>
-            <select class="govuk-select" id="other-income" name="other-income">
+            <p class="govuk-error-message" id="other-icnome-error-message" style="display: none">
+              <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+            </p>
+            <select class="govuk-select" id="other-income-select" name="other-income-select">
               <option value="default" selected>Please select</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -134,7 +140,7 @@
 
             <div class="govuk-form-group">
               <label class="govuk-label govuk-label--s" for="claim-reference-number">
-                Your claim reference number:
+                Your claim reference number (optional)
               </label>
               <input class="govuk-input" id="claim-reference-number" name="claim-reference-number" type="text" maxlength="21">
               <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
