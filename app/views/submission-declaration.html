@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference:
+        XR4010</span>
+    </dl>
+    <h1 class="govuk-heading-xl">Declaration</h1>
+  </div>
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="#" method="post">
+
+        <p class="govuk-body govuk-!-font-weight-bold">Your charities repayment claim is now ready for submission.</p>
+
+        <p>Before your repayment claim can be accepted by HM Revenue & Customs (HMRC), you must indicate your agreement to the statements below by ticking the checkbox.</p>
+
+        <p>The information I have given in this claim is complete and correct to the best of my knowledge and belief.</p>
+
+        <p>I confirm that I have read the HMRC notes and guidance on claiming Gift Aid and/or top-up payments under the Gift Aid Small Donations Scheme.</p>
+
+        <p>Where this claim wholly or partly relates to Gift Aid I claim exemption from tax for this charity or Community Amateur Sports Club for the period covered by the claim</p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="declaration-confirmation">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="declaration-confirmation" name="declaration-confirmation" type="checkbox" value="declaration-confirmation">
+                <label class="govuk-label govuk-checkboxes__label" for="declaration-confirmation">
+                  I understand that false statements can lead to prosecution.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="350">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="adjustment-reason">
+              If you have included any adjustments in this claim, you must enter an explanation below. You can also provide any other information regarding your charity's repayment claim.
+            </label>
+            <textarea class="govuk-textarea govuk-js-character-count" id="label-as-page-heading" name="adjustment-reason" rows="5" aria-describedby="declaration"></textarea>
+          </div>
+        
+          <div id="adjustment-reason" class="govuk-hint govuk-character-count__message">
+            You can enter up to 350 characters
+          </div>
+          <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Help about: Explain adjustment
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+            <p>Enter your explanation of any adjustments that you have made to this claim or additional information that will be useful to HM Revenue & Customs in this box. Additional lines will automatically appear as you enter your information.</p>
+
+            <p><strong>Please note:</strong> You cannot attach any letters or other files to your claim here.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Next
+          </button>
+        
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back
+          </button>
+        </div>
+
+      </form>
+
+  </div>
+
+</div>
+
+{% endblock %}
