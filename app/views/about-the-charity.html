@@ -106,14 +106,17 @@
 
             <!-- Are you claiming a top up payment for small cash donations under GASDS? These are not your Gift Aid donations. -->
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="top-up-small-cash-gasds">
+            <div class="govuk-form-group" id="top-up-cash-gasds-group">
+              <label class="govuk-label govuk-label--s" for="top-up-cash-gasds-select">
                 Are you claiming a top up payment for small cash donations under GASDS?
               </label>
+              <p class="govuk-error-message" id="top-up-cash-gasds-error-message" style="display: none">
+                <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              </p>
               <div id="subject-hint" class="govuk-hint">
                 These are not your Gift Aid donations.
               </div>
-              <select class="govuk-select" id="top-up-small-cash-gasds" name="top-up-small-cash-gasds">
+              <select class="govuk-select" id="top-up-cash-gasds-select" name="top-up-cash-gasds-select">
                 <option value="default" selected>Please select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -160,11 +163,14 @@
             
             <p>If you indicated you are claiming a top-up payment under GASDS you must provide the information below.*</p>
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="top-up-gasds-community-building">
+            <div class="govuk-form-group" id="top-up-gasds-community-building-group">
+              <label class="govuk-label govuk-label--s" for="top-up-gasds-community-building-select">
                 Are you claiming a top up payment under GASDS for donations that were not collected in a community building?
               </label>
-              <select class="govuk-select" id="top-up-gasds-community-building" name="top-up-gasds-community-building">
+              <p class="govuk-error-message" id="top-up-gasds-community-building-error-message" style="display: none">
+                <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              </p>
+              <select class="govuk-select" id="top-up-gasds-community-building-select" name="top-up-gasds-community-building-select">
                 <option value="default" selected>Please select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -217,11 +223,14 @@
 
             <!-- Are you claiming for donations collected in community buildings?  -->
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="donations-community-building">
+            <div class="govuk-form-group" id="claiming-community-building-group">
+              <label class="govuk-label govuk-label--s" for="claiming-community-building-select">
                 Are you claiming for donations collected in community buildings?
               </label>
-              <select class="govuk-select" id="donations-community-building" name="donations-community-building">
+              <p class="govuk-error-message" id="claiming-community-building-error-message" style="display: none">
+                <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              </p>
+              <select class="govuk-select" id="claiming-community-building-select" name="claiming-community-building-select">
                 <option value="default" selected>Please select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -277,11 +286,14 @@
 
             <!-- Are you connected to any other charities or CASCs for the purpose of GASDS? -->
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="casc">
+            <div class="govuk-form-group" id="connected-charities-group">
+              <label class="govuk-label govuk-label--s" for="connected-charities-select">
                 Are you connected to any other charities or CASCs for the purpose of GASDS?
               </label>
-              <select class="govuk-select" id="casc" name="casc">
+              <p class="govuk-error-message" id="connected-charities-error-message" style="display: none">
+                <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              </p>
+              <select class="govuk-select" id="connected-charities-select" name="connected-charities-select">
                 <option value="default" selected>Please select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -306,11 +318,14 @@
 
             <!-- Are you making an adjustment to a previous GASDS claim? -->
 
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="adjustment-to-gasds">
+            <div class="govuk-form-group" id="adjustment-to-gasds-group">
+              <label class="govuk-label govuk-label--s" for="adjustment-to-gasds-select">
                 Are you making an adjustment to a previous GASDS claim?
               </label>
-              <select class="govuk-select" id="adjustment-to-gasds" name="adjustment-to-gasds">
+              <p class="govuk-error-message" id="adjustment-to-gasds-error-message" style="display: none">
+                <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              </p>
+              <select class="govuk-select" id="adjustment-to-gasds-select" name="adjustment-to-gasds-select">
                 <option value="default" selected>Please select</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
