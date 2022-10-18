@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  About the organisation - {{ serviceName }}
 {% endblock %}
 
 {% block header %}
@@ -267,19 +267,14 @@
 </div>
 
 <div class="govuk-grid-column-one-third">
-    <aside class="app-related-items" role="complementary">
-      <h2 class="govuk-heading-m" id="subsection-title">
-      </h2>
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <a href="https://local.tax.service.gov.uk/home">
-              Your HMRC services
-            </a>
-        </li>
-      </ul>
+
+  <h2 class="govuk-heading-m" id="subsection-title">
+    Charity repayment claim
+  </h2>
+  <aside class="app-related-items" role="complementary">
+
+    <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
-            <li><p class="govuk-body govuk-!-font-weight-bold">Charity repayment claim</p></li>
             <li>
               <a href="at-a-glance">
                 At a glance
@@ -287,8 +282,8 @@
             </li>
 
             <li>
-              <a href="#">
-                Continue with charity repayment claim
+              <a href="" class="govuk-link govuk-link--no-visited-state"><p class="govuk-!-font-size-16 govuk-!-font-weight-bold">
+                Repayment claim summary
               </a>
             </li>
 
@@ -297,9 +292,9 @@
                 FAQs
               </a>
             </li>
-        </ul>
-      </nav>
-    </aside>
-  </div>
+      </ul>
+    </nav>
+  </aside>
+</div>
 </div>
 {% endblock %}
