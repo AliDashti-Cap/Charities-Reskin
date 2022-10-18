@@ -63,7 +63,7 @@
           Further information about Gift Aid schedules can be found in the online guidance. HMRC recommend you read this guidance before you complete and save your schedule.
         </p>
 
-        <form class="form" action="/repayment-claim-summary" method="post">
+        <form class="form" action="/other-schedule-upload" method="post">
 
         <p class="govuk-body govuk-!-font-weight-bold">Attach your Gift Aid schedule</p>
 
@@ -80,7 +80,7 @@
             text: "Upload a file"
           }
         }) }}
-        
+
 
         <p class="govuk-body">
           If you do not want to attach a Gift Aid schedule now please tick the checkbox below then, click the 'Next' button to continue.
@@ -119,18 +119,18 @@
           <button class="govuk-button" data-module="govuk-button">
             Next
           </button>
-        
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Repayment Claim Summary
-          </button>
-        </div>
 
-      </form>
+          <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment Claim Summary</a>
+          <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="repayment-claim-summary">
+          Repayment Claim Summary
+          </button> -->
+        </form>
+        </div>
 
     </div>
 
     <div class="govuk-grid-column-one-third">
-      
+
       <h2 class="govuk-heading-m" id="subsection-title">
         Charity repayment claim
       </h2>
@@ -145,19 +145,19 @@
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">
                     Repayment claim summary
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="about-the-charity" class="govuk-link govuk-link--no-visited-state">
                     Question about this claim
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="about-the-organisation" class="govuk-link govuk-link--no-visited-state">
                     About the organisation
                   </a>
                 </li>
@@ -169,17 +169,17 @@
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="other-schedule-upload" class="govuk-link govuk-link--no-visited-state">
                     Other income schedule
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="gasds-details" class="govuk-link govuk-link--no-visited-state">
                     Gift Aid Small Donations Scheme schedule
                   </a>
                 </li>
-                
+
                 <li>
                   <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
                     FAQs

@@ -27,8 +27,8 @@
     You must provide the information below then, click the 'Next' button to continue. The person making this claim must be a recognised authorised official or corporate trustee that has already been notified to HM Revenue & Customs as the authorised official.
   </p>
 
-  <form class="form" action="" method="post" id="about-organisation-form">
-    
+  <form class="form" action="/gas-schedule-upload" method="post" id="about-organisation-form">
+
     <!-- Name of charity regulator -->
 
     <div class="govuk-form-group" id="name-charity-regulator-group">
@@ -255,13 +255,15 @@
       <button class="govuk-button" data-module="govuk-button">
         Next
       </button>
-    
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Repayment Claim Summary
-      </button>
+
+     <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment Claim Summary</a>
+     <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="repayment-claim-summary">
+     Repayment Claim Summary
+     </button> -->
+   </form>
+
     </div>
-    
-  </form>
+
 </div>
 
 <div class="govuk-grid-column-one-third">
@@ -279,7 +281,7 @@
           <ul class="govuk-list govuk-!-font-size-16">
             <li><p class="govuk-body govuk-!-font-weight-bold">Charity repayment claim</p></li>
             <li>
-              <a href="#">
+              <a href="at-a-glance">
                 At a glance
               </a>
             </li>
@@ -291,7 +293,7 @@
             </li>
 
             <li>
-              <a href="#">
+              <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
                 FAQs
               </a>
             </li>
