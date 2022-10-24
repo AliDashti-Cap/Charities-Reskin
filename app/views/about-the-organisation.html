@@ -40,10 +40,10 @@
       </p>
         <select class="govuk-select" id="name-charity-regulator-select" name="name-charity-regulator-select">
           <option value="default" selected>Please select</option>
-          <option value="Charity Commission for England and Wales" >Charity Commission for England and Wales</option>
-          <option value="Charity Commission for Northern Ireland">Charity Commission for Northern Ireland</option>
-          <option value="Office of the Scottish Charity Regulator">Office of the Scottish Charity Regulator</option>
-          <option value="None">None</option>
+          <option value="england-wales" >Charity Commission for England and Wales</option>
+          <option value="northern-ireland">Charity Commission for Northern Ireland</option>
+          <option value="scottish-charity-regulator">Office of the Scottish Charity Regulator</option>
+          <option value="none">None</option>
         </select>
       <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
         <summary class="govuk-details__summary">
@@ -71,12 +71,14 @@
       If you selected Charity Commission for England and Wales, Charity Commission for Northern Ireland or Office of the Scottish Charity Regulator, you must provide the information below.
     </p>
 
-    <div class="govuk-form-group">
-      <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="number-charity-regulator">
+    <div class="govuk-form-group" id="number-charity-regulator-group">
+      <label class="govuk-label govuk-label--s" for="number-charity-regulator">
           Charity regulator's number - enter the numerical characters only (not the HMRC Charities reference number)
         </label>
-      </h1>
-      <input class="govuk-input" id="number-charity-regulator" name="number-charity-regulator" type="text">
+        <p class="govuk-error-message" id="number-charity-regulator-group-error-message" style="display: none">
+          <span class="govuk-visually-hidden">ERROR:</span> Please supply the charity registration number for your organisation.
+        </p>
+      <input class="govuk-input" id="number-charity-regulator-input" name="number-charity-regulator" type="text">
       <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -97,6 +99,24 @@
       </details>
     </div>
 
+    <!-- Please provide a reason for not being registered with a regulator:-->
+
+    <div class="govuk-form-group" id="reason-not-registered-regulator-group">
+      <label class="govuk-label govuk-label--s" for="reason-not-registered-regulator-select">
+        Please provide a reason for not being registered with a regulator
+      </label>
+      <p class="govuk-error-message" id="reason-not-registered-regulator-error-message" style="display: none">
+        <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+      </p>
+        <select class="govuk-select" id="reason-not-registered-regulator-select" name="name-charity-regulator-select">
+          <option value="default" selected>Please select</option>
+          <option value="less-than-5000">Your charity is located in England or Wales and your income is less than £5,000 per year</option>
+          <option value="excepted">Your charity is Excepted</option>
+          <option value="exempt">Your charity is Exempt</option>
+          <option value="northern-ireland">Your charity is based in Northern Ireland and you are awaiting registration with the CCNI</option>
+        </select>
+    </div>
+
     <!-- Corporate trustee -->
 
     <div class="govuk-form-group" id="corporate-trustee-group">
@@ -108,8 +128,8 @@
         </p>
           <select class="govuk-select" id="corporate-trustee-select" name="corporate-trustee-select">
             <option value="default" selected>Please select</option>
-            <option value="Yes" >Yes</option>
-            <option value="No">No</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
           </select>
         <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
             <summary class="govuk-details__summary">
@@ -221,7 +241,7 @@
       },
       items: [
         {
-          value: "not-in-UK",
+          value: "not-in-uk",
           text: "Please select if your address is not in the UK"
         }
       ]
@@ -276,7 +296,7 @@
     <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <a href="at-a-glance">
+              <a href="/at-a-glance" class="govuk-link govuk-link--no-visited-state">
                 At a glance
               </a>
             </li>
@@ -284,6 +304,36 @@
             <li>
               <a href="repayment-claim-summary" class="govuk-link">
                 Repayment claim summary
+              </a>
+            </li>
+
+            <li>
+              <a href="/about-the-charity" class="govuk-link govuk-link--no-visited-state">
+                Question about this claim
+              </a>
+            </li>
+
+            <li>
+              <a href="/about-the-organisation" class="govuk-link govuk-link--no-visited-state">
+                About the organisation
+              </a>
+            </li>
+
+            <li>
+              <a href="/gas-schedule-upload" class="govuk-link govuk-link--no-visited-state">
+                Gift Aid schedule
+              </a>
+            </li>
+
+            <li>
+              <a href="/other-schedule-upload" class="govuk-link govuk-link--no-visited-state">
+                Other income schedule
+              </a>
+            </li>
+
+            <li>
+              <a href="/gasds-details" class="govuk-link govuk-link--no-visited-state">
+                Gift Aid Small Donations Scheme schedule
               </a>
             </li>
 
@@ -296,5 +346,6 @@
     </nav>
   </aside>
 </div>
+
 </div>
 {% endblock %}
