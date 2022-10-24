@@ -66,6 +66,20 @@ const corporateTrusteeGroup = document.getElementById("corporate-trustee-group")
 const corporateTrusteeErrorMessage = document.getElementById("corporate-trustee-error-message")
 const corporateTrusteeSelect = document.getElementById("corporate-trustee-select")
 
+// About the Organisation - Charity regulator's number
+
+const numberCharityRegulatorGroup = document.getElementById("number-charity-regulator-group")
+const numberCharityRegulatorErrorMessage = document.getElementById("number-charity-regulator-group-error-message")
+const numberCharityRegulatorInput = document.getElementById("number-charity-regulator-input")
+
+// Please provide a reason for not being registered with a regulator
+
+const reasonNotRegisteredRegulatorGroup = document.getElementById("reason-not-registered-regulator-group")
+const reasonNotRegisteredRegulatorErrorMessage = document.getElementById("reason-not-registered-regulator-error-message")
+const reasonNotRegisteredRegulatorSelect = document.getElementById("reason-not-registered-regulator-select")
+
+
+if (aboutCharityForm) {
 
 // About the Charity - Listeners
 aboutCharityForm.addEventListener("submit", function(e) {
@@ -90,6 +104,9 @@ aboutCharityForm.addEventListener("submit", function(e) {
   adjustmentToGasdsGroup.classList.remove("govuk-form-group--error")
   adjustmentToGasdsErrorMessage.style.display = "none"
   adjustmentToGasdsSelect.classList.remove("govuk-select--error")
+  numberCharityRegulatorGroup.classList.remove("govuk-form-group--error")
+  numberCharityRegulatorErrorMessage.style.display = "none"
+  numberCharityRegulatorInput.classList.remove("govuk-select--error")
 
   if (claimingGiftAidSelect.value === "default") {
     e.preventDefault()
@@ -134,6 +151,9 @@ aboutCharityForm.addEventListener("submit", function(e) {
     adjustmentToGasdsSelect.classList.add("govuk-select--error")
   }
 })
+}
+
+if (aboutOrganisationForm) {
 
 // About the Organisation - Listeners
 aboutOrganisationForm.addEventListener("submit", function(e) {
@@ -143,7 +163,9 @@ aboutOrganisationForm.addEventListener("submit", function(e) {
   corporateTrusteeGroup.classList.remove("govuk-form-group--error")
   corporateTrusteeErrorMessage.style.display = "none"
   corporateTrusteeSelect.classList.remove("govuk-select--error")
-
+  numberCharityRegulatorGroup.classList.remove("govuk-form-group--error")
+  numberCharityRegulatorErrorMessage.style.display = "none"
+  numberCharityRegulatorInput.classList.remove("govuk-select--error")
 
   if (nameCharityRegulatorSelect.value === "default") {
     e.preventDefault()
@@ -158,4 +180,41 @@ aboutOrganisationForm.addEventListener("submit", function(e) {
     corporateTrusteeErrorMessage.style.display = "block"
     corporateTrusteeSelect.classList.add("govuk-select--error")
   }
+
+  if (numberCharityRegulatorInput.value === "" || !(/^\d+$/.test(numberCharityRegulatorInput.value))) {
+    // https://stackoverflow.com/a/1779019
+    e.preventDefault()
+    numberCharityRegulatorGroup.classList.add("govuk-form-group--error")
+    numberCharityRegulatorErrorMessage.style.display = "block"
+    numberCharityRegulatorInput.classList.add("govuk-select--error")
+  }
+
+  if (reasonNotRegisteredRegulatorSelect.value === "default") {
+    e.preventDefault()
+    reasonNotRegisteredRegulatorGroup.classList.add("govuk-form-group--error")
+    reasonNotRegisteredRegulatorErrorMessage.style.display = "block"
+    reasonNotRegisteredRegulatorSelect.classList.add("govuk-select--error")
+  }
+
 })
+}
+
+const topUpPaymentFields = document.getElementById("top-up-payment-fields")
+ function topUpPaymentsFieldOnChange(e){
+if (e.value === "yes") {
+  topUpPaymentFields.style.display = "block"
+}
+else {
+  topUpPaymentFields.style.display = "none"
+}
+}
+
+const adjustmentPreviousGasdsFields = document.getElementById("adjustments-previous-gasds-fields")
+ function adjustmentPreviousGasdsFieldsOnChange(e){
+if (e.value === "yes") {
+  adjustmentPreviousGasdsFields.style.display = "block"
+}
+else {
+  adjustmentPreviousGasdsFields.style.display = "none"
+}
+}
