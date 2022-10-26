@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Attach other income schedule – {{ serviceName }}
 {% endblock %}
 
 {% block header %}
@@ -59,6 +59,8 @@
           Further information about Gift Aid schedules can be found in the online guidance. HMRC recommend you read this guidance before you complete and save your schedule.
         </p>
 
+        <form class="form" action="/gasds-details" method="post">
+
         <p class="govuk-body govuk-!-font-weight-bold">Attach your other income schedule</p>
 
         <p class="govuk-body">
@@ -114,12 +116,14 @@
             Next
           </button>
 
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Repayment Claim Summary
-          </button>
+          <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment Claim Summary</a>
+          <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="repayment-claim-summary">
+          Repayment Claim Summary
+          </button> -->
+        </form>
         </div>
 
-      </form>
+
 
     </div>
 
@@ -139,25 +143,25 @@
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">
                     Repayment claim summary
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
-                    Question about this claim
+                  <a href="about-the-charity" class="govuk-link govuk-link--no-visited-state">
+                    Questions about this claim
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="about-the-organisation" class="govuk-link govuk-link--no-visited-state">
                     About the organisation
                   </a>
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="gas-schedule-upload" class="govuk-link govuk-link--no-visited-state">
                     Gift Aid schedule
                   </a>
                 </li>
@@ -169,7 +173,7 @@
                 </li>
 
                 <li>
-                  <a href="#" class="govuk-link govuk-link--no-visited-state">
+                  <a href="gasds-details" class="govuk-link govuk-link--no-visited-state">
                     Gift Aid Small Donations Scheme schedule
                   </a>
                 </li>

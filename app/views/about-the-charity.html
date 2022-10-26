@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  About the charity – {{ serviceName }}
 {% endblock %}
 
 {% block header %}
@@ -29,318 +29,366 @@
         Questions about this claim
       </h2>
 
-      <p class="govuk-body">
-        You can use this service to claim tax repayments on Gift Aid donations, claim UK tax deducted from other income and claim top-up payments under the Gift Aid Small Donations Scheme (GASDS). Please answer the questions below indicating which of the three areas you want to claim under then, click the 'Next' button to continue.
+        <form class="form" action="/about-the-organisation" method="post" id="about-charity-form">
+
+
+<!-- Are you claiming Gift Aid? -->
+
+<div class="govuk-form-group" id="claiming-gift-aid-group">
+  <label class="govuk-label govuk-label--s" for="claiming-gift-aid">
+    Are you claiming Gift Aid?
+  </label>
+  <p class="govuk-error-message" id="claiming-gift-aid-error-message" style="display: none">
+    <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+  </p>
+  <select class="govuk-select" id="claiming-gift-aid-select" name="claiming-gift-aid-select">
+    <option value="default" selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Claiming Gift Aid
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    <p>
+      'Yes' if you want to claim a repayment of tax on donations from individuals who have made a valid Gift Aid declaration.
+    </p>
+    <p><strong>Please note:</strong>
+      To submit your claim, you'll need your completed HM Revenue and Customs schedule of Gift Aid donations ready to attach when requested during this process.
+    </p>
+    <p>
+      You can download the schedule as a spreadsheet from the GOV.UK website. All donor details which are required entries on the spreadsheet should be completed before attaching to your claim.
+    </p>
+    </div>
+  </details>
+</div>
+
+
+
+<!-- Are you claiming UK tax deducted from other income? -->
+
+<div class="govuk-form-group" id="other-income-group">
+  <label class="govuk-label govuk-label--s" for="other-income">
+    Are you claiming UK tax deducted from other income?
+  </label>
+  <p class="govuk-error-message" id="other-icnome-error-message" style="display: none">
+    <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+  </p>
+  <select class="govuk-select" id="other-income-select" name="other-income-select">
+    <option value="default" selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Claiming tax relief
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    <p>Select 'Yes' if you want to claim a repayment of tax deducted from 'other income' for example</p>
+    <ul>
+      <li>Bank or Building Society interest</li>
+      <li>repayable tax shown on an R185E certificate issued by an Estate Administrator</li>
+      <li>tax deducted from a payment received from a Discretionary Trust</li>
+    </ul>
+    <p>
+      <strong>Please note:</strong>
+      To submit your claim, you'll need your completed HM Revenue and Customs schedule of other income payments ready to attach when requested during this process.
+    </p>
+    <p>
+      You can download the schedule as a spreadsheet from the GOV.UK website. All donor details which are required entries on the spreadsheet should be completed before attaching to your claim.
+    </p>
+    </div>
+  </details>
+</div>
+
+<!-- Are you claiming a top up payment for small cash donations under GASDS? These are not your Gift Aid donations. -->
+
+<div class="govuk-form-group" id="top-up-cash-gasds-group">
+  <label class="govuk-label govuk-label--s" for="top-up-cash-gasds-select">
+    Are you claiming a top up payment for small cash donations under GASDS?
+  </label>
+  <p class="govuk-error-message" id="top-up-cash-gasds-error-message" style="display: none">
+    <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+  </p>
+  <div id="subject-hint" class="govuk-hint">
+    These are not your Gift Aid donations.
+  </div>
+  <select class="govuk-select" id="top-up-cash-gasds-select" name="top-up-cash-gasds-select">
+    <option value="default" selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Claiming - Gift Aid Small Donations Scheme
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    <p>
+      Select 'Yes' if you want to claim under the Gift Aid Small Donations Scheme (GASDS). This is separate from your Gift Aid claim.
+    </p>
+    <p>
+      The GASDS is for small cash donations of £20 or less that the charity or Community Amateur Sports Club has received that you do not have a Gift Aid declaration for. It only applies to donations you have already received since 6 April 2013.
+    </p>
+    <p>
+      You will be asked to enter the total amount of all small cash donations that you have received and are claiming for under the GASDS on this occasion.
+    </p>
+    <p><strong>Please note:</strong>
+      In general, you can claim a maximum of £1,250 of top-up payments in any one tax year for donations received from 6 April 2013 onwards.
+    </p>
+    </div>
+  </details>
+</div>
+
+<!-- Your claim reference number:  -->
+
+<div class="govuk-form-group">
+  <label class="govuk-label govuk-label--s" for="claim-reference-number">
+    Your claim reference number (optional)
+  </label>
+  <input class="govuk-input" id="claim-reference-number" name="claim-reference-number" type="text" maxlength="21">
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Your claim reference number
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    <p>You do not have to complete this box but you can use it to show your claim reference if you use one. The reference that you quote will appear on the payment advice note you receive from us when we pay the claim.</p>
+    </div>
+  </details>
+</div>
+
+
+<!-- Are you claiming a top up payment under GASDS for donations that were not collected in a community building? -->
+
+<div class="govuk-form-group" id="top-up-gasds-community-building-group">
+  <label class="govuk-label govuk-label--s" for="top-up-gasds-community-building-select">
+    Are you claiming a top up payment under GASDS for donations that were not collected in a community building?
+  </label>
+  <p class="govuk-error-message" id="top-up-gasds-community-building-error-message" style="display: none">
+    <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+  </p>
+  <select class="govuk-select" id="top-up-gasds-community-building-select" name="top-up-gasds-community-building-select">
+    <option value="default" selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Donations – Gift Aid Small Donations Scheme (GASDS)
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    <p>
+      <strong>Only</strong> select ‘Yes’ if you are claiming under the Gift Aid Small Donations Scheme (GASDS) on donations of £20 or less that were <strong>not</strong> collected in a community building since 6 April 2014.
+    </p>
+    <p>
+      If you are claiming under the community buildings rule <strong>only</strong>, you must answer ‘<strong>No</strong>’ to this question.
+    </p>
+    <p>
+      <strong>Gift Aid Small Donations (GASDS) received in the 2013/14 tax year are now ineligible, as they should have been claimed for by 5 April 2016.</strong>
+    </p>
+    <p>
+      <strong>To prevent your payment being delayed - Please check below</strong>
+    </p>
+    <ol class="govuk-list govuk-list--number">
+      <li style="margin-bottom:20px"><strong>Don’t enter amounts above the maximum allowance for GASDS</strong></li>
+        <p>
+          When completing your claim, do <strong>not</strong> enter an amount above the maximum small donation limit of £5000 (on donations collected in the 14/15 and 15/16 tax year) or £8000 (from April 2016 onwards),
+        </p>
+        <p>
+          For example, if you collected £5800 in the 2015/16 tax year, you should enter £5000 as the amount collected.
+        </p>
+      <li style="margin-bottom:20px"><strong>Enter the correct tax year</strong></li>
+        <p>
+          You must ensure that you enter the correct tax year for the small donations you are claiming for.
+        </p>
+        <p>
+          GASDS are claimed by tax year, <strong>not</strong> on your accounting periods.
+        </p>
+        <p>
+          Failure to do this may lead to your claim being disallowed if the system determines you have claimed on your limit for that year already.
+        </p>
+      <li style="margin-bottom:20px"><strong>Are you eligible for Gift Aid Small Donations?</strong></li>
+        <p>
+          Your charity or Community Amateur Sports Club <strong>must</strong> have claimed Gift Aid:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>in at least 2 of the last 4 tax years (but without a 2 year gap between the claims) AND</li>
+          <li>without getting a penalty in the last 2 tax years</li>
+        </ul>
+        <p>
+          If you do <strong>not</strong> meet these requirements then unfortunately, you are <strong>not</strong> eligible to claim under Small Donations.
+        </p>
+    </ol>
+    </div>
+  </details>
+</div>
+
+
+<!-- Are you claiming for donations collected in community buildings?  -->
+
+<div class="govuk-form-group" id="claiming-community-building-group">
+  <label class="govuk-label govuk-label--s" for="claiming-community-building-select">
+    Are you claiming for donations collected in community buildings?
+  </label>
+  <p class="govuk-error-message" id="claiming-community-building-error-message" style="display: none">
+    <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+  </p>
+  <select class="govuk-select" id="claiming-community-building-select" name="claiming-community-building-select">
+    <option value="default" selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Donations – Gift Aid Small Donations Scheme (GASDS) - Community buildings
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    <p>
+      <strong>Only</strong> select ‘Yes’ if you are claiming under the Gift Aid Small Donations Scheme on donations of £20 or less that <strong>were</strong> collected in a community building during charitable activities from 6 April 2014.
+    </p>
+    <p>
+      <strong>Please note:</strong> To claim under community buildings, you need to attach your completed HM Revenue & Customs schedule of community buildings when requested during the claim process.
+    </p>
+    <p>
+      The spreadsheet can be downloaded from the GOV.UK website. Please ensure you complete all relevant fields on the spreadsheet.
+    </p>
+    <p>
+      <strong>Gift Aid Small Donations (GASDS) received in the 2013/14 tax year are now ineligible, as they should have been claimed for by 5 April 2016.</strong>
+    </p>
+    <p>
+      Community Amateur Sports Clubs (CASCS) cannot claim under the community buildings rules.
+    </p>
+    <p>
+      <strong>To prevent your payment being delayed - Please check below</strong>
+    </p>
+    <ol class="govuk-list govuk-list--number">
+      <li style="margin-bottom:20px"><strong>Don’t enter amounts above the maximum allowance for GASDS</strong></li>
+        <p>
+          When completing your claim, do <strong>not</strong> enter an amount above the maximum small donation limit of £5000 (on donations collected in the 14/15 and 15/16 tax year) or £8000 (from April 2016 onwards),
+        </p>
+        <p>
+          For example, if you collected £5800 in the 2015/16 tax year, you should enter £5000 as the amount collected.
+        </p>
+      <li style="margin-bottom:20px"><strong>Enter the correct tax year</strong></li>
+        <p>
+          You must ensure that you enter the correct tax year for the small donations you are claiming for.
+        </p>
+        <p>GASDS are claimed by tax year, <strong>not</strong> on your accounting periods.
+        </p>
+        <p>
+          Failure to do this may lead to your claim being disallowed if the system determines you have claimed on your limit for that year already.
+        </p>
+      <li style="margin-bottom:20px"><strong>Are you eligible for Gift Aid Small Donations?</strong></li>
+        <p>
+          Your charity or Community Amateur Sports Club <strong>must</strong> have claimed Gift Aid:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>in at least 2 of the last 4 tax years (but without a 2 year gap between the claims) AND</li>
+          <li>without getting a penalty in the last 2 tax years</li>
+        </ul>
+        <p>
+          If you do <strong>not</strong> meet these requirements then unfortunately, you are <strong>not</strong> eligible to claim under Small Donations.
+        </p>
+    </ol>
+    </div>
+  </details>
+</div>
+
+<!-- Are you connected to any other charities or CASCs for the purpose of GASDS? -->
+
+<div class="govuk-form-group" id="connected-charities-group">
+  <label class="govuk-label govuk-label--s" for="connected-charities-select">
+    Are you connected to any other charities or CASCs for the purpose of GASDS?
+  </label>
+  <p class="govuk-error-message" id="connected-charities-error-message" style="display: none">
+    <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+  </p>
+  <select class="govuk-select" id="connected-charities-select" name="connected-charities-select">
+    <option value="default" selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Connected Charities
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+    <p>
+      Choose 'Yes' if the charity or Community Amateur Sports Club (CASC) is connected to another charity or CASC under the Gift Aid Small Donations Scheme rules. The connected charities and CASCs that claim a top-up payment for the year will share the maximum £1,250 payments limit for the tax year.
+    </p>
+    <p><strong>Please note:</strong>
+      To submit your claim, you'll need to have your completed HM Revenue and Customs schedule of connected charities (prepared by your charity for the Gift Aid Small Donations Scheme) ready to attach when requested during the claim process.
+    </p>
+    <p>
+      You can download the schedule as a spreadsheet from the GOV.UK website. All connected charity details which are required entries on the spreadsheet should be completed.
+    </p>
+    </div>
+  </details>
+</div>
+
+
+<!-- Are you making an adjustment to a previous GASDS claim? -->
+
+<div class="govuk-form-group" id="adjustment-to-gasds-group">
+  <label class="govuk-label govuk-label--s" for="adjustment-to-gasds-select">
+    Are you making an adjustment to a previous GASDS claim?
+  </label>
+  <p class="govuk-error-message" id="adjustment-to-gasds-error-message" style="display: none">
+    <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+  </p>
+  <select class="govuk-select" id="adjustment-to-gasds-select" name="adjustment-to-gasds-select">
+    <option value="default" selected>Please select</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help about: Please enter the title
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p>
+        Select 'Yes' if an error was made in a previous claim which caused the charity or Community Amateur Sports Club to receive an over-payment of Gift Aid Small Donations Scheme to which it is not entitled. The over-claimed amount will, where possible, be deducted from this claim.
       </p>
+      <p>
+        Where this is not possible, if for example the over paid amount is more than the repayment claim you are making, then you will need to make an additional payment to HM Revenue & Customs.
+      </p>
+    </div>
+  </details>
+</div>
 
 
-      <form class="form" action="/repayment-claim-summary" method="post">
+<div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button" href="/about-the-organisation">
+    Next
+    </button>
+    <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment Claim Summary</a>
+    <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="repayment-claim-summary">
+    Repayment Claim Summary
+    </button> -->
+</form>
 
-
-          <!-- Are you claiming Gift Aid? -->
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="claiming-gift-aid">
-                Are you claiming Gift Aid?
-              </label>
-              <select class="govuk-select" id="claiming-gift-aid" name="claiming-gift-aid">
-                <option value="default" selected>Please select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Help about: Claiming Gift Aid
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                <p>'Yes' if you want to claim a repayment of tax on donations from individuals who have made a    valid Gift Aid declaration.</p>
-
-                <p><strong>Please note:</strong> To submit your claim, you'll need your completed HM Revenue and Customs schedule of Gift Aid donations ready to attach when requested during this process.</p>
-
-                <p>You can download the schedule as a spreadsheet from the GOV.UK website. All donor details which are required entries on the spreadsheet should be completed before attaching to your claim.</p> 
-                </div>
-              </details>
-            </div>
-
-
-            
-          <!-- Are you claiming UK tax deducted from other income? -->
-
-          <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--s" for="other-income">
-              Are you claiming UK tax deducted from other income?
-            </label>
-            <select class="govuk-select" id="other-income" name="other-income">
-              <option value="default" selected>Please select</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Help about: Claiming tax relief
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-              <p>Select 'Yes' if you want to claim a repayment of tax deducted from 'other income' for example</p>
-              <ul>
-                <li>Bank or Building Society interest</li>
-                <li>repayable tax shown on an R185E certificate issued by an Estate Administrator</li>
-                <li>tax deducted from a payment received from a Discretionary Trust</li>
-              </ul>
-
-              <p><strong>Please note:</strong> To submit your claim, you'll need your completed HM Revenue and Customs schedule of other income payments ready to attach when requested during this process.</p>
-
-              <p>You can download the schedule as a spreadsheet from the GOV.UK website. All donor details which are required entries on the spreadsheet should be completed before attaching to your claim.</p> 
-              </div>
-            </details>
-          </div>
-
-            <!-- Are you claiming a top up payment for small cash donations under GASDS? These are not your Gift Aid donations. -->
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="top-up-small-cash-gasds">
-                Are you claiming a top up payment for small cash donations under GASDS?
-              </label>
-              <div id="subject-hint" class="govuk-hint">
-                These are not your Gift Aid donations.
-              </div>
-              <select class="govuk-select" id="top-up-small-cash-gasds" name="top-up-small-cash-gasds">
-                <option value="default" selected>Please select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Help about: Claiming - Gift Aid Small Donations Scheme
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                <p>Select 'Yes' if you want to claim under the Gift Aid Small Donations Scheme (GASDS). This is separate from your Gift Aid claim.</p>
-
-                <p>The GASDS is for small cash donations of £20 or less that the charity or Community Amateur Sports Club has received that you do not have a Gift Aid declaration for. It only applies to donations you have already received since 6 April 2013.</p>
-
-                <p>You will be asked to enter the total amount of all small cash donations that you have received and are claiming for under the GASDS on this occasion.</p>
-
-                <p><strong>Please note:</strong> In general, you can claim a maximum of £1,250 of top-up payments in any one tax year for donations received from 6 April 2013 onwards.</p>
-                </div>
-              </details>
-            </div>
-
-            <!-- Your claim reference number:  -->
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="claim-reference-number">
-                Your claim reference number:
-              </label>
-              <input class="govuk-input" id="claim-reference-number" name="claim-reference-number" type="text" maxlength="21">
-              <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Help about: Your claim reference number
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                <p>You do not have to complete this box but you can use it to show your claim reference if you use one. The reference that you quote will appear on the payment advice note you receive from us when we pay the claim.</p>
-                </div>
-              </details>
-            </div>
-
-
-            <!-- Are you claiming a top up payment under GASDS for donations that were not collected in a community building? -->
-            
-            <p>If you indicated you are claiming a top-up payment under GASDS you must provide the information below.*</p>
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="top-up-gasds-community-building">
-                Are you claiming a top up payment under GASDS for donations that were not collected in a community building?
-              </label>
-              <select class="govuk-select" id="top-up-gasds-community-building" name="top-up-gasds-community-building">
-                <option value="default" selected>Please select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Help about: Donations – Gift Aid Small Donations Scheme (GASDS)
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                <p><strong>Only</strong> select ‘Yes’ if you are claiming under the Gift Aid Small Donations Scheme (GASDS) on donations of £20 or less that were <strong>not</strong> collected in a community building since 6 April 2014.</p>
-
-                <p>If you are claiming under the community buildings rule <strong>only</strong>, you must answer ‘<strong>No</strong>’ to this question.</p>
-
-                <p><strong>Gift Aid Small Donations (GASDS) received in the 2013/14 tax year are now ineligible, as they should have been claimed for by 5 April 2016.</strong></p>
-                
-                <p><strong>To prevent your payment being delayed - Please check below</strong></p>
-                
-                <ol class="govuk-list govuk-list--number">
-                  <li style="margin-bottom:20px"><strong>Don’t enter amounts above the maximum allowance for GASDS</strong></li>
-
-                    <p>When completing your claim, do <strong>not</strong> enter an amount above the maximum small donation limit of £5000 (on donations collected in the 14/15 and 15/16 tax year) or £8000 (from April 2016 onwards),</p>
-
-                    <p>For example, if you collected £5800 in the 2015/16 tax year, you should enter £5000 as the amount collected.</p>
-
-
-                  <li style="margin-bottom:20px"><strong>Enter the correct tax year</strong></li>
-
-                    <p>You must ensure that you enter the correct tax year for the small donations you are claiming for.</p>
-
-                    <p>GASDS are claimed by tax year, <strong>not</strong> on your accounting periods.</p>
-
-                    <p>Failure to do this may lead to your claim being disallowed if the system determines you have claimed on your limit for that year already.</p>
-
-                  <li style="margin-bottom:20px"><strong>Are you eligible for Gift Aid Small Donations?</strong></li>
-
-                    <p>Your charity or Community Amateur Sports Club <strong>must</strong> have claimed Gift Aid:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>in at least 2 of the last 4 tax years (but without a 2 year gap between the claims) AND</li>
-                      <li>without getting a penalty in the last 2 tax years</li>
-                    </ul>
-                  
-                    <p>If you do <strong>not</strong> meet these requirements then unfortunately, you are <strong>not</strong> eligible to claim under Small Donations.</p>
-                </ol>
-                </div>
-              </details>
-            </div>
-
-
-            <!-- Are you claiming for donations collected in community buildings?  -->
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="donations-community-building">
-                Are you claiming for donations collected in community buildings?
-              </label>
-              <select class="govuk-select" id="donations-community-building" name="donations-community-building">
-                <option value="default" selected>Please select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Help about: Donations – Gift Aid Small Donations Scheme (GASDS) - Community buildings
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                <p><strong>Only</strong> select ‘Yes’ if you are claiming under the Gift Aid Small Donations Scheme on donations of £20 or less that <strong>were</strong> collected in a community building during charitable activities from 6 April 2014.</p>
-
-                <p><strong>Please note:</strong> To claim under community buildings, you need to attach your completed HM Revenue & Customs schedule of community buildings when requested during the claim process.</p>
-
-                <p>The spreadsheet can be downloaded from the GOV.UK website. Please ensure you complete all relevant fields on the spreadsheet.</p>
-                
-                <p><strong>Gift Aid Small Donations (GASDS) received in the 2013/14 tax year are now ineligible, as they should have been claimed for by 5 April 2016.</strong></p>
-
-                <p>Community Amateur Sports Clubs (CASCS) cannot claim under the community buildings rules.</p>
-
-                <p><strong>To prevent your payment being delayed - Please check below</strong></p>
-                
-                <ol class="govuk-list govuk-list--number">
-                  <li style="margin-bottom:20px"><strong>Don’t enter amounts above the maximum allowance for GASDS</strong></li>
-
-                    <p>When completing your claim, do <strong>not</strong> enter an amount above the maximum small donation limit of £5000 (on donations collected in the 14/15 and 15/16 tax year) or £8000 (from April 2016 onwards),</p>
-
-                    <p>For example, if you collected £5800 in the 2015/16 tax year, you should enter £5000 as the amount collected.</p>
-
-
-                  <li style="margin-bottom:20px"><strong>Enter the correct tax year</strong></li>
-
-                    <p>You must ensure that you enter the correct tax year for the small donations you are claiming for.</p>
-
-                    <p>GASDS are claimed by tax year, <strong>not</strong> on your accounting periods.</p>
-
-                    <p>Failure to do this may lead to your claim being disallowed if the system determines you have claimed on your limit for that year already.</p>
-
-                  <li style="margin-bottom:20px"><strong>Are you eligible for Gift Aid Small Donations?</strong></li>
-
-                    <p>Your charity or Community Amateur Sports Club <strong>must</strong> have claimed Gift Aid:</p>
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>in at least 2 of the last 4 tax years (but without a 2 year gap between the claims) AND</li>
-                      <li>without getting a penalty in the last 2 tax years</li>
-                    </ul>
-                  
-                    <p>If you do <strong>not</strong> meet these requirements then unfortunately, you are <strong>not</strong> eligible to claim under Small Donations.</p>
-                </ol>
-                </div>
-              </details>
-            </div>
-
-            <!-- Are you connected to any other charities or CASCs for the purpose of GASDS? -->
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="casc">
-                Are you connected to any other charities or CASCs for the purpose of GASDS?
-              </label>
-              <select class="govuk-select" id="casc" name="casc">
-                <option value="default" selected>Please select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Help about: Connected Charities
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                <p>Choose 'Yes' if the charity or Community Amateur Sports Club (CASC) is connected to another charity or CASC under the Gift Aid Small Donations Scheme rules. The connected charities and CASCs that claim a top-up payment for the year will share the maximum £1,250 payments limit for the tax year.</p>
-
-                <p><strong>Please note:</strong> To submit your claim, you'll need to have your completed HM Revenue and Customs schedule of connected charities (prepared by your charity for the Gift Aid Small Donations Scheme) ready to attach when requested during the claim process.</p>
-
-                <p>You can download the schedule as a spreadsheet from the GOV.UK website. All connected charity details which are required entries on the spreadsheet should be completed.</p>
-
-                </div>
-              </details>
-            </div>
-
-
-            <!-- Are you making an adjustment to a previous GASDS claim? -->
-
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-label--s" for="adjustment-to-gasds">
-                Are you making an adjustment to a previous GASDS claim?
-              </label>
-              <select class="govuk-select" id="adjustment-to-gasds" name="adjustment-to-gasds">
-                <option value="default" selected>Please select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-              </select>
-              <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Sarah please fix
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                <p>Select 'Yes' if an error was made in a previous claim which caused the charity or Community Amateur Sports Club to receive an over-payment of Gift Aid Small Donations Scheme to which it is not entitled. The over-claimed amount will, where possible, be deducted from this claim.</p>
-
-                <p>Where this is not possible, if for example the over paid amount is more than the repayment claim you are making, then you will need to make an additional payment to HM Revenue & Customs.</p>
-
-                </div>
-              </details>
-            </div>
-
-
-        <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Next
-          </button>
-        
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Repayment Claim Summary
-          </button>
         </div>
-
-      </form>
 
     </div>
 
     <div class="govuk-grid-column-one-third">
-      
+
       <h2 class="govuk-heading-m" id="subsection-title">
         Charity repayment claim
       </h2>

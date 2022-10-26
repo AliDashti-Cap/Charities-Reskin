@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  At a glance - {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference:
+        XR4010</span>
+    </dl>
+    <h1 class="govuk-heading-xl">At a glance</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">
+      Make a charity repayment claim
+    </h2>
+
+    <p class="govuk-body">
+      You have started to make a charity repayment claim using this Charities service. Please follow the link below to complete and submit your claim.</p>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">Make a charity repayment claim</a></li>
+      </ul>
+
+
+      <p class="govuk-body">
+        You can make a charity repayment claim using the HMRC online service by following the link below.
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://www.gov.uk/government/publications/charities-online-commercial-software-suppliers" class="govuk-link govuk-link--no-visited-state">View a list of commercial software</a></li>
+      </ul>
+
+
+      <h2 class="govuk-heading-m">
+        News & updates
+      </h2>
+
+      <p>Welcome to the charities online service.</p>
+
+      <p>Before you make your claim please complete and save any schedules.</p>
+
+      <p>Please refer to the <a href="https://www.gov.uk/guidance/claim-tax-back-on-donations-using-charities-online">demonstrator</a> which will help you make your claim correctly.</p>
+
+      <p class="govuk-body govuk-!-font-weight-bold">Avoid these 5 common mistakes that will delay your payment:</p>
+
+      <ol class="govuk-list govuk-list--number">
+        <li>Answer 'No' to the question 'are you a corporate trustee?' unless your charity is managed by a trust company, or trust department of a bank. See demonstrator page 8.</li>
+        <li>Do not confuse Gift Aid with the Gift Aid Small Donations Scheme (GASDS). See demonstrator page 6.</li>
+        <li>Do not confuse your charity regulator's number with your HMRC reference or User ID. See demonstrator page 8.</li>
+        <li>If you are including a tax adjustment on any schedule make sure you enter the amount of tax over-claimed and not the value of the donations.</li>
+        <li>Make sure you only give details of an official who is already known to HMRC.</li>
+      </ol>
+  </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Charity repayment claim
+      </h2>
+      <aside class="app-related-items" role="complementary">
+
+        <nav role="navigation" aria-labelledby="subsection-title">
+              <ul class="govuk-list govuk-!-font-size-16">
+                <li>
+                  <a href="" class="govuk-link govuk-link--no-visited-state"><p class="govuk-!-font-size-16 govuk-!-font-weight-bold">
+                    At a glance
+                  </a>
+                </li>
+
+                <li>
+                  <a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">
+                    Make a charity repayment claim
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
+                    FAQs
+                  </a>
+                </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
