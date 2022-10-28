@@ -104,9 +104,6 @@ aboutCharityForm.addEventListener("submit", function(e) {
   adjustmentToGasdsGroup.classList.remove("govuk-form-group--error")
   adjustmentToGasdsErrorMessage.style.display = "none"
   adjustmentToGasdsSelect.classList.remove("govuk-select--error")
-  numberCharityRegulatorGroup.classList.remove("govuk-form-group--error")
-  numberCharityRegulatorErrorMessage.style.display = "none"
-  numberCharityRegulatorInput.classList.remove("govuk-select--error")
 
   if (claimingGiftAidSelect.value === "default") {
     e.preventDefault()
