@@ -38,7 +38,7 @@
       <p class="govuk-error-message" id="name-charity-regulator-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
       </p>
-        <select class="govuk-select" id="name-charity-regulator-select" name="name-charity-regulator-select">
+        <select class="govuk-select" id="name-charity-regulator-select" name="name-charity-regulator-select" onchange="charityRegulatorNoneFieldsOnChange(this)">
           <option value="default" selected>Please select</option>
           <option value="england-wales" >Charity Commission for England and Wales</option>
           <option value="northern-ireland">Charity Commission for Northern Ireland</option>
@@ -71,7 +71,7 @@
       <label class="govuk-label govuk-label--s" for="number-charity-regulator">
           Charity regulator's number - enter the numerical characters only (not the HMRC Charities reference number)
         </label>
-        <p class="govuk-error-message" id="number-charity-regulator-group-error-message" style="display: none">
+        <p class="govuk-error-message" id="number-charity-regulator-error-message" style="display: none">
           <span class="govuk-visually-hidden">ERROR:</span> Please supply the charity registration number for your organisation.
         </p>
       <input class="govuk-input" id="number-charity-regulator-input" name="number-charity-regulator" type="text">
@@ -95,6 +95,8 @@
       </details>
     </div>
 
+   <div id="charity-regulator-none-fields" style="display: none">
+
     <!-- Please provide a reason for not being registered with a regulator:-->
 
     <div class="govuk-form-group" id="reason-not-registered-regulator-group">
@@ -112,6 +114,8 @@
           <option value="northern-ireland">Your charity is based in Northern Ireland and you are awaiting registration with the CCNI</option>
         </select>
     </div>
+
+  
 
     <!-- Corporate trustee -->
 
@@ -140,121 +144,125 @@
         </div>
       </details>
     </div>
+  </div> 
 
-    <!-- Corporate trustee name yes -->
+  <!-- Name of corporate trustee  -->
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--s" for="name-corporate-trustee">
-        Name of corporate trustee
-          </label>
-        </h1>
-          <input class="govuk-input" id="name-corporate-trustee" name="name-corporate-trustee" type="text">
-            <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    Help about: Corporate trustee name
-                </span>
-              </summary>
-          <div class="govuk-details__text">
-          <p>
-            This will be the name of the company that looks after the day to day administration of the charity.
-          </p>
-        </div>
-      </details>
+  <div class="govuk-form-group" id="name-corporate-trustee-group">
+    <label class="govuk-label govuk-label--s" for="name-corporate-trustee-input">
+      Name of corporate trustee
+    </label>
+    <p class="govuk-error-message" id="name-corporate-trustee-error-message" style="display: none">
+      <span class="govuk-visually-hidden">ERROR:</span> You must enter the name of the corporate trustee for your organisation.
+    </p>  
+    <input class="govuk-input" id="name-corporate-trustee-input" name="name-corporate-trustee" type="text">
+    <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+      <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help about: Corporate trustee name
+          </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>
+          This will be the name of the company that looks after the day to day administration of the charity.
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Authorised Official Title -->
+
+  <div class="govuk-form-group" id="authorised-official-title-group">
+    <label class="govuk-label govuk-label--s" for="authorised-official-title-input"> Title (optional)
+    </label>
+    <input class="govuk-input" id="authorised-official-title-input" name="authorised-official-title-input" type="text">
+  </div>
+
+    <!-- Authorised Official First name -->
+
+  <div class="govuk-form-group" id="authorised-official-first-name-group">
+    <label class="govuk-label govuk-label--s" for="authorised-official-first-name-input name"> First name
+    </label>
+    <p class="govuk-error-message" id="authorised-official-first-name-error-message" style="display: none">
+      <span class="govuk-visually-hidden">ERROR:</span> You must enter the first name of the authorised person for your organisation.
+    </p>  
+    <input class="govuk-input" id="authorised-official-first-name-input" name="authorised-official-first-name-input" type="text">
+  </div>
+
+    <!-- Authorised Official Last name -->
+
+  <div class="govuk-form-group" id="authorised-official-last-name-group">
+    <label class="govuk-label govuk-label--s"     for="authorised-official-last-name-input"> Last name
+    </label>
+    <p class="govuk-error-message" id="authorised-official-last-name-error-message" style="display: none">
+      <span class="govuk-visually-hidden">ERROR:</span> You must enter the last name of the authorised person for your organisation.
+    </p>  
+    <input class="govuk-input" id="authorised-official-last-name-input" name="authorised-official-last-name" type="text">
+  </div>
+
+  <!-- Postcode-->
+
+  <p>Please enter a postcode or indicate if your address is not in the UK.</p>
+
+  <div class="govuk-form-group" id="postcode-group">
+    <label class="govuk-label govuk-label--s" for="postcode-input"> Postcode
+    </label>
+    <div id="postcode-hint" class="govuk-hint">
+      For example AB12 3YZ
     </div>
-
-    <!-- Title -->
+    <p class="govuk-error-message" id="postcode-error-message" style="display: none">
+      <span class="govuk-visually-hidden">ERROR:</span> You must enter your postcode or indicate if your address is not in the UK.
+    </p>  
+    <input class="govuk-input" id="postcode-input" name="postcode-input" type="text">
+    <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help about: Postcode
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        This should be the postcode of the office in which your organisation is based.
+    </details>
 
     <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="title"> Title
+      <fieldset class="govuk-fieldset" aria-describedby="declaration-confirmation">
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="declaration-confirmation" name="declaration-confirmation" type="checkbox" value="declaration-confirmation">
+            <label class="govuk-label govuk-checkboxes__label" for="declaration-confirmation">
+              Please select if your address is not in the UK
             </label>
-          </h1>
-      <input class="govuk-input" id="title" name="title" type="text">
-    </div>
-
-    <!-- First name -->
-
-    <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="First name"> First name
-          </label>
-        </h1>
-      <input class="govuk-input" id="first-name" name="first-name" type="text">
-    </div>
-
-    <!-- Last name -->
-
-    <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="last-name"> Last name
-          </label>
-        </h1>
-      <input class="govuk-input" id="last-name" name="last-name" type="text">
-    </div>
-
-    <!-- Postcode-->
-
-    <p>
-      Please enter a postcode or indicate if your address is not in the UK.
-    </p>
-
-    <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="postcode"> Postcode
-          </label>
-          <div id="postcode-hint" class="govuk-hint">
-            For example AB12 3YZ
           </div>
-        </h1>
-      <input class="govuk-input" id="postcode" name="postcode" type="text">
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Help about: Postcode
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          This should be the postcode of the office in which your organisation is based.
-      </details>
-    </div>
-
-    {{ govukCheckboxes({
-      name: "not-UK-address",
-      fieldset: {
-        legend: {
-          text: "",
-          isPageHeading: false,
-          classes: "govuk-body govuk-!-margin-bottom-4"
-        }
-      },
-      items: [
-        {
-          value: "not-in-uk",
-          text: "Please select if your address is not in the UK"
-        }
-      ]
-    }) }}
-
-    <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--s" for="telephone-number">
-          Daytime telephone number
-          </label>
-        </h1>
-        <input class="govuk-input" id="telephone-number" name="telephone-number" type="text">
-          <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Help about: Daytime telephone number
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>
-          You must provide a telephone number that HM Revenue & Customs can use to discuss any queries that they may have with your claim.
-          </p>
         </div>
-      </details>
+      </fieldset>
     </div>
+  </div>
 
-    <p>'Next' automatically saves your data.</p>
+  <!-- Postcode-->
+
+  <div class="govuk-form-group" id="phone-number-group">
+    <label class="govuk-label govuk-label--s" for="phone-number-group-input">
+      Daytime telephone number
+    </label>
+    <p class="govuk-error-message" id="phone-number-error-message" style="display: none">
+      <span class="govuk-visually-hidden">ERROR:</span> You must enter a telephone number for your organisation.
+    </p>  
+    <input class="govuk-input" id="phone-number-input" name="tphone-number-group-input" type="text">
+    <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help about: Daytime telephone number
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>
+        You must provide a telephone number that HM Revenue & Customs can use to discuss any queries that they may have with your claim.
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <p>'Next' automatically saves your data.</p>
 
 
     <div class="govuk-button-group">
@@ -263,9 +271,6 @@
       </button>
 
      <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment Claim Summary</a>
-     <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="repayment-claim-summary">
-     Repayment Claim Summary
-     </button> -->
     </div>
 
   </form>

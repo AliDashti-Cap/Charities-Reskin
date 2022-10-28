@@ -118,7 +118,7 @@
           <div id="subject-hint" class="govuk-hint">
             These are not your Gift Aid donations.
           </div>
-          <select class="govuk-select" id="top-up-cash-gasds-select" name="top-up-cash-gasds-select">
+          <select class="govuk-select" id="top-up-cash-gasds-select" name="top-up-cash-gasds-select" onchange="topUpPaymentFieldsOnChange(this)">
             <option value="default" selected>Please select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
@@ -176,7 +176,7 @@
             <p class="govuk-error-message" id="top-up-gasds-community-building-error-message" style="display: none">
               <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
             </p>
-            <select class="govuk-select" id="top-up-gasds-community-building-select" name="top-up-gasds-community-building-select">
+            <select class="govuk-select" id="top-up-gasds-community-building-select" name="top-up-gasds-community-building-select" onchange="adjustmentPreviousGasdsFieldsOnChange(this)">
               <option value="default" selected>Please select</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -244,7 +244,7 @@
             <p class="govuk-error-message" id="claiming-community-building-error-message" style="display: none">
               <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
             </p>
-            <select class="govuk-select" id="claiming-community-building-select" name="claiming-community-building-select">
+            <select class="govuk-select" id="claiming-community-building-select" name="claiming-community-building-select" onchange="adjustmentPreviousGasdsFieldsOnChange(this)">
               <option value="default" selected>Please select</option>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -342,7 +342,7 @@
           </div>
         </div>
 
-
+      <div id="adjustments-previous-gasds-fields" style="display: none;">
         <!-- Are you making an adjustment to a previous GASDS claim? -->
 
         <div class="govuk-form-group" id="adjustment-to-gasds-group">
@@ -373,6 +373,7 @@
             </div>
           </details>
         </div>
+      </div>
 
 
         <div class="govuk-button-group">

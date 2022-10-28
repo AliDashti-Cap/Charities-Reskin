@@ -69,14 +69,44 @@ const corporateTrusteeSelect = document.getElementById("corporate-trustee-select
 // About the Organisation - Charity regulator's number
 
 const numberCharityRegulatorGroup = document.getElementById("number-charity-regulator-group")
-const numberCharityRegulatorErrorMessage = document.getElementById("number-charity-regulator-group-error-message")
+const numberCharityRegulatorErrorMessage = document.getElementById("number-charity-regulator-error-message")
 const numberCharityRegulatorInput = document.getElementById("number-charity-regulator-input")
 
-// Please provide a reason for not being registered with a regulator
+// About the Organisation - Please provide a reason for not being registered with a regulator
 
 const reasonNotRegisteredRegulatorGroup = document.getElementById("reason-not-registered-regulator-group")
 const reasonNotRegisteredRegulatorErrorMessage = document.getElementById("reason-not-registered-regulator-error-message")
 const reasonNotRegisteredRegulatorSelect = document.getElementById("reason-not-registered-regulator-select")
+
+// About the Organisation - Name of corporate trustee 
+
+const nameCorporateTrusteeGroup = document.getElementById("name-corporate-trustee-group")
+const nameCorporateTrusteeErrorMessage = document.getElementById("name-corporate-trustee-error-message")
+const nameCorporateTrusteeInput = document.getElementById("name-corporate-trustee-input")
+
+// About the Organisation - Authorised Official First name 
+
+const authorisedOfficialFirstNameGroup = document.getElementById("authorised-official-first-name-group")
+const authorisedOfficialFirstNameErrorMessage = document.getElementById("authorised-official-first-name-error-message")
+const authorisedOfficialFirstNameInput = document.getElementById("authorised-official-first-name-input")
+
+// About the Organisation - Authorised Official Last name 
+
+const authorisedOfficialLastNameGroup = document.getElementById("authorised-official-last-name-group")
+const authorisedOfficialLastNameErrorMessage = document.getElementById("authorised-official-last-name-error-message")
+const authorisedOfficialLastNameInput = document.getElementById("authorised-official-last-name-input")
+
+// About the Organisation - Postcode 
+
+const postcodeGroup = document.getElementById("postcode-group")
+const postcodeErrorMessage = document.getElementById("postcode-error-message")
+const postcodeInput = document.getElementById("postcode-input")
+
+// About the Organisation - Phone number 
+
+const phoneNumberGroup = document.getElementById("phone-number-group")
+const phoneNumberErrorMessage = document.getElementById("phone-number-error-message")
+const phoneNumberInput = document.getElementById("phone-number-input")
 
 
 if (aboutCharityForm) {
@@ -163,6 +193,21 @@ aboutOrganisationForm.addEventListener("submit", function(e) {
   numberCharityRegulatorGroup.classList.remove("govuk-form-group--error")
   numberCharityRegulatorErrorMessage.style.display = "none"
   numberCharityRegulatorInput.classList.remove("govuk-select--error")
+  nameCorporateTrusteeGroup.classList.remove("govuk-form-group--error")
+  nameCorporateTrusteeErrorMessage.style.display = "none"
+  nameCorporateTrusteeInput.classList.remove("govuk-select--error")
+  authorisedOfficialFirstNameGroup.classList.remove("govuk-form-group--error")
+  authorisedOfficialFirstNameErrorMessage.style.display = "none"
+  authorisedOfficialFirstNameInput.classList.remove("govuk-select--error")
+  authorisedOfficialLastNameGroup.classList.remove("govuk-form-group--error")
+  authorisedOfficialLastNameErrorMessage.style.display = "none"
+  authorisedOfficialLastNameInput.classList.remove("govuk-select--error")
+  postcodeGroup.classList.remove("govuk-form-group--error")
+  postcodeErrorMessage.style.display = "none"
+  postcodeInput.classList.remove("govuk-select--error")
+  phoneNumberGroup.classList.remove("govuk-form-group--error")
+  phoneNumberErrorMessage.style.display = "none"
+  phoneNumberInput.classList.remove("govuk-select--error")
 
   if (nameCharityRegulatorSelect.value === "default") {
     e.preventDefault()
@@ -193,6 +238,41 @@ aboutOrganisationForm.addEventListener("submit", function(e) {
     reasonNotRegisteredRegulatorSelect.classList.add("govuk-select--error")
   }
 
+  if (nameCorporateTrusteeInput.value === "") {
+    e.preventDefault()
+    nameCorporateTrusteeGroup.classList.add("govuk-form-group--error")
+    nameCorporateTrusteeErrorMessage.style.display = "block"
+    nameCorporateTrusteeInput.classList.add("govuk-select--error")
+  }
+
+  if (authorisedOfficialFirstNameInput.value === "") {
+    e.preventDefault()
+    authorisedOfficialFirstNameGroup.classList.add("govuk-form-group--error")
+    authorisedOfficialFirstNameErrorMessage.style.display = "block"
+    authorisedOfficialFirstNameInput.classList.add("govuk-select--error")
+  }
+
+  if (authorisedOfficialLastNameInput.value === "") {
+    e.preventDefault()
+    authorisedOfficialLastNameGroup.classList.add("govuk-form-group--error")
+    authorisedOfficialLastNameErrorMessage.style.display = "block"
+    authorisedOfficialLastNameInput.classList.add("govuk-select--error")
+  }
+
+  if (postcodeInput.value === "") {
+    e.preventDefault()
+    postcodeGroup.classList.add("govuk-form-group--error")
+    postcodeErrorMessage.style.display = "block"
+    postcodeInput.classList.add("govuk-select--error")
+  }
+
+  if (phoneNumberInput.value === "" || !(/^\d+$/.test(phoneNumberInput.value))) {
+    e.preventDefault()
+    phoneNumberGroup.classList.add("govuk-form-group--error")
+    phoneNumberErrorMessage.style.display = "block"
+    phoneNumberInput.classList.add("govuk-select--error")
+  }
+
 })
 }
 
@@ -203,11 +283,9 @@ const topUpPaymentFields = document.getElementById("top-up-payment-fields")
   
 if (e.value === "yes") {
   topUpPaymentFields.style.display = "block"
-  console.log("Sami")
 }
 else {
   topUpPaymentFields.style.display = "none"
-}
 }
 }
 
@@ -220,4 +298,19 @@ else {
   adjustmentPreviousGasdsFields.style.display = "none"
 }
 }
+}
 
+if (aboutOrganisationForm) {
+
+  const charityRegulatorNoneFields = document.getElementById("charity-regulator-none-fields")
+  function charityRegulatorNoneFieldsOnChange(e){
+ if (e.value === "none") {
+  charityRegulatorNoneFields.style.display = "block"
+ }
+ else {
+  charityRegulatorNoneFields.style.display = "none"
+ }
+ }
+
+
+  }
