@@ -196,13 +196,18 @@ aboutOrganisationForm.addEventListener("submit", function(e) {
 })
 }
 
+if (aboutCharityForm) {
+
 const topUpPaymentFields = document.getElementById("top-up-payment-fields")
- function topUpPaymentsFieldOnChange(e){
+ function topUpPaymentFieldsOnChange(e){
+  
 if (e.value === "yes") {
   topUpPaymentFields.style.display = "block"
+  console.log("Sami")
 }
 else {
   topUpPaymentFields.style.display = "none"
+}
 }
 }
 
@@ -215,3 +220,4 @@ else {
   adjustmentPreviousGasdsFields.style.display = "none"
 }
 }
+
