@@ -65,6 +65,8 @@
       </details>
     </div>
 
+  <div id="number-charity-regulator-fields" style="display: block">
+
     <!-- Charity regulator's number -->
 
     <div class="govuk-form-group" id="number-charity-regulator-group">
@@ -94,8 +96,9 @@
         </div>
       </details>
     </div>
+  </div>  
 
-   <div id="charity-regulator-none-fields" style="display: none">
+  <div id="charity-regulator-none-fields" style="display: none">
 
     <!-- Please provide a reason for not being registered with a regulator:-->
 
@@ -114,10 +117,9 @@
           <option value="northern-ireland">Your charity is based in Northern Ireland and you are awaiting registration with the CCNI</option>
         </select>
     </div>
-
+  </div> 
   
-
-    <!-- Corporate trustee -->
+    <!-- Is this claim being made by a corporate trustee such as the Trust Department of a bank, a Trust Company or a Trust Corporation? -->
 
     <div class="govuk-form-group" id="corporate-trustee-group">
         <label class="govuk-label govuk-label--s" for="corporate-trustee-select">
@@ -126,7 +128,7 @@
         <p class="govuk-error-message" id="corporate-trustee-error-message" style="display: none">
           <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
         </p>
-          <select class="govuk-select" id="corporate-trustee-select" name="corporate-trustee-select">
+          <select class="govuk-select" id="corporate-trustee-select" name="corporate-trustee-select" onchange="nameCorporateTrusteeGroupOnChange(this)">
             <option value="default" selected>Please select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
@@ -144,67 +146,69 @@
         </div>
       </details>
     </div>
-  </div> 
 
-  <!-- Name of corporate trustee  -->
+    <!-- Name of corporate trustee  -->
 
-  <div class="govuk-form-group" id="name-corporate-trustee-group">
-    <label class="govuk-label govuk-label--s" for="name-corporate-trustee-input">
-      Name of corporate trustee
-    </label>
-    <p class="govuk-error-message" id="name-corporate-trustee-error-message" style="display: none">
-      <span class="govuk-visually-hidden">ERROR:</span> You must enter the name of the corporate trustee for your organisation.
-    </p>  
-    <input class="govuk-input" id="name-corporate-trustee-input" name="name-corporate-trustee" type="text">
-    <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
-      <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Help about: Corporate trustee name
-          </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p>
-          This will be the name of the company that looks after the day to day administration of the charity.
-        </p>
-      </div>
-    </details>
-  </div>
+    <div class="govuk-form-group" id="name-corporate-trustee-group" style="display: none">
+      <label class="govuk-label govuk-label--s" for="name-corporate-trustee-input">
+        Name of corporate trustee
+      </label>
+      <p class="govuk-error-message" id="name-corporate-trustee-error-message" style="display: none">
+        <span class="govuk-visually-hidden">ERROR:</span> You must enter the name of the corporate trustee for your organisation.
+      </p>  
+      <input class="govuk-input" id="name-corporate-trustee-input" name="name-corporate-trustee" type="text">
+      <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help about: Corporate trustee name
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>
+            This will be the name of the company that looks after the day to day administration of the charity.
+          </p>
+        </div>
+      </details>
+    </div>
+  
+  <div id="authorised-official-fields" style="display: none">
 
-  <!-- Authorised Official Title -->
+    <!-- Authorised Official Title -->
 
-  <div class="govuk-form-group" id="authorised-official-title-group">
-    <label class="govuk-label govuk-label--s" for="authorised-official-title-input"> Title (optional)
-    </label>
-    <input class="govuk-input" id="authorised-official-title-input" name="authorised-official-title-input" type="text">
-  </div>
+    <div class="govuk-form-group" id="authorised-official-title-group">
+      <label class="govuk-label govuk-label--s" for="authorised-official-title-input"> Title (optional)
+      </label>
+      <input class="govuk-input" id="authorised-official-title-input" name="authorised-official-title-input" type="text">
+    </div>
 
-    <!-- Authorised Official First name -->
+      <!-- Authorised Official First name -->
 
-  <div class="govuk-form-group" id="authorised-official-first-name-group">
-    <label class="govuk-label govuk-label--s" for="authorised-official-first-name-input name"> First name
-    </label>
-    <p class="govuk-error-message" id="authorised-official-first-name-error-message" style="display: none">
-      <span class="govuk-visually-hidden">ERROR:</span> You must enter the first name of the authorised person for your organisation.
-    </p>  
-    <input class="govuk-input" id="authorised-official-first-name-input" name="authorised-official-first-name-input" type="text">
-  </div>
+    <div class="govuk-form-group" id="authorised-official-first-name-group">
+      <label class="govuk-label govuk-label--s" for="authorised-official-first-name-input name"> First name
+      </label>
+      <p class="govuk-error-message" id="authorised-official-first-name-error-message" style="display: none">
+        <span class="govuk-visually-hidden">ERROR:</span> You must enter the first name of the authorised person for your organisation.
+      </p>  
+      <input class="govuk-input" id="authorised-official-first-name-input" name="authorised-official-first-name-input" type="text">
+    </div>
 
-    <!-- Authorised Official Last name -->
+      <!-- Authorised Official Last name -->
 
-  <div class="govuk-form-group" id="authorised-official-last-name-group">
-    <label class="govuk-label govuk-label--s"     for="authorised-official-last-name-input"> Last name
-    </label>
-    <p class="govuk-error-message" id="authorised-official-last-name-error-message" style="display: none">
-      <span class="govuk-visually-hidden">ERROR:</span> You must enter the last name of the authorised person for your organisation.
-    </p>  
-    <input class="govuk-input" id="authorised-official-last-name-input" name="authorised-official-last-name" type="text">
-  </div>
+    <div class="govuk-form-group" id="authorised-official-last-name-group">
+      <label class="govuk-label govuk-label--s"     for="authorised-official-last-name-input"> Last name
+      </label>
+      <p class="govuk-error-message" id="authorised-official-last-name-error-message" style="display: none">
+        <span class="govuk-visually-hidden">ERROR:</span> You must enter the last name of the authorised person for your organisation.
+      </p>  
+      <input class="govuk-input" id="authorised-official-last-name-input" name="authorised-official-last-name" type="text">
+    </div>
+  </div>  
 
   <!-- Postcode-->
 
   <p>Please enter a postcode or indicate if your address is not in the UK.</p>
 
-  <div class="govuk-form-group" id="postcode-group">
+  <div class="govuk-form-group" id="postcode-group" style="display: none">
     <label class="govuk-label govuk-label--s" for="postcode-input"> Postcode
     </label>
     <div id="postcode-hint" class="govuk-hint">
@@ -238,7 +242,7 @@
     </div>
   </div>
 
-  <!-- Postcode-->
+  <!-- Phone number -->
 
   <div class="govuk-form-group" id="phone-number-group">
     <label class="govuk-label govuk-label--s" for="phone-number-group-input">

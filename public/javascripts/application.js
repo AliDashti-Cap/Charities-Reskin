@@ -278,39 +278,59 @@ aboutOrganisationForm.addEventListener("submit", function(e) {
 
 if (aboutCharityForm) {
 
-const topUpPaymentFields = document.getElementById("top-up-payment-fields")
- function topUpPaymentFieldsOnChange(e){
-  
-if (e.value === "yes") {
-  topUpPaymentFields.style.display = "block"
-}
-else {
-  topUpPaymentFields.style.display = "none"
-}
-}
+  const topUpPaymentFields = document.getElementById("top-up-payment-fields")
+    function topUpPaymentFieldsOnChange(e){
+    if (e.value === "yes") {
+      topUpPaymentFields.style.display = "block"
+    }
+    else {
+      topUpPaymentFields.style.display = "none"
+    }
+    }
 
-const adjustmentPreviousGasdsFields = document.getElementById("adjustments-previous-gasds-fields")
- function adjustmentPreviousGasdsFieldsOnChange(e){
-if (e.value === "yes") {
-  adjustmentPreviousGasdsFields.style.display = "block"
-}
-else {
-  adjustmentPreviousGasdsFields.style.display = "none"
-}
-}
+  const adjustmentPreviousGasdsFields = document.getElementById("adjustments-previous-gasds-fields")
+  function adjustmentPreviousGasdsFieldsOnChange(e){
+    if (e.value === "yes") {
+      adjustmentPreviousGasdsFields.style.display = "block"
+    }
+    else {
+      adjustmentPreviousGasdsFields.style.display = "none"
+    }
+    }
 }
 
 if (aboutOrganisationForm) {
 
   const charityRegulatorNoneFields = document.getElementById("charity-regulator-none-fields")
+  const numberCharityRegulatorFields = document.getElementById("number-charity-regulator-fields")
   function charityRegulatorNoneFieldsOnChange(e){
- if (e.value === "none") {
-  charityRegulatorNoneFields.style.display = "block"
- }
- else {
-  charityRegulatorNoneFields.style.display = "none"
- }
- }
-
-
+    if (e.value === "none") {
+      charityRegulatorNoneFields.style.display = "block"
+      numberCharityRegulatorFields.style.display = "none"
+    }
+    else {
+      charityRegulatorNoneFields.style.display = "none"
+      numberCharityRegulatorFields.style.display = "block"
+    }
   }
+
+  const authorisedOfficialFields = document.getElementById("authorised-official-fields")
+  function nameCorporateTrusteeGroupOnChange(e){
+    if (e.value === "yes") {
+      nameCorporateTrusteeGroup.style.display = "block"
+      authorisedOfficialFields.style.display = "none"
+      postcodeGroup.style.display = "block"
+    }
+    else if (e.value === "no")  {
+      nameCorporateTrusteeGroup.style.display = "none"
+      authorisedOfficialFields.style.display = "block"
+      postcodeGroup.style.display = "block"
+    }
+    else {
+      nameCorporateTrusteeGroup.style.display = "none"
+      authorisedOfficialFields.style.display = "none"
+      postcodeGroup.style.display = "none"
+    }
+  }
+
+}
