@@ -1,10 +1,3 @@
-import Hotjar from '@hotjar/browser';
-
-const siteId = 3246389;
-const hotjarVersion = 6;
-
-Hotjar.init(siteId, hotjarVersion);
-
 /* global $ */
 
 // Warn about using the kit in production
