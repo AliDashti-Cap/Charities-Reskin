@@ -4,7 +4,10 @@
   Repayment claim summary - {{ serviceName }}
 {% endblock %}
 
-{% block content %}
+{% block content%}
+
+<body onload="giftAidTaskListOnLoad(); otherIncomeTaskListOnLoad(); gasdsTaskListDonationDetailsOnLoad();gasdsTaskListCommunityBuildingsOnLoad(); gasdsTaskListConnectedCharitiesOnLoad()">
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">CHARITY TC088</span>
@@ -24,6 +27,17 @@
 <p class="govuk-body">You must complete all sections before you can submit your claim.
 </p>
 
+<input id="gift-aid-task-show" name="gift-aid-task-show" value="{{ data['claiming-gift-aid-select'] }}" style="display: none;">
+
+<input id="other-income-task-show" name="other-income-task-show" value="{{ data['other-income-select'] }}" style="display: none;">
+
+<input id="gasds-details-task-show" name="gasds-details-task-show" value="{{ data['top-up-gasds-community-building-select'] }}" style="display: none;"> 
+
+<input id="gasds-community-buildings-task-show" name="gasds-community-buildings-task-show" value="{{ data['claiming-community-building-select'] }}" style="display: none;">
+
+<input id="gasds-connected-charities-task-show" name="gasds-connected-charities-task-show" value="{{ data['connected-charities-select'] }}" style="display: none;">
+
+
 <ol class="app-task-list">
 
   <li>
@@ -37,7 +51,8 @@
             Repayment claim details
           </a>
         </span>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="repayment-claim-details">Incomplete</strong>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="about-charity-tag-incomplete">Incomplete</strong>
+        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="about-charity-tag-compelete" style="display: none">Complete</strong>
       </li>
     </ul>
   </li>
@@ -58,7 +73,7 @@
       </ul>
     </li>
 
-  <li>
+  <li style="display: none" id="gift-aid-task-list">
     <h2 class="app-task-list__section">
       Gift Aid schedule
     </h2>
@@ -69,12 +84,13 @@
             Attach Gift Aid schedule
           </a>
         </span>
-        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-gift-aid-schedule">Incomplete</strong>
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-gift-aid-schedule-tag-incomplete">Incomplete</strong>
+        <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="attach-gift-aid-schedule-tag-complete">Complete</strong>
       </li>
     </ul>
   </li>
 
-  <li>
+  <li style="display: none" id="other-income-task-list">
     <h2 class="app-task-list__section">
       Other income schedule
     </h2>
@@ -90,12 +106,12 @@
     </ul>
   </li>
 
-  <li>
+  <li id="gasds-task-list-title" style="display: none">
     <h2 class="app-task-list__section">
     Gift Aid Small Donations Scheme schedule
     </h2>
     <ul class="app-task-list__items" style="padding-left: 0px;">
-      <li class="app-task-list__item" style="padding-left: 0px;">
+      <li class="app-task-list__item" style="padding-left: 0px; display: none;" id="gasds-task-list-donation-details">
         <span class="app-task-list__task-name">
           <a href="gasds-details" aria-describedby="donation-details" class="govuk-link govuk-link--no-visited-state">
             Donation details
@@ -104,7 +120,7 @@
         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="donation-details">Incomplete</strong>
       </li>
 
-      <li class="app-task-list__item" style="padding-left: 0px;">
+      <li class="app-task-list__item" style="padding-left: 0px; display: none;" id="gasds-task-list-community-buildings">
         <span class="app-task-list__task-name">
           <a href="community-buildings-schedule-upload" aria-describedby="attach-community-buildings-schedule" class="govuk-link govuk-link--no-visited-state">
             Attach community buildings schedule
@@ -113,7 +129,7 @@
         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-community-buildings-schedule">Incomplete</strong>
       </li>
 
-      <li class="app-task-list__item" style="padding-left: 0px;">
+      <li class="app-task-list__item" style="padding-left: 0px; display: none;" id="gasds-task-list-connected-charities">
         <span class="app-task-list__task-name">
           <a href="/connected-charities-schedule-upload" aria-describedby="attach-connected-charities-schedule" class="govuk-link govuk-link--no-visited-state">
             Attach connected charities schedule
@@ -204,5 +220,7 @@
       </aside>
     </div>
   </div>
+
+  </body>
 
 {% endblock %}

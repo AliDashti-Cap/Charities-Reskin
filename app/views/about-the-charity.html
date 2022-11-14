@@ -29,7 +29,7 @@
         Questions about this claim
       </h2>
 
-      <form class="form" action="" method="post" id="about-charity-form">
+      <form class="form" action="/repayment-claim-summary" method="post" id="about-charity-form" name="about-charity-form">
 
 
         <!-- Are you claiming Gift Aid? -->
@@ -71,7 +71,7 @@
         <!-- Are you claiming UK tax deducted from other income? -->
 
         <div class="govuk-form-group" id="other-income-group">
-          <label class="govuk-label govuk-label--s" for="other-income">
+          <label class="govuk-label govuk-label--s" for="other-income-select">
             Are you claiming UK tax deducted from other income?
           </label>
           <p class="govuk-error-message" id="other-icnome-error-message" style="display: none">
@@ -152,7 +152,7 @@
           <label class="govuk-label govuk-label--s" for="claim-reference-number">
             Your claim reference number (optional)
           </label>
-          <input class="govuk-input" id="claim-reference-number" name="claim-reference-number" type="text" maxlength="21">
+          <input class="govuk-input" id="claim-reference-number" name="claim-reference-number" type="text" maxlength="21" value="{{ data['claim-reference-number'] }}">
           <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
