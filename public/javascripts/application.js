@@ -195,6 +195,8 @@ aboutCharityForm.addEventListener("submit", function(e) {
   adjustmentToGasdsErrorMessage.style.display = "none"
   adjustmentToGasdsSelect.classList.remove("govuk-select--error")
 
+  let test = false
+
   if (claimingGiftAidSelect.value === "default") {
     e.preventDefault()
     claimingGiftAidGroup.classList.add("govuk-form-group--error")
@@ -213,29 +215,36 @@ aboutCharityForm.addEventListener("submit", function(e) {
     topUpCashGasdsErrorMessage.style.display = "block"
     topUpCashGasdsSelect.classList.add("govuk-select--error")
   }
+
+  if (topUpCashGasdsSelect.value === "yes") {
+  test = true
+  }
+
+
   if (topUpGasdsCommunityBuildingSelect.value === "default") {
-    e.preventDefault()
+    // e.preventDefault()
     topUpGasdsCommunityBuildingGroup.classList.add("govuk-form-group--error")
     topUpGasdsCommunityBuildingErrorMessage.style.display = "block"
     topUpGasdsCommunityBuildingSelect.classList.add("govuk-select--error")
   }
   if (claimingCommunityBuildingSelect.value === "default") {
-    e.preventDefault()
+    // e.preventDefault()
     claimingCommunityBuildingGroup.classList.add("govuk-form-group--error")
     claimingCommunityBuildingErrorMessage.style.display = "block"
     claimingCommunityBuildingSelect.classList.add("govuk-select--error")
   }
   if (connectedCharitiesSelect.value === "default") {
-    e.preventDefault()
+    // e.preventDefault()
     connectedCharitiesGroup.classList.add("govuk-form-group--error")
     connectedCharitiesErrorMessage.style.display = "block"
     connectedCharitiesSelect.classList.add("govuk-select--error")
   }
-  if (adjustmentToGasdsSelect.value === "default") {
-    e.preventDefault()
+  if (adjustmentToGasdsSelect.value === "default"){
+    // e.preventDefault()
     adjustmentToGasdsGroup.classList.add("govuk-form-group--error")
     adjustmentToGasdsErrorMessage.style.display = "block"
     adjustmentToGasdsSelect.classList.add("govuk-select--error")
+
   }
 })
 }
@@ -292,35 +301,35 @@ aboutOrganisationForm.addEventListener("submit", function(e) {
   }
 
   if (reasonNotRegisteredRegulatorSelect.value === "default") {
-    e.preventDefault()
+    // e.preventDefault()
     reasonNotRegisteredRegulatorGroup.classList.add("govuk-form-group--error")
     reasonNotRegisteredRegulatorErrorMessage.style.display = "block"
     reasonNotRegisteredRegulatorSelect.classList.add("govuk-select--error")
   }
 
   if (nameCorporateTrusteeInput.value === "") {
-    e.preventDefault()
+    // e.preventDefault()
     nameCorporateTrusteeGroup.classList.add("govuk-form-group--error")
     nameCorporateTrusteeErrorMessage.style.display = "block"
     nameCorporateTrusteeInput.classList.add("govuk-select--error")
   }
 
   if (authorisedOfficialFirstNameInput.value === "") {
-    e.preventDefault()
+    // e.preventDefault()
     authorisedOfficialFirstNameGroup.classList.add("govuk-form-group--error")
     authorisedOfficialFirstNameErrorMessage.style.display = "block"
     authorisedOfficialFirstNameInput.classList.add("govuk-select--error")
   }
 
   if (authorisedOfficialLastNameInput.value === "") {
-    e.preventDefault()
+    // e.preventDefault()
     authorisedOfficialLastNameGroup.classList.add("govuk-form-group--error")
     authorisedOfficialLastNameErrorMessage.style.display = "block"
     authorisedOfficialLastNameInput.classList.add("govuk-select--error")
   }
 
   if (postcodeInput.value === "") {
-    e.preventDefault()
+    // e.preventDefault()
     postcodeGroup.classList.add("govuk-form-group--error")
     postcodeErrorMessage.style.display = "block"
     postcodeInput.classList.add("govuk-select--error")
@@ -389,35 +398,35 @@ if (claimSecondTaxYearSelect.value === "default") {
 }
 
 if (taxYearTwoEndInput.value === "" || !(/^\d+$/.test(taxYearTwoEndInput.value))) {
-  e.preventDefault()
+  // e.preventDefault()
   taxYearTwoEndGroup.classList.add("govuk-form-group--error")
   taxYearTwoEndErrorMessage.style.display = "block"
   taxYearTwoEndInput.classList.add("govuk-select--error")
 }
 
 if (donationTopUpAmountYearTwoInput.value === "" || !(/^\d+$/.test(donationTopUpAmountYearTwoInput.value))) {
-  e.preventDefault()
+  // e.preventDefault()
   donationTopUpAmountYearTwoGroup.classList.add("govuk-form-group--error")
   donationTopUpAmountYearTwoErrorMessage.style.display = "block"
   donationTopUpAmountYearTwoInput.classList.add("govuk-select--error")
 }
 
 if (claimThirdTaxYearSelect.value === "default") {
-  e.preventDefault()
+  // e.preventDefault()
   claimThirdTaxYearGroup.classList.add("govuk-form-group--error")
   claimThirdTaxYearErrorMessage.style.display = "block"
   claimThirdTaxYearSelect.classList.add("govuk-select--error")
 }
 
 if (taxYearThreeEndInput.value === "" || !(/^\d+$/.test(taxYearThreeEndInput.value))) {
-  e.preventDefault()
+  // e.preventDefault()
   taxYearThreeEndGroup.classList.add("govuk-form-group--error")
   taxYearThreeEndErrorMessage.style.display = "block"
   taxYearThreeEndInput.classList.add("govuk-select--error")
 }
 
 if (donationTopUpAmountYearThreeInput.value === "" || !(/^\d+$/.test(donationTopUpAmountYearThreeInput.value))) {
-  e.preventDefault()
+  // e.preventDefault()
   donationTopUpAmountYearThreeGroup.classList.add("govuk-form-group--error")
   donationTopUpAmountYearThreeErrorMessage.style.display = "block"
   donationTopUpAmountYearThreeInput.classList.add("govuk-select--error")
@@ -446,14 +455,13 @@ if (aboutCharityForm) {
 
   const adjustmentPreviousGasdsFields = document.getElementById("adjustments-previous-gasds-fields")
   function adjustmentPreviousGasdsFieldsOnChange(e){
-    if (e.value === "yes") {
+    if (claimingCommunityBuildingSelect.value === "yes" || topUpGasdsCommunityBuildingSelect.value === "yes" ) {
       adjustmentPreviousGasdsFields.style.display = "block"
     }
-    else {
+    else if (claimingCommunityBuildingSelect.value === "no" && topUpGasdsCommunityBuildingSelect.value === "no" )  {
       adjustmentPreviousGasdsFields.style.display = "none"
     }
     }
-
 }
 
 if (aboutOrganisationForm) {
