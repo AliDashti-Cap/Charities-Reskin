@@ -42,7 +42,7 @@
 
         <p>You should wait to receive your repayment rather than contacting HMRC or re-submitting your return</p>
 
-        <p><strong>Please note:</strong>HMRC recommends that you print this information for your records by using the print facility on your browser.</p>
+        <p><strong>Please note:</strong> HMRC recommends that you print this information for your records by using the print facility on your browser.</p>
 
   <div class="govuk-width-container">
   <a href="#" class="govuk-back-link">Back</a>
@@ -53,131 +53,137 @@
 
         <h2 class="govuk-heading-m">Organisation details</h2>
 
-  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-    <div class="govuk-summary-list__row">
-      <dt class="govuk-summary-list__key">
-        Charity name:
-      </dt>
-      <dd class="govuk-summary-list__value">
-        Charity TC008
-      </dd>
-    </div>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          HMRC Charities Reference:
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Charity TC008
-        </dd>
-      </div>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Charity name:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Charity TC008
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              HMRC Charities Reference:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['adjustment-for-gift-aid-input'] }}
+            </dd>
+          </div>
+        </dl>
 
         <h2 class="govuk-heading-m">Claim details</h2>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date of submission:
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>{{ data['adjustment-for-gift-aid-input'] }}</p>
-          </dd>
-        </div>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of submission:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['adjustment-for-gift-aid-input'] }}
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Claim submitted by:
             </dt>
             <dd class="govuk-summary-list__value">
-              <p>{{ data['adjustment-for-gift-aid-input'] }}</p>
+              {{ data['adjustment-for-gift-aid-input'] }}
             </dd>
           </div>
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Number of Gift Aid donations:
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p>{{ data['adjustment-for-gift-aid-input'] }}</p>
-              </dd>
-            </div>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Total value of Gift Aid donations claimed:
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <p>£</p>
-                </dd>
-              </div>
-            </div>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Amount of tax relief previously overclaimed:
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <p>Not attached</p>
-                </dd>
-              </div>
-            </div>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Total value of GASDS donations not collected in a community building:
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <p>Not applicable</p>
-                </dd>
-              </div>
-            </div>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Number of community buildings:
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <p>Not attached</p>
-                </dd>
-              </div>
-            </div>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Total value of GASDS donations not collected in a community building:
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <p>Not attached</p>
-                </dd>
-              </div>
-            </div>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Number of connected charities:
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <p>Not attached</p>
-                </dd>
-              </div>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Amount of GASDS previously overclaimed:
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <p>{{ data['adjustment-for-gift-aid-input'] }}</p>
-                </dd>
-              </div>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Your submission receipt reference number is:
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  <p>12345678ABCDEFG</p>
-                </dd>
-              </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of Gift Aid donations claimed:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total value of Gift Aid donations:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £---
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of Other Income items:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not attached
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total value of Other Income claimed:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not attached
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Amount of tax relief previously overclaimed:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not attached
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total value of GASDS donations not collected in a community building:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not applicable
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of community buildings:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not attached
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total value of GASDS donations collected in community buildings:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not attached
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Number of connected charities:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Not attached
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Amount of GASDS previously overclaimed:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['adjustment-for-gift-aid-input'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your submission receipt reference number is:
+            </dt>
+            <dd class="govuk-summary-list__value">
+              123456ABCDEF
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </main>
+</div>
 
         <div class="govuk-button-group">
           <button class="govuk-button" data-module="govuk-button">
@@ -189,10 +195,5 @@
           </button>
         </div>
 
-      </form>
-
-  </div>
-
-</div>
 
 {% endblock %}
