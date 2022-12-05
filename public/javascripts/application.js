@@ -13,6 +13,7 @@ $(document).ready(function () {
 const aboutCharityForm = document.getElementById("about-charity-form")
 const aboutOrganisationForm = document.getElementById("about-organisation-form")
 const gasdsDetailsForm = document.getElementById("gasds-details-form")
+const charityRepaymentClaimSummary = document.getElementById("charity-repayment-claim-summary")
 
 
 // About the Charity - Are you claiming Gift Aid?
@@ -609,3 +610,17 @@ function giftAidTaskListOnLoad(e) {
 //   //   aboutCharityTagIncompelete.style.display = "block"
 //   // }
 // }
+
+
+if (charityRepaymentClaimSummary) {
+const submissionCellDate = document.getElementById("submission-cell-date")
+const date = new Date();
+
+const day = date.getDate();
+const month = date.getMonth() + 1;
+const year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+const currentDate = `${day}/${month}/${year}`;
+console.log(currentDate); // "17-6-2022"
+}
