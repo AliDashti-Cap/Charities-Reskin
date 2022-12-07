@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "euluo2x974");
+  </script> 
+
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Change me: You're about to be Authenticated
+      </h1>
+
+      <p><strong>[CHANGE ME] </strong>For security reasons, please log back into your HMRC account in order to complete your claim.</p>
+
+      <p><strong>[CHANGE ME] </strong>Read more <a href="/url/of/onward/page">about this topic</a>.</p>
+
+    </div>
+  </div>
+
+  <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button">
+    Authenticate
+    </button>
+    <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment Claim Summary</a>
+  </div>
+
+{% endblock %}

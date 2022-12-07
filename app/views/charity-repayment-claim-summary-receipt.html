@@ -5,8 +5,9 @@
 {% endblock %}
 
 {% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
 
   <!-- Microsoft Clarity Script -->
   <script type="text/javascript">
@@ -20,376 +21,128 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <span class="govuk-caption-xl">CHARITY TC088</span>
-      <dl>
-        <span class="govuk-caption-xl">HMRC charities reference:
-          XR4010</span>
-      </dl>
-      <h1 class="govuk-heading-xl">Charity repayment claim summary</h1>
-    </div>
-  </div>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <form class="form" action="#" method="post" id="charity-repayment-claim-summary">
-
-        <p>This is a summary of the information you've submitted to HM Revenue & Customs (HMRC) as part of your charity repayment claim, including any Gift Aid Small Donations Scheme (GASDS) donations you may have claimed for.</p>
-
-        <p>It also contains your submission receipt reference number</p>
-
-        <p>You should wait to receive your repayment rather than contacting HMRC or re-submitting your return</p>
-
-        <p><strong>Please note:</strong> HMRC recommends that you print this information for your records by using the print facility on your browser.</p>
-
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-        <div class="govuk-width-container">
-
-          <main class="govuk-main-wrapper" id="main-content" role="main">
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-two-thirds">
-        
-                <h2 class="govuk-heading-m">Organisation details</h2>
-        
-                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Charity name:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>Charity TC008</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      HMRC Charities Reference:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>{{ data['number-charity-regulator'] }}</p>
-                    </dd>
-                  </div>
-                </dl>
-        
-                <h2 class="govuk-heading-m">Claim details</h2>
-        
-                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Date of submission:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <script>
-                        const date = new Date();
-                        const day = date.getDate();
-                        const month = date.getMonth() + 1;
-                        const year = date.getFullYear();
-                      
-                      // This arrangement can be altered based on how we want the date's format to appear.
-                      const currentDate = `${day}/${month}/${year}`;
-                      console.log(currentDate); // "17-6-2022"document.write(currentDate)
-                      document.write(currentDate)
-                      </script>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Claim submitted by:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <script>
-                        var today = new Date();
-                        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                        document.write(time)
-                      </script>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Number of Gift Aid donations claimed:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>1</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Total value of Gift Aid donations:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>£---</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Number of Other Income items:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>Not attached</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Total value of Other Income claimed:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>Not attached</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Amount of tax relief previously overclaimed:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>Not attached</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Total value of GASDS donations not collected in a community building:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>Not applicable</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Number of community buildings:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>Not attached</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Total value of GASDS donations collected in community buildings:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>Not attached</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Number of connected charities:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>Not attached</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Amount of GASDS previously overclaimed:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>{{ data['adjustment-for-gift-aid-input'] }}</p>
-                    </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                      Your submission receipt reference number is:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                      <p>123456ABCDEF</p>
-                    </dd>
-                  </div>
-                </dl>
-              </div>
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Application complete
+            </h1>
+            <div class="govuk-panel__body">
+              Your claim reference number<br><strong>123456ABCDEF</strong>
             </div>
-          </main>
-        </div>
-        
+          </div>
 
-        <table class="govuk-table govuk-!-margin-bottom-9">
-          <caption class="govuk-table__caption govuk-table__caption--m">Organisation details</caption>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Charity name:</th>
-              <td class="govuk-table__cell">Charity TC008</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">HMRC Charities Reference:</th>
-              <td class="govuk-table__cell">{{ data['number-charity-regulator'] }}</td>
-            </tr>
-          </tbody>
-        </table>
+          <p class="govuk-body"><strong>[CHANGE ME]</strong> We have sent you a confirmation email.</p>
+          <h2 class="govuk-heading-m">[CHANGE ME] What happens next</h2>
+          <p class="govuk-body">
+            <strong>[CHANGE ME]</strong> We’ve sent your application to Hackney Electoral Register Office.
+          </p>
+          <p class="govuk-body">
+            <strong>[CHANGE ME]</strong> They will contact you either to confirm your registration, or to ask for more information.
+          </p>
+          <p class="govuk-body">
+            <strong>[CHANGE ME]</strong> <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+          </p>
 
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-table__caption--m">Claim details</caption>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Date of submission:</th>
-              <td class="govuk-table__cell" id="submission-cell-date">
-                <script>
-                //   const date = new Date();
-                //   const day = date.getDate();
-                //   const month = date.getMonth() + 1;
-                //   const year = date.getFullYear();
-                
-                // // This arrangement can be altered based on how we want the date's format to appear.
-                // const currentDate = `${day}/${month}/${year}`;
-                // console.log(currentDate); // "17-6-2022"document.write(currentDate)
-                document.write(currentDate)
-                </script>
+          <table class="govuk-table govuk-!-margin-bottom-9">
+            <caption class="govuk-table__caption govuk-table__caption--m">Organisation details</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Charity name:</th>
+                <td class="govuk-table__cell">Charity TC008</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">HMRC Charities Reference:</th>
+                <td class="govuk-table__cell">{{ data['number-charity-regulator'] }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Claim details</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of submission:</th>
+                <td class="govuk-table__cell" id="submission-cell-date">
+                  <script>
+                  //   const date = new Date();
+                  //   const day = date.getDate();
+                  //   const month = date.getMonth() + 1;
+                  //   const year = date.getFullYear();
+                  
+                  // // This arrangement can be altered based on how we want the date's format to appear.
+                  // const currentDate = `${day}/${month}/${year}`;
+                  // console.log(currentDate); // "17-6-2022"document.write(currentDate)
+                  document.write(currentDate)
+                  </script>
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Claim submitted by:</th>
+                <td class="govuk-table__cell">
+                  <script>
+                    // var today = new Date();
+                    // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                    document.write(time)
+                  </script>
                 </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Claim submitted by:</th>
-              <td class="govuk-table__cell">
-                <script>
-                  // var today = new Date();
-                  // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-                  document.write(time)
-                </script>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Number of Gift Aid donations claimed:</th>
-              <td class="govuk-table__cell">1</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Total value of Gift Aid donations:</th>
-              <td class="govuk-table__cell">£---</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Number of Other Income items:</th>
-              <td class="govuk-table__cell">Not attached</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Total value of Other Income claimed:</th>
-              <td class="govuk-table__cell">Not attached</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Amount of tax relief previously overclaimed:</th>
-              <td class="govuk-table__cell">Not attached</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Total value of GASDS donations not collected in a community building:</th>
-              <td class="govuk-table__cell">Not applicable</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Number of community buildings:</th>
-              <td class="govuk-table__cell">Not attached</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Total value of GASDS donations collected in community buildings:</th>
-              <td class="govuk-table__cell">Not attached</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Number of connected charities:</th>
-              <td class="govuk-table__cell">Not attached</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Amount of GASDS previously overclaimed:	
-              </th>
-              <td class="govuk-table__cell">{{ data['adjustment-for-gift-aid-input'] }}</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Your submission receipt reference number is:
-              </th>
-              <td class="govuk-table__cell">123456ABCDEF</td>
-            </tr>
-          </tbody>
-        </table>
-
-=======
->>>>>>> Stashed changes
-
-<table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Organisation details</caption>
-  <thead class="govuk-table__head">
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Charity name:</th>
-      <td class="govuk-table__cell">Charity TC008</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">HMRC Charities Reference:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Claim details</caption>
-  <thead class="govuk-table__head">
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Date of submission:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Claim submitted by:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Number of Gift Aid donations claimed:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Total value of Gift Aid donations:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Number of Other Income items:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Total value of Other Income claimed:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Amount of tax relief previously overclaimed:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Total value of GASDS donations not collected in a community building:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Number of community buildings:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Total value of GASDS donations collected in community buildings:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Number of connected charities:</th>
-      <td class="govuk-table__cell"></td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Submission receipt</caption>
-  <thead class="govuk-table__head">
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Your submission receipt reference number is:</th>
-      <td class="govuk-table__cell">123456ABCDEF</td>
-    </tr>
-  </tbody>
-</table>
-<<<<<<< Updated upstream
-=======
->>>>>>> 53deae5102df2e2f9ed87bce111378a5e326c75a
->>>>>>> Stashed changes
-
-        <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Log out
-          </button>
-
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Your HMRC services
-          </button>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Number of Gift Aid donations claimed:</th>
+                <td class="govuk-table__cell">1</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Total value of Gift Aid donations:</th>
+                <td class="govuk-table__cell">£---</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Number of Other Income items:</th>
+                <td class="govuk-table__cell">Not attached</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Total value of Other Income claimed:</th>
+                <td class="govuk-table__cell">Not attached</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount of tax relief previously overclaimed:</th>
+                <td class="govuk-table__cell">Not attached</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Total value of GASDS donations not collected in a community building:</th>
+                <td class="govuk-table__cell">Not applicable</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Number of community buildings:</th>
+                <td class="govuk-table__cell">Not attached</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Total value of GASDS donations collected in community buildings:</th>
+                <td class="govuk-table__cell">Not attached</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Number of connected charities:</th>
+                <td class="govuk-table__cell">Not attached</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Amount of GASDS previously overclaimed:	
+                </th>
+                <td class="govuk-table__cell">{{ data['adjustment-for-gift-aid-input'] }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
-
+      </div>
+      
+      <div class="govuk-button-group">
+        <a href="/index" role="button" draggable="false" class="govuk-button govuk-button--primary" data-module="govuk-button">
+          Sign out
+        </a>
+        <a href="/index" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Your HMRC services
+        </a>
+      </div>
+    </main>
+  </div>
 {% endblock %}
