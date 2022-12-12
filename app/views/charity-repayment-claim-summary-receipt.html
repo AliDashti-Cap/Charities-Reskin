@@ -67,14 +67,14 @@
                 <th scope="row" class="govuk-table__header">Date of submission:</th>
                 <td class="govuk-table__cell" id="submission-cell-date">
                   <script>
-                  //   const date = new Date();
-                  //   const day = date.getDate();
-                  //   const month = date.getMonth() + 1;
-                  //   const year = date.getFullYear();
+                    const date = new Date();
+                    const day = date.getDate();
+                    const month = date.getMonth() + 1;
+                    const year = date.getFullYear();
                   
-                  // // This arrangement can be altered based on how we want the date's format to appear.
-                  // const currentDate = `${day}/${month}/${year}`;
-                  // console.log(currentDate); // "17-6-2022"document.write(currentDate)
+                  // This arrangement can be altered based on how we want the date's format to appear.
+                  const currentDate = `${day}/${month}/${year}`;
+                  console.log(currentDate); // "17-6-2022"document.write(currentDate)
                   document.write(currentDate)
                   </script>
                   </td>
@@ -83,8 +83,8 @@
                 <th scope="row" class="govuk-table__header">Claim submitted by:</th>
                 <td class="govuk-table__cell">
                   <script>
-                    // var today = new Date();
-                    // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                    var today = new Date();
+                    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
                     document.write(time)
                   </script>
                 </td>
