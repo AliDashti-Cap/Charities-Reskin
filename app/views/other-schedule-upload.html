@@ -5,8 +5,19 @@
 {% endblock %}
 
 {% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "euluo2x974");
+  </script> 
+
 {% endblock %}
 
 
@@ -32,7 +43,7 @@
     <p class="govuk-body govuk-!-font-weight-bold">Donwload an other income schedule</p>
 
       <p class="govuk-body">
-        You have indicated that you want to claim a repayment of tax thta has been deducted on other income recieved by your organisation. Your claim must be supported by details of each payer, the foress value of the payment and the tax deducted from each payment.
+        You have indicated that you want to claim a repayment of tax that has been deducted on other income received by your organisation. Your claim must be supported by details of each payer, the gross value of the payment and the tax deducted from each payment.
       </p>
 
       <p class="govuk-body">
@@ -137,7 +148,7 @@
         <nav role="navigation" aria-labelledby="subsection-title">
               <ul class="govuk-list govuk-!-font-size-16">
                 <li>
-                  <a href="/at-a-glance" class="govuk-link govuk-link--no-visited-state">
+                  <a href="/index" class="govuk-link govuk-link--no-visited-state">
                     At a glance
                   </a>
                 </li>

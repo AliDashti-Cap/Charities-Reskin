@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "euluo2x974");
+  </script> 
+
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Re-enter your sign in details for Government Gateway
+      </h1>
+
+      <form class="form" action="/charity-repayment-claim-summary-receipt" method="post" id="gasds-details-form">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+            Government gateway user ID
+          </label>
+          <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+            Password
+          </label>
+          <input class="govuk-input" id="password" name="password" type="password" spellcheck="false" aria-describedby="password-hint" autocomplete="password">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Sign in
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
