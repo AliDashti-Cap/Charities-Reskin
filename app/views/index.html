@@ -5,20 +5,10 @@
 {% endblock %}
 
 {% block header %}
-  {{ govukHeader({
-    serviceName: serviceName
-  }) }}
-
-  <!-- Microsoft Clarity Script -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "euluo2x974");
-  </script> 
-
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
 {% endblock %}
+
 
 {% block content %}
 <div class="govuk-grid-row">
@@ -28,7 +18,7 @@
       <span class="govuk-caption-xl">HMRC charities reference:
         XR4010</span>
     </dl>
-    <h1 class="govuk-heading-xl">Happy Weekend</h1>
+    <h1 class="govuk-heading-xl">Hello Ali</h1>
   </div>
 </div>
 
@@ -50,7 +40,7 @@
 
 
       <p class="govuk-body">
-        To make a charity repayment claim using commercial software follow the link below.
+        You can make a charity repayment claim using the HMRC online service by following the link below.
       </p>
 
       <ul class="govuk-list govuk-list--bullet">
@@ -95,7 +85,7 @@
                 </li>
 
                 <li>
-                  <a href="/about-the-charity" class="govuk-link govuk-link--no-visited-state">
+                  <a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">
                     Make a charity repayment claim
                   </a>
                 </li>
