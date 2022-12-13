@@ -247,6 +247,8 @@ aboutCharityForm.addEventListener("submit", function(e) {
     adjustmentToGasdsSelect.classList.add("govuk-select--error")
 
   }
+
+  localStorage.setItem("first-form","true")
 })
 }
 
@@ -343,6 +345,16 @@ aboutOrganisationForm.addEventListener("submit", function(e) {
     phoneNumberInput.classList.add("govuk-select--error")
   }
 
+  localStorage.setItem("second-form","true")
+
+})
+}
+
+const giftAidUpload = document.querySelector("#gas-schedule-confirmation-form")
+
+if (giftAidUpload) {
+  giftAidUpload.addEventListener("submit", function(e) {
+  localStorage.setItem("third-form","true")
 })
 }
 
@@ -594,8 +606,29 @@ function giftAidTaskListOnLoad(e) {
         }
         }
 
-// const aboutCharityTagIncompelete = document.getElementById("about-charity-tag-incomplete")
-// const aboutCharityTagCompelete = document.getElementById("about-charity-tag-compelete")
+const aboutCharityTagIncompelete = document.getElementById("about-charity-tag-incomplete")
+const aboutCharityTagCompelete = document.getElementById("about-charity-tag-compelete")
+const aboutOrganisationTagIncompelete = document.getElementById("about-organisation-tag-incomplete")
+const aboutOrganisationTagCompelete = document.getElementById("about-organisation-tag-compelete")
+const attachGiftAidScheduleTagIncompelete = document.getElementById("attach-gift-aid-schedule-tag-incomplete")
+const attachGiftAidScheduleTagCompelete = document.getElementById("attach-gift-aid-schedule-tag-complete")
+
+if (localStorage.getItem("first-form") === "true") {
+  aboutCharityTagIncompelete.style.display = "none"
+  aboutCharityTagCompelete.style.display = "block"
+}
+
+if (localStorage.getItem("second-form") === "true") {
+  aboutOrganisationTagIncompelete.style.display = "none"
+  aboutOrganisationTagCompelete.style.display = "block"
+}
+
+if (localStorage.getItem("third-form") === "true") {
+  attachGiftAidScheduleTagIncompelete.style.display = "none"
+  attachGiftAidScheduleTagCompelete.style.display = "block"
+}
+
+
 // function updateFormStatusAboutCharity()
 // {
 //   console.log("Sami is the best")
