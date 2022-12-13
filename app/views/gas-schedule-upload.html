@@ -16,7 +16,7 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "euluo2x974");
-  </script> 
+  </script>
 
 {% endblock %}
 
@@ -28,54 +28,37 @@
       <span class="govuk-caption-xl">HMRC charities reference:
         XR4010</span>
     </dl>
-    <h1 class="govuk-heading-xl">Attach Gift Aid schedule</h1>
+    <h1 class="govuk-heading-xl">Make a Gift Aid claim</h1>
   </div>
   </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h2 class="govuk-heading-m">
-        Gift Aid schedule
-      </h2>
-
-      <p class="govuk-body govuk-!-font-weight-bold">Download a Gift Aid schedule</p>
-
       <p class="govuk-body">
-        You have indicated that you want to claim a repayment of tax on Gift Aid donations. Your claim must include full details of the donors and their donations on which you are claiming a repayment of tax.
+        You have selected to claim a repayment of tax on Gift Aid donations. Gift Aid is a repayment of tax on donations from individuals who have made a <a href="https://www.gov.uk/guidance/gift-aid-declarations-claiming-tax-back-on-donations" class="govuk-link">valid Gift Aid declaration</a>.
       </p>
 
       <p class="govuk-body">
-        You must have already completed and saved an HM Revenue & Customs (HMRC) Gift Aid schedule on your computer with details of your Gift Aid donations to support this claim.
+      To make a claim, you must fill out a Gift Aid claim spreadsheet. Your claim spreadsheet must include full details of the donors and their donations.
       </p>
 
       <p class="govuk-body">
-        <strong>Please note:</strong> If you haven't already done so please follow the link below to download the HMRC Gift Aid schedule.
+        We recommend you read the <a href="https://www.gov.uk/guidance/schedule-spreadsheet-to-claim-back-tax-on-gift-aid-donations" class="govuk-link">Gift Aid spreadsheet guidance</a> before you complete and save your spreadsheet.
       </p>
+
+      <h2 class="govuk-heading-l">Upload a Gift Aid spreadsheet</h2>
 
       <p class="govuk-body">
-        To complete the schedule now you will need to log out of this service. Any information you have already entered will be saved.
+        To complete and upload a Gift Aid spreadsheet:
       </p>
 
-      <p class="govuk-body">
-        Once you have completed the schedule you will be able to log back into this service and attach it to your claim.
-      </p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="https://www.gov.uk/guidance/schedule-spreadsheet-to-claim-back-tax-on-gift-aid-donations" class="govuk-link">Download a Gift Aid schedule</a></li>
-        </ul>
-
-        <p class="govuk-body">
-          Further information about Gift Aid schedules can be found in the online guidance. HMRC recommend you read this guidance before you complete and save your schedule.
-        </p>
-
-        <form class="form" action="/repayment-claim-summary" method="post">
-
-        <p class="govuk-body govuk-!-font-weight-bold">Attach your Gift Aid schedule</p>
-
-        <p class="govuk-body">
-          When you are ready to attach your Gift Aid schedule to this claim, click on the 'Browse' button below to find and select the completed schedule on your computer.
-        </p>
+      <ol class="govuk-list govuk-list--number">
+         <li>Download a <a href="https://www.gov.uk/government/publications/gift-aid-schedule-spreadsheets-to-claim-back-tax-on-donations" class="govuk-link">Gift Aid schedule</a>.</li>
+         <li>Complete the spreadsheet and save the file to your computer.</li>
+         <li>Select ‘Choose file’ and select the saved spreadsheet file from your computer to attach it to this claim.</li>
+         <li>Select ‘Next’.</li>
+      </ol>
 
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
@@ -87,41 +70,8 @@
           }
         }) }}
 
-
-        <p class="govuk-body">
-          If you do not want to attach a Gift Aid schedule now please tick the checkbox below then, click the 'Next' button to continue.
-        </p>
-
-        <p class="govuk-body">
-          <strong>Please note:</strong> You must attach a Gift Aid schedule before you can submit your charity repayment claim.
-        </p>
-
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
-        {{ govukCheckboxes({
-          name: "agree",
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          hint: {
-            text: ""
-          },
-          items: [
-            {
-              value: "no-attach",
-              text: "I do not want to attach a Gift Aid schedule at this time.",
-              hint: {
-                text: ""
-              }
-            }
-          ]
-        }) }}
-
         <div class="govuk-button-group">
+        <form>
           <button class="govuk-button" data-module="govuk-button">
             Next
           </button>
@@ -148,13 +98,13 @@
                 At a glance
               </a>
             </li>
-    
+
             <li>
               <a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">
                 Repayment claim summary
               </a>
             </li>
-    
+
             <li>
               <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
                 FAQs
