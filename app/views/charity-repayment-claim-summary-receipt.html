@@ -16,7 +16,7 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "euluo2x974");
-  </script> 
+  </script>
 
 {% endblock %}
 
@@ -27,24 +27,12 @@
         <div class="govuk-grid-column-two-thirds">
           <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-              Application complete
+              Claim complete
             </h1>
             <div class="govuk-panel__body">
-              Your claim reference number<br><strong>123456ABCDEF</strong>
+              Your submission receipt reference number<br><strong>123456ABCDEF</strong>
             </div>
           </div>
-
-          <p class="govuk-body"><strong>[CHANGE ME]</strong> We have sent you a confirmation email.</p>
-          <h2 class="govuk-heading-m">[CHANGE ME] What happens next</h2>
-          <p class="govuk-body">
-            <strong>[CHANGE ME]</strong> We’ve sent your application to Hackney Electoral Register Office.
-          </p>
-          <p class="govuk-body">
-            <strong>[CHANGE ME]</strong> They will contact you either to confirm your registration, or to ask for more information.
-          </p>
-          <p class="govuk-body">
-            <strong>[CHANGE ME]</strong> <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
-          </p>
 
           <table class="govuk-table govuk-!-margin-bottom-9">
             <caption class="govuk-table__caption govuk-table__caption--m">Organisation details</caption>
@@ -71,7 +59,7 @@
                     const day = date.getDate();
                     const month = date.getMonth() + 1;
                     const year = date.getFullYear();
-                  
+
                   // This arrangement can be altered based on how we want the date's format to appear.
                   const currentDate = `${day}/${month}/${year}`;
                   console.log(currentDate); // "17-6-2022"document.write(currentDate)
@@ -97,44 +85,22 @@
                 <th scope="row" class="govuk-table__header">Total value of Gift Aid donations:</th>
                 <td class="govuk-table__cell">£---</td>
               </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Number of Other Income items:</th>
-                <td class="govuk-table__cell">Not attached</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Total value of Other Income claimed:</th>
-                <td class="govuk-table__cell">Not attached</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Amount of tax relief previously overclaimed:</th>
-                <td class="govuk-table__cell">Not attached</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Total value of GASDS donations not collected in a community building:</th>
-                <td class="govuk-table__cell">Not applicable</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Number of community buildings:</th>
-                <td class="govuk-table__cell">Not attached</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Total value of GASDS donations collected in community buildings:</th>
-                <td class="govuk-table__cell">Not attached</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Number of connected charities:</th>
-                <td class="govuk-table__cell">Not attached</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Amount of GASDS previously overclaimed:	
-                </th>
-                <td class="govuk-table__cell">{{ data['adjustment-for-gift-aid-input'] }}</td>
-              </tr>
             </tbody>
           </table>
         </div>
       </div>
-      
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p class="govuk-body">
+        You’ll get a Gift Aid payment by BACS within 4 weeks. You will receive a letter receipt in the post to the address you entered for this claim.
+      </p>
+      <p class="govuk-body">
+        You should wait to receive your payment before re-submitting your claim.
+      </p>
+      <p class="govuk-body">
+        Contact the <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/charities-and-community-amateur-sports-clubs-cascs" class="govuk-link">charities helpline</a> if your repayment is wrong or if you submitted an incorrect claim.
+      </p>
+
       <div class="govuk-button-group">
         <a href="/index" role="button" draggable="false" class="govuk-button govuk-button--primary" data-module="govuk-button">
           Sign out
