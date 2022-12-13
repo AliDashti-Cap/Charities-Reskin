@@ -16,7 +16,7 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "euluo2x974");
-  </script> 
+  </script>
 
 {% endblock %}
 
@@ -31,13 +31,13 @@
     <span class="govuk-caption-xl">HMRC charities reference: XR4010
     </span>
   </dl>
-  <h1 class="govuk-heading-xl">About the organisation</h1>
-    <h2 class="govuk-heading-m">Organisation details
-    </h2>
+  <h1 class="govuk-heading-xl">Organisation details</h1>
     <p class="govuk-body">
-      To make this claim, you must be a recognised authorised official or corporate trustee that has already been notified to HM Revenue & Customs as the authorised official.
+      To make this claim, you must be a recognised authorised official or corporate trustee that has already been notified to HMRC as the authorised official.
     </p>
-
+    <p>
+      You need to provide details about the charity or Community Amateur Sports Club (CASC) you are claiming on behalf of.
+    </p>
   <form class="form" action="/repayment-claim-summary" method="post" id="about-organisation-form">
 
     <!-- Name of charity regulator -->
@@ -63,14 +63,13 @@
         </summary>
       <div class="govuk-details__text">
         <p>
-          If the charity is registered with a UK charity regulator then you must select the name of that regulator from the drop-down list. If the charity is registered with a non-UK charity regulator then please select 'Other'. If the charity is not registered with one of these UK regulators or is not registered with a non-UK regulator then select 'None'.
+          If the charity is registered with a UK charity regulator then you must select the name of that regulator from the drop-down list. If the charity is not registered with one of these UK regulators or is not registered with a non-UK regulator then select 'None'.
         </p>
         <p>
-          <strong>Please note:</strong>
-          Community Amateur Sports Clubs should always select 'None' from the drop-down list.
+          Community Amateur Sports Clubs (CASCs) should always select 'None' from the drop-down list.
         </p>
         <p>
-          If dual registered, please include a registration number you have used in previous correspondence with HM Revenue & Customs or complete and submit a change of details form (ChV1) with this information before making your claim.
+          If the charity is dual registered, include a registration number you have used in previous correspondence with HMRC or complete and submit a change of details form (ChV1) with this information before making your claim.
         </p>
       </div>
       </details>
@@ -82,8 +81,11 @@
 
     <div class="govuk-form-group" id="number-charity-regulator-group">
       <label class="govuk-label govuk-label--s" for="number-charity-regulator">
-          Charity regulator's number - enter the numerical characters only (not the HMRC Charities reference number):
+          Charity regulator's number:
         </label>
+        <div id="event-name-hint" class="govuk-hint">
+          Enter the numerical characters only of the registration number the charity regulator issued to you. This is not the HMRC charities reference number.
+        </div>
         <p class="govuk-error-message" id="number-charity-regulator-error-message" style="display: none">
           <span class="govuk-visually-hidden">ERROR:</span> Please supply the charity registration number for your organisation.
         </p>
@@ -96,13 +98,10 @@
         </summary>
         <div class="govuk-details__text">
           <p>
-            Where you have selected a regulator from the drop-down list you must enter the registration number the regulator issued to you (this does not apply where you have selected "none" or "other").
-          </p>
-          <p>
             The registration number from the regulator will be on any paperwork received from that regulator.
           </p>
           <p>
-            If the charity is dual registered, please include a registration number you have used in previous correspondence with HMRC or complete and submit a change of details form (ChV1) with this information before making your claim.
+            If the charity is dual registered, include a registration number you have used in previous correspondence with HMRC or complete and submit a change of details form (ChV1) with this information before making your claim.
           </p>
         </div>
       </details>
@@ -111,11 +110,11 @@
 
   <div id="charity-regulator-none-fields" style="display: none">
 
-    <!-- Please provide a reason for not being registered with a regulator:-->
+    <!-- Provide a reason for not being registered with a regulator:-->
 
     <div class="govuk-form-group" id="reason-not-registered-regulator-group">
       <label class="govuk-label govuk-label--s" for="reason-not-registered-regulator-select">
-        Please provide a reason for not being registered with a regulator
+        Provide a reason for not being registered with a regulator:
       </label>
       <p class="govuk-error-message" id="reason-not-registered-regulator-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
@@ -158,10 +157,10 @@
             If you select 'No', you are indicating that you are not a corporate trustee.
           </p>
           <p>
-            Enter the details of the official you have told HM Revenue & Customs (HMRC) is authorised to make this repayment claim.
+            Enter the details of the official you have told HMRC is authorised to make this repayment claim.
           </p>
           <p>
-            These details will be the personal information of the authorised official supplied to HMRC when the charity applied to be recognised by HMRC or when the Community Amateur Sports Club submitted its registration or when the details were amended by submitting a change of details form (ChV1).
+            These details will be the personal information of the authorised official supplied to HMRC when the charity applied to be recognised by HMRC or when the CASC submitted its registration or when the details were amended by submitting a change of details form (ChV1).
           </p>
           <p>
             If the authorised official has changed you must tell HMRC who the new authorised official is by submitting a change of details form at least 30 days before making this claim.
@@ -176,22 +175,12 @@
       <label class="govuk-label govuk-label--s" for="name-corporate-trustee-input">
         Name of corporate trustee
       </label>
+      <div id="event-name-hint" class="govuk-hint">
+        This is the name of the company that looks after the day-to-day administration of the charity.
+      </div>
       <p class="govuk-error-message" id="name-corporate-trustee-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> You must enter the name of the corporate trustee for your organisation.
       </p>
-      <input class="govuk-input" id="name-corporate-trustee-input" name="name-corporate-trustee" type="text">
-      <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
-        <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Help about: Corporate trustee name
-            </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>
-            This will be the name of the company that looks after the day to day administration of the charity.
-          </p>
-        </div>
-      </details>
     </div>
 
   <div id="authorised-official-fields" style="display: none">
@@ -229,27 +218,15 @@
 
   <!-- Postcode-->
 
-  <p>Please enter a postcode or indicate if your address is not in the UK.</p>
-
   <div class="govuk-form-group" id="postcode-group" style="display: none">
     <label class="govuk-label govuk-label--s" for="postcode-input"> Postcode:
     </label>
     <div id="postcode-hint" class="govuk-hint">
-      For example AB12 3YZ
+      This should be the postcode of the office in which your organisation is based if it is in the UK.
     </div>
     <p class="govuk-error-message" id="postcode-error-message" style="display: none">
       <span class="govuk-visually-hidden">ERROR:</span> You must enter your postcode or indicate if your address is not in the UK.
     </p>
-    <input class="govuk-input" id="postcode-input" name="postcode-input" type="text">
-    <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Help about: Postcode
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        This should be the postcode of the office in which your organisation is based.
-    </details>
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="declaration-confirmation">
@@ -257,7 +234,7 @@
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="declaration-confirmation" name="declaration-confirmation" type="checkbox" value="declaration-confirmation">
             <label class="govuk-label govuk-checkboxes__label" for="declaration-confirmation">
-              Please select if your address is not in the UK
+              Select if your address is not in the UK
             </label>
           </div>
         </div>
@@ -269,24 +246,14 @@
 
   <div class="govuk-form-group" id="phone-number-group">
     <label class="govuk-label govuk-label--s" for="phone-number-group-input">
-      Your daytime telephone number (including international dialling code if outside the UK):
+      Phone number:
     </label>
+    <div id="postcode-hint" class="govuk-hint">
+      You must provide a phone number that HMRC can use to discuss any queries that they may have with your claim. Include the international dialling code if outside the UK.
+    </div>
     <p class="govuk-error-message" id="phone-number-error-message" style="display: none">
       <span class="govuk-visually-hidden">ERROR:</span> You must enter a telephone number for your organisation.
     </p>
-    <input class="govuk-input" id="phone-number-input" name="tphone-number-group-input" type="text">
-    <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Help about: Daytime telephone number
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p>
-        You must provide a telephone number that HM Revenue & Customs can use to discuss any queries that they may have with your claim.
-        </p>
-      </div>
-    </details>
   </div>
 
   <p>'Next' automatically saves your data.</p>
