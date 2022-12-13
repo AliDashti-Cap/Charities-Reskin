@@ -64,14 +64,15 @@
             </summary>
             <div class="govuk-details__text">
               <p>
-                Gift Aid is a repayment of tax on donations from individuals who have made a valid Gift Aid declaration.
+                Gift Aid is a repayment of tax on donations from individuals who have made a <a href="https://www.gov.uk/guidance/gift-aid-declarations-claiming-tax-back-on-donations" class="govuk-link">valid Gift Aid declaration</a>.
               </p>
-              <p><strong>Please note:</strong>
-                To submit your claim, you'll need your completed HM Revenue and Customs schedule of Gift Aid donations ready to attach when requested during this process.
-              </p>
-              <p>
-               You can download the schedule as a spreadsheet from the GOV.UK website. All donor details which are required entries on the spreadsheet should be completed before attaching to your claim.
-             </p>
+              <p class="govuk-body">You can make a Gift Aid claim on:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                 <li>single donations</li>
+                 <li>regular donations from an individual donor</li>
+                 <li>donations of £20 or less from different donors that you have added together (aggregated donations) </li>
+                 <li>donations raised through sponsored events</li>
+              </ul>
             </div>
           </details>
         </div>
@@ -95,23 +96,16 @@
           <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Help about: Claiming tax relief
+                Help about: Other income claims
               </span>
             </summary>
             <div class="govuk-details__text">
-            <p>Select 'Yes' if you want to claim a repayment of tax deducted from 'other income' for example</p>
+            <p>You can claim a repayment of tax deducted from 'other income', including:</p>
             <ul>
               <li>Bank or Building Society interest</li>
-              <li>repayable tax shown on an R185E certificate issued by an Estate Administrator</li>
-              <li>tax deducted from a payment received from a Discretionary Trust</li>
+              <li>repayable tax shown on an R185E certificate issued by an estate administrator</li>
+              <li>tax deducted from a payment received from a discretionary trust</li>
             </ul>
-            <p>
-              <strong>Please note:</strong>
-              To submit your claim, you'll need your completed HM Revenue and Customs schedule of other income payments ready to attach when requested during this process.
-            </p>
-            <p>
-              You can download the schedule as a spreadsheet from the GOV.UK website. All donor details which are required entries on the spreadsheet should be completed before attaching to your claim.
-            </p>
             </div>
           </details>
         </div>
@@ -126,7 +120,7 @@
             <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
           </p>
           <div id="subject-hint" class="govuk-hint">
-            These are not your Gift Aid donations.
+            The GASDS is for small cash donations of £30 or less that you do not have a Gift Aid declaration for.
           </div>
           <select class="govuk-select" id="top-up-cash-gasds-select" name="top-up-cash-gasds-select" onchange="topUpPaymentFieldsOnChange(this)">
             <option value="default" selected>Please select</option>
@@ -136,21 +130,15 @@
           <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Help about: Claiming - Gift Aid Small Donations Scheme
+                Help about: Gift Aid Small Donations Scheme claims
               </span>
             </summary>
             <div class="govuk-details__text">
             <p>
-              Select 'Yes' if you want to claim under the Gift Aid Small Donations Scheme (GASDS). This is separate from your Gift Aid claim.
+              The GASDS only applies to donations you have received since 6 April 2013.
             </p>
             <p>
-              The GASDS is for small cash donations of £20 or less that the charity or Community Amateur Sports Club has received that you do not have a Gift Aid declaration for. It only applies to donations you have already received since 6 April 2013.
-            </p>
-            <p>
-              You will be asked to enter the total amount of all small cash donations that you have received and are claiming for under the GASDS on this occasion.
-            </p>
-            <p><strong>Please note:</strong>
-              In general, you can claim a maximum of £1,250 of top-up payments in any one tax year for donations received from 6 April 2013 onwards.
+              In general, you can claim a maximum of £1,250 under the GASDS in any one tax year. Guidance is available on the <a href="https://www.gov.uk/government/publications/charities-detailed-guidance-notes/chapter-8-the-gift-aid-small-donations-scheme#the-amount-you-can-claim" class="govuk-link">amount of GASDS top-up payment you can claim</a>.
             </p>
             </div>
           </details>
@@ -162,6 +150,9 @@
           <label class="govuk-label govuk-label--s" for="claim-reference-number">
             Your claim reference number (optional)
           </label>
+          <div id="subject-hint" class="govuk-hint">
+          You can include a claim number as your own reference for this claim.
+          </div>
           <input class="govuk-input" id="claim-reference-number" name="claim-reference-number" type="text" maxlength="21" value="{{ data['claim-reference-number'] }}">
           <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
             <summary class="govuk-details__summary">
@@ -170,7 +161,7 @@
               </span>
             </summary>
             <div class="govuk-details__text">
-            <p>You do not have to complete this box but you can use it to show your claim reference if you use one. The reference that you quote will appear on the payment advice note you receive from us when we pay the claim.</p>
+            <p>The reference number that you add to this claim will appear on the payment advice letter you receive from us when we pay the claim.</p>
             </div>
           </details>
         </div>
