@@ -16,7 +16,7 @@
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "euluo2x974");
-  </script>
+  </script> 
 
 {% endblock %}
 
@@ -35,9 +35,10 @@
     <p class="govuk-body">
       To make this claim, you must be a recognised authorised official or corporate trustee that has already been notified to HMRC as the authorised official.
     </p>
-    <p>
+    <p class="govuk-body">
       You need to provide details about the charity or Community Amateur Sports Club (CASC) you are claiming on behalf of.
     </p>
+
   <form class="form" action="/repayment-claim-summary" method="post" id="about-organisation-form">
 
     <!-- Name of charity regulator -->
@@ -81,14 +82,14 @@
 
     <div class="govuk-form-group" id="number-charity-regulator-group">
       <label class="govuk-label govuk-label--s" for="number-charity-regulator">
-          Charity regulator's number:
+        Charity regulator's number:
         </label>
-        <div id="event-name-hint" class="govuk-hint">
-          Enter the numerical characters only of the registration number the charity regulator issued to you. This is not the HMRC charities reference number.
-        </div>
         <p class="govuk-error-message" id="number-charity-regulator-error-message" style="display: none">
           <span class="govuk-visually-hidden">ERROR:</span> Please supply the charity registration number for your organisation.
         </p>
+        <div id="event-name-hint" class="govuk-hint">
+          Enter the numerical characters only of the registration number the charity regulator issued to you. This is not the HMRC charities reference number.
+        </div>
       <input class="govuk-input" id="number-charity-regulator-input" name="number-charity-regulator" type="text">
       <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
         <summary class="govuk-details__summary">
@@ -110,7 +111,7 @@
 
   <div id="charity-regulator-none-fields" style="display: none">
 
-    <!-- Provide a reason for not being registered with a regulator:-->
+    <!-- Provide a reason for not being registered with a regulator: -->
 
     <div class="govuk-form-group" id="reason-not-registered-regulator-group">
       <label class="govuk-label govuk-label--s" for="reason-not-registered-regulator-select">
@@ -164,7 +165,7 @@
           </p>
           <p>
             If the authorised official has changed you must tell HMRC who the new authorised official is by submitting a change of details form at least 30 days before making this claim.
-          </p>
+            </p>
         </div>
       </details>
     </div>
@@ -175,12 +176,22 @@
       <label class="govuk-label govuk-label--s" for="name-corporate-trustee-input">
         Name of corporate trustee
       </label>
-      <div id="event-name-hint" class="govuk-hint">
-        This is the name of the company that looks after the day-to-day administration of the charity.
-      </div>
       <p class="govuk-error-message" id="name-corporate-trustee-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> You must enter the name of the corporate trustee for your organisation.
       </p>
+      <input class="govuk-input" id="name-corporate-trustee-input" name="name-corporate-trustee" type="text">
+      <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+        <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help about: Corporate trustee name
+            </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>
+            This is the name of the company that looks after the day-to-day administration of the charity.
+          </p>
+        </div>
+      </details>
     </div>
 
   <div id="authorised-official-fields" style="display: none">
@@ -227,8 +238,9 @@
     <p class="govuk-error-message" id="postcode-error-message" style="display: none">
       <span class="govuk-visually-hidden">ERROR:</span> You must enter your postcode or indicate if your address is not in the UK.
     </p>
+    <input class="govuk-input" id="postcode-input" name="postcode-input" type="text">
 
-    <div class="govuk-form-group">
+    <div class="govuk-form-group govuk-!-margin-top-6">
       <fieldset class="govuk-fieldset" aria-describedby="declaration-confirmation">
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
@@ -248,12 +260,22 @@
     <label class="govuk-label govuk-label--s" for="phone-number-group-input">
       Phone number:
     </label>
-    <div id="postcode-hint" class="govuk-hint">
-      You must provide a phone number that HMRC can use to discuss any queries that they may have with your claim. Include the international dialling code if outside the UK.
-    </div>
     <p class="govuk-error-message" id="phone-number-error-message" style="display: none">
       <span class="govuk-visually-hidden">ERROR:</span> You must enter a telephone number for your organisation.
     </p>
+    <input class="govuk-input" id="phone-number-input" name="tphone-number-group-input" type="text">
+    <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help about: Daytime telephone number
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>
+          You must provide a phone number that HMRC can use to discuss any queries that they may have with your claim. Include the international dialling code if outside the UK.
+        </p>
+      </div>
+    </details>
   </div>
 
   <p>'Next' automatically saves your data.</p>
@@ -264,12 +286,10 @@
         Next
       </button>
 
-     <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment Claim Summary</a>
+     <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment claim summary</a>
     </div>
 
   </form>
-
-
 
 </div>
 
@@ -281,12 +301,6 @@
   <aside class="app-related-items" role="complementary">
     <nav role="navigation" aria-labelledby="subsection-title">
       <ul class="govuk-list govuk-!-font-size-16">
-        <li>
-          <a href="/index" class="govuk-link govuk-link--no-visited-state">
-            At a glance
-          </a>
-        </li>
-
         <li>
           <a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">
             Repayment claim summary
