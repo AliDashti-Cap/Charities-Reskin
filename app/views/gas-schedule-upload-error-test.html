@@ -1,0 +1,335 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Attach Gift Aid schedule – {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "euluo2x974");
+  </script> 
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference:
+        XR4010</span>
+    </dl>
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="">Item 2 You cannot have both an aggregated donation and a sponsored event. Please amend your entry.</a>
+          </li>
+          <li>
+            <a href="">Item 2 You cannot provide both a title and an entry for an aggregated donation box. Please amend your entry.</a>
+          </li>
+          <li>
+            <a href="">Item 2 You cannot provide both a first name and an entry for an aggregated donation. Please amend your entry.</a>
+          </li>
+          <li>
+            <a href="">Item 2 You cannot provide both a last name and an entry for an aggregated donation. Please amend your entry.</a>
+          </li>
+          <li>
+            <a href="">Item 2 You cannot provide both address details and an entry for an aggregated donation. Please amend your entry.</a>
+          </li>
+          <li>
+            <a href="">Item 2 You cannot provide both a postcode and an entry for an aggregated donation. Please amend your entry.</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-xl">Attach Gift Aid schedule</h1>
+
+      <h2 class="govuk-heading-m">
+        Gift Aid schedule - Errors
+      </h2>
+
+      <p class="govuk-body">
+        To help you check the information on your schedule you can print this page using the print button in your internet browser.
+      </p>
+      
+      <p class="govuk-body">
+        The Gift Aid schedule you attached contains one or more errors. Please see details below. Please correct the errors in your Gift Aid schedule on the spreadsheet saved on your computer and then attach the updated Gift Aid schedule by following the link below.
+      </p>
+
+
+      <!-- Item 1 -->
+
+      <p class="govuk-error-message">ERROR: The title you have supplied is in an invalid format. You can only enter a maximum of four valid characters. Please amend your entry.</p>
+
+      <p>The affected row from your schedule is shown below:</p>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Title</th>
+            <th scope="col" class="govuk-table__header">First name</th>
+            <th scope="col" class="govuk-table__header">Last name</th>
+            <th scope="col" class="govuk-table__header">House name or number</th>
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">Aggregated donations</th>
+            <th scope="col" class="govuk-table__header">Sponsored event</th>
+            <th scope="col" class="govuk-table__header">Donation date</th>
+            <th scope="col" class="govuk-table__header">Amount (£)</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><p class="govuk-error-message">ERROR</p></td>
+            <td class="govuk-table__cell">Sam</td>
+            <td class="govuk-table__cell">White</td>
+            <td class="govuk-table__cell">Flat 14</td>
+            <td class="govuk-table__cell">NW11AA</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">14/11/2022</td>
+            <td class="govuk-table__cell">1432.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>In addition to the example shown above 1 more errors of this type have been found. Please check your schedule carefully and correct all similar errors.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <!-- Item 2 -->
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Item 2</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Title</th>
+            <th scope="col" class="govuk-table__header">First name</th>
+            <th scope="col" class="govuk-table__header">Last name</th>
+            <th scope="col" class="govuk-table__header">House name or number</th>
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">Aggregated donations</th>
+            <th scope="col" class="govuk-table__header">Sponsored event</th>
+            <th scope="col" class="govuk-table__header">Donation date</th>
+            <th scope="col" class="govuk-table__header">Amount (£)</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Mr.</td>
+            <td class="govuk-table__cell">Daniel</td>
+            <td class="govuk-table__cell">Neil</td>
+            <td class="govuk-table__cell">House 3342</td>
+            <td class="govuk-table__cell">NW128BB</td>
+            <td class="govuk-table__cell">1400</td>
+            <td class="govuk-table__cell">No</td>
+            <td class="govuk-table__cell">12/12/2021</td>
+            <td class="govuk-table__cell">4230.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ol class="govuk-list govuk-list--number govuk-list--spaced">
+        <li>
+          <p class="govuk-error-message">
+          <span class="govuk-visually-hidden">ERROR:</span> You cannot have both an aggregated donation and a sponsored event. Please amend your entry.
+          </p>
+        </li>
+
+        <li>
+          <p class="govuk-error-message">
+            <span class="govuk-visually-hidden">ERROR:</span> You cannot provide both a title and an entry for an aggregated donation box. Please amend your entry.
+          </p>
+        </li>
+
+        <li>
+          <p class="govuk-error-message">
+            <span class="govuk-visually-hidden">ERROR:</span> You cannot provide both a first name and an entry for an aggregated donation. Please amend your entry.
+          </p>
+        </li>
+
+        <li>
+          <p class="govuk-error-message">
+            <span class="govuk-visually-hidden">ERROR:</span> You cannot provide both a last name and an entry for an aggregated donation. Please amend your entry.
+          </p>
+        </li>
+
+        <li>
+          <p class="govuk-error-message">
+            <span class="govuk-visually-hidden">ERROR:</span> You cannot provide both address details and an entry for an aggregated donation. Please amend your entry.
+          </p>
+        </li>
+
+        <li>
+          <p class="govuk-error-message">
+            <span class="govuk-visually-hidden">ERROR:</span> You cannot provide both a postcode and an entry for an aggregated donation. Please amend your entry.
+          </p>
+        </li>
+      </ol>
+
+      <!-- Error 2 -->
+
+      <!-- <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">First 6 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total estimated pay</th>
+            <td class="govuk-table__cell">£4,282.20</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+
+      <!-- Error 3 -->
+<!-- 
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">First 6 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total estimated pay</th>
+            <td class="govuk-table__cell">£4,282.20</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <!-- Error 4 -->
+
+      <!-- <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">First 6 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total estimated pay</th>
+            <td class="govuk-table__cell">£4,282.20</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <!-- Error 5 -->
+
+      <!-- <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">First 6 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total estimated pay</th>
+            <td class="govuk-table__cell">£4,282.20</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <!-- Error 6 -->
+
+      <!-- <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Dates and amounts</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Amount</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">First 6 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total estimated pay</th>
+            <td class="govuk-table__cell">£4,282.20</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+      <p class="govuk-body govuk-!-font-weight-bold">Attach your Gift Aid schedule</p>
+
+      <p>Once you have corrected all the errors shown above in the Gift Aid schedule saved on your computer, follow the 'Attach an updated Gift Aid schedule' link below to continue with your claim. This will replace the incorrect Gift Aid schedule you previously attached.</p>
+
+      <div class="govuk-button-group">
+
+        <a href="/gas-schedule-upload-error" role="button" draggable="false" class="govuk-button govuk-button--primary" data-module="govuk-button">
+          Re-attach Gift Aid schedule
+        </a>
+  
+        <a href="/repayment-claim-summary" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Repayment claim summary
+        </a>
+
+      </div>
+      
+  </div>
+</div>
+
+{% endblock %}
