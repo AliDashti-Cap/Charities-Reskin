@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  At a glance - {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ey78wl1udc");
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">Charities Agent Reference:
+        95100000001295</span>
+    </dl>
+    <h1 class="govuk-heading-xl">Current charity repayment claims</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">
+      You have started to make charity repayment claims for the organisations listed below.
+    </p>
+
+    <p class="govuk-body">
+      To continue with a repayment claim, please follow the relevant link in the 'Name of organisation' column. Alternatively, to delete a repayment claim click the relevant link in the 'Action' column.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      Charity repayment claim details
+    </h2>
+
+    <p class="govuk-body">
+      Displaying 1 to 3 of 3 records.
+    </p>
+
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header"><a href="h" class="govuk-link">Name of organisation</a></th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">HMRC Charities Reference</th>
+      <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="h" class="govuk-link">Charity A</a></th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">EN91648</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><a href="h" class="govuk-link">Delete</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="h" class="govuk-link">Charity B</a></th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">SC23890</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><a href="h" class="govuk-link">Delete</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"><a href="h" class="govuk-link">Charity C</a></th>
+      <td class="govuk-table__cell govuk-table__cell--numeric">SC14235</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><a href="h" class="govuk-link">Delete</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="govuk-body">
+  To start a new claim using the Charities Online service, select the button below.
+</p>
+
+    <a class="govuk-button govuk-button--primary" href="about-the-charity">Start a charity repayment claim</a>
+
+      <!-- <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">Make a charity repayment claim</a></li>
+      </ul> -->
+
+  </div>
+  </div>
+{% endblock %}

@@ -69,6 +69,9 @@
                  <li>donations of £20 or less from different donors that you have added together (aggregated donations) </li>
                  <li>donations raised through sponsored events</li>
               </ul>
+              <p>
+                If you select ‘Yes’, you need to <a href="https://www.gov.uk/government/publications/gift-aid-schedule-spreadsheets-to-claim-back-tax-on-donations" class="govuk-link">complete a Gift Aid spreadsheet</a>, and attach it to the ‘Attach Gift Aid spreadsheet’ page.
+              </p>
             </div>
           </details>
         </div>
@@ -96,12 +99,19 @@
               </span>
             </summary>
             <div class="govuk-details__text">
-            <p>You can claim a repayment of tax deducted from 'other income', including:</p>
+            <p>You can claim a repayment of tax deducted from other income, for example:</p>
             <ul>
-              <li>Bank or Building Society interest</li>
-              <li>repayable tax shown on an R185E certificate issued by an estate administrator</li>
-              <li>tax deducted from a payment received from a discretionary trust</li>
+              <li>bank and building society interest </li>
+              <li>interest from government stocks</li>
+              <li>income from wayleaves, for example, sums paid by a utility company for the right to put cables across a piece of land</li>
+              <li>royalties</li>
+              <li>other types of annual payment</li>
+              <li>estate income</li>
+              <li>discretionary trust income</li>
             </ul>
+            <p>
+              If you select ‘Yes’, you need to <a href="https://www.gov.uk/government/publications/gift-aid-schedule-spreadsheets-to-claim-back-tax-on-donations" class="govuk-link">complete a other income spreadsheet</a>, and attach it to the ‘Attach other income spreadsheet’ page.
+            </p>
             </div>
           </details>
         </div>
@@ -116,7 +126,7 @@
             <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
           </p>
           <div id="subject-hint" class="govuk-hint">
-            The GASDS is for small cash donations of £30 or less that you do not have a Gift Aid declaration for.
+            The GASDS is for small donations of £30 or less that the charity or community amateur sports club (CASC) has received that you do not have a Gift Aid declaration for.
           </div>
           <select class="govuk-select" id="top-up-cash-gasds-select" name="top-up-cash-gasds-select" onchange="topUpPaymentFieldsOnChange(this)">
             <option value="default" selected>Please select</option>
@@ -131,7 +141,31 @@
             </summary>
             <div class="govuk-details__text">
             <p>
-              In general, you can claim a maximum of £2000 under the GASDS in any one tax year. Guidance is available on the <a href="https://www.gov.uk/government/publications/charities-detailed-guidance-notes/chapter-8-the-gift-aid-small-donations-scheme#the-amount-you-can-claim" class="govuk-link">amount of GASDS top-up payment you can claim</a>.
+              To be eligible to make a claim under GASDS, your charity or CASC must have claimed Gift Aid:
+            </p>
+            <ul>
+              <li>in the same tax year as you want to claim GASDS</li>
+              <li>without getting a Gift Aid or GASDS claim penalty in the last 2 tax years</li>
+              <li>in at least 2 of the last 4 tax years (without a 2-year gap between claims) if you’re claiming on donations made before 6 April 2017</li>
+            </ul>
+            <p>
+              You must claim for top-up payments under the GASDS within 2 years of the end of the tax year that the donations were collected in.
+            </p>
+            <p>
+              For GASDS claims, you must claim by tax year, not based on your accounting periods.
+            </p>
+            <p>
+              GASDS donations can be in:
+            </p>
+            <ul>
+              <li>cash</li>
+              <li>contactless card payments you collected on or after 6 April 2019 </li>
+            </ul>
+            <p>
+              You can claim up to 25% of GASDS donations. The maximum donation total you can submit a claim for under the GASDS in one tax year is £8,000. Your charity or CASC would recieve a payment of £2,000 from a maximum £8,000 GASDS claim.
+            </p>
+            <p>
+              Guidance is available on the <a href="https://www.gov.uk/government/publications/charities-detailed-guidance-notes/chapter-8-the-gift-aid-small-donations-scheme#the-amount-you-can-claim" class="govuk-link">amount of GASDS top-up payment you can claim</a>.
             </p>
             </div>
           </details>
@@ -141,10 +175,10 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="claim-reference-number">
-            Your claim reference number (optional):
+            Your claim reference (optional):
           </label>
           <div id="subject-hint" class="govuk-hint">
-          You can include a claim number as your own reference for this claim.
+          This is your own reference for this claim.
           </div>
           <input class="govuk-input" id="claim-reference-number" name="claim-reference-number" type="text" maxlength="21" value="{{ data['claim-reference-number'] }}">
           <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
@@ -154,7 +188,7 @@
               </span>
             </summary>
             <div class="govuk-details__text">
-            <p>The reference number that you add to this claim will appear on the payment advice letter you receive from us when we pay the claim.</p>
+            <p>The reference that you add to this claim will appear on the payment advice letter you receive from us when we pay the claim. It will also be included on the receipt page of this claim.</p>
             </div>
           </details>
         </div>
