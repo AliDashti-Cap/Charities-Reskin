@@ -48,7 +48,7 @@
         Name of charity regulator:
       </label>
       <p class="govuk-error-message" id="name-charity-regulator-error-message" style="display: none">
-        <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+        <span class="govuk-visually-hidden">ERROR:</span> Select the charity regulator you are registered with, or if you are not registered.
       </p>
         <select class="govuk-select" id="name-charity-regulator-select" name="name-charity-regulator-select" onchange="charityRegulatorNoneFieldsOnChange(this)">
           <option value="default" selected>Please select</option>
@@ -64,10 +64,7 @@
         </summary>
       <div class="govuk-details__text">
         <p>
-          If the charity is registered with a UK charity regulator then you must select the name of that regulator from the drop-down list. If the charity is not registered with one of these UK regulators or is not registered with a non-UK regulator then select 'None'.
-        </p>
-        <p>
-          Community Amateur Sports Clubs (CASCs) should always select 'None' from the drop-down list.
+          Community Amateur Sports Clubs (CASCs) are not regulated by an external organisation. Therefore, CASCs should always select 'None' from the drop-down list.
         </p>
       </div>
       </details>
@@ -82,7 +79,7 @@
         Charity regulator's number:
         </label>
         <p class="govuk-error-message" id="number-charity-regulator-error-message" style="display: none">
-          <span class="govuk-visually-hidden">ERROR:</span> Please supply the charity registration number for your organisation.
+          <span class="govuk-visually-hidden">ERROR:</span> Enter the charity registration number for your organisation.
         </p>
         <div id="event-name-hint" class="govuk-hint">
           Enter the numerical characters only of the registration number the charity regulator issued to you. This is not the HMRC charities reference number.
@@ -100,7 +97,7 @@
           </p>
           <p> If the charity is dual registered, you can either:</p>
           <ul class="govuk-list govuk-list--bullet">
-             <li>include a registration number you have used in previous correspondence with HMRC</li>
+             <li>include a registration number used in previous correspondence with HMRC</li>
              <li>complete and submit <a href="https://www.gov.uk/government/publications/charities-change-of-details-form-chv1">a change of details form (ChV1)</a> with this information before making your claim.</li>
           </ul>
         </div>
@@ -117,7 +114,7 @@
         Provide a reason for not being registered with a regulator:
       </label>
       <p class="govuk-error-message" id="reason-not-registered-regulator-error-message" style="display: none">
-        <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+        <span class="govuk-visually-hidden">ERROR:</span> Select a reason for not being registered with a regulator.
       </p>
         <select class="govuk-select" id="reason-not-registered-regulator-select" name="name-charity-regulator-select">
           <option value="default" selected>Please select</option>
@@ -151,19 +148,27 @@
             </summary>
           <div class="govuk-details__text">
             <p>
-              A corporate trustee is responsible for looking after the day-to-day administration of the charity.
+              A corporate trustee is responsible for looking after the day-to-day administration of the charity. Only a charity managed by a trust company, or trust department of a bank can have a corporate trustee.
             </p>
-  
+
             <p>
               If you are not a corporate trustee, enter the details of the official you have told HMRC is authorised to make this repayment claim.
             </p>
-  
+
             <p>
-              These details will be the personal information of the authorised official supplied to HMRC when the charity applied to be recognised by HMRC or when the CASC submitted its registration or when the details were amended by submitting a <a href="https://www.gov.uk/government/publications/charities-change-of-details-form-chv1">change of details form (ChV1).</a>
+              These details will be the personal information of the authorised official supplied to HMRC when
             </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+               <li>the charity applied to be recognised by HMRC, or</li>
+               <li>when the CASC submitted its registration, or</li>
+               <li>when the details were amended by submitting a  <a href="https://www.gov.uk/government/publications/charities-change-of-details-form-chv1">change of details form (ChV1)</a>.</li>
+            </ul>
+
             <p>
               If the authorised official has changed you must tell HMRC who the new authorised official is by submitting a change of details form (ChV1) at least 30 days before making this claim.
             </p>
+
         </div>
       </details>
     </div>
@@ -266,13 +271,11 @@
       </summary>
     <div class="govuk-details__text">
       <p>
-        You must provide a phone number that HMRC can use to discuss any queries that they may have with your claim. 
+        You must provide a phone number that HMRC can use to discuss any queries that they may have with your claim.
       </p>
   </div>
 </details>
   </div>
-
-  <p>'Next' automatically saves your data.</p>
 
 
     <div class="govuk-button-group">
