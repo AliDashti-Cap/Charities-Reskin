@@ -1,0 +1,191 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Declaration – {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ey78wl1udc");
+</script>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+  
+    <div class="govuk-grid-row govuk-!-margin-bottom-1">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Repayment claim details</h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" href="#">
+          <div style="text-align: right;">Edit this section</div>
+        </a>
+      </div>
+    </div>  
+
+    <!-- Repayment claim details answers -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Are you claiming Gift Aid?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['claiming-gift-aid-select'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Are you claiming UK tax deducted from other income?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['other-income-select'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Are you claiming a top up payment for small cash donations under Gift Aid Small Donations Scheme (GASDS)?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['top-up-cash-gasds-select'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Your claim reference (optional):
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['claim-reference-number'] }}
+        </dd>
+      </div>
+      </dl>
+
+
+    <!-- About the organisation answers -->
+    <div class="govuk-grid-row govuk-!-margin-bottom-1">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">About the organisation</h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" href="#">
+          <div style="text-align: right;">Edit this section</div>
+        </a>
+      </div>
+    </div>  
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Name of charity regulator:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['name-charity-regulator-select'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Charity regulator's number:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['number-charity-regulator'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Is this claim being made by a corporate trustee such as the Trust Department of a bank, a Trust Company or a Trust Corporation?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['corporate-trustee-select'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Title:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['authorised-official-title-input'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          First name:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['authorised-official-first-name-input'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Last name:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['authorised-official-last-name-input'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Postcode:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['postcode-input'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Telephone number:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['tphone-number-group-input'] }}
+        </dd>
+      </div>
+    </dl>
+
+    <!-- Gift Aid Spreadsheet upload -->
+    <div class="govuk-grid-row govuk-!-margin-bottom-1">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Repayment claim details</h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" href="#">
+          <div style="text-align: right;">Edit this section</div>
+        </a>
+      </div>
+    </div>  
+
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-one-half">
+          Upload a Gift Aid spreadsheet
+        </dt>
+        <dd class="govuk-summary-list__value">
+          gift_aid_schedule_version_3.ods
+        </dd>
+      </div>
+    </dl>
+
+  
+    <h2 class="govuk-heading-m">Now send your application</h2>
+    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+    <form action="/submission-declaration" method="post" novalidate>
+      <input type="hidden" name="answers-checked" value="true">
+      <button class="govuk-button" data-module="govuk-button">
+        Accept and submit
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
