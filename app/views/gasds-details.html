@@ -22,6 +22,9 @@
 
 {% block content %}
 
+<!-- Function for data passthrough for Adjustment for Gift Aid previously over-claimed fields -->
+<body onload="adjustmentToGasdsGroupOnLoad()">
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <span class="govuk-caption-xl">CHARITY TC088</span>
@@ -35,6 +38,10 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    
+    <!-- Data passthrough for Adjustment for Gift Aid previously over-claimed fields -->
+    <input id="adjustment-to-gasds-task-show" name="adjustment-to-gasds-task-show" value="{{ data['adjustment-to-gasds-select'] }}" style="display: none;">
 
     <h2 class="govuk-heading-m">
       Donation details
@@ -252,7 +259,9 @@
         </div>
       </div>
 
-        <!-- Adjustment for Gift Aid previously over-claimed:  -->
+      <!-- Adjustment for Gift Aid previously over-claimed:  -->
+
+      <div id="adjustment-to-gasds-group" style="display: none">
 
         <p class="govuk-body">If you have claimed too much under GASDS in a previous claim, you can enter the amount of overclaimed top-up payment here. This amount will be deducted from this claim.</p>
 
@@ -281,6 +290,7 @@
             </div>
           </details>
         </div>
+      </div>
 
       <p class="govuk-body">
         'Next' automatically saves your data.'
@@ -296,29 +306,6 @@
     </form>
   </div>
 
-
-  <div class="govuk-grid-column-one-third">
-
-    <h2 class="govuk-heading-m" id="subsection-title">
-      Charity repayment claim
-    </h2>
-    <aside class="app-related-items" role="complementary">
-      <nav role="navigation" aria-labelledby="subsection-title">
-        <ul class="govuk-list govuk-!-font-size-16">
-          <li>
-            <a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">
-              Repayment claim summary
-            </a>
-          </li>
-  
-          <li>
-            <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
-              FAQs
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
-  </div>
 </div> 
+</body>
 {% endblock %}

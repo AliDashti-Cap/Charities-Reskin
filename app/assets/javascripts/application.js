@@ -533,6 +533,19 @@ if (gasdsDetailsForm) {
       thirdTaxYear.style.display = "none"
     }
     }
+
+    const adjustmentToGasdsTaskShow = document.getElementById("adjustment-to-gasds-task-show")
+    const adjustmentToGasdsGroup = document.getElementById("adjustment-to-gasds-group")
+    function adjustmentToGasdsGroupOnLoad(e) {
+      if (adjustmentToGasdsTaskShow.value === "yes") {
+        console.log("yes")
+        adjustmentToGasdsGroup.style.display = "block"
+      }
+      else {
+        console.log("no")
+        adjustmentToGasdsGroup.style.display = "none"
+      }
+      }
 }
 
 const giftAidTaskShow = document.getElementById("gift-aid-task-show")
@@ -605,6 +618,8 @@ function giftAidTaskListOnLoad(e) {
           gasdsTaskListConnectedCharities.style.display = "none"
         }
         }
+
+
 
 const aboutCharityTagIncompelete = document.getElementById("about-charity-tag-incomplete")
 const aboutCharityTagCompelete = document.getElementById("about-charity-tag-compelete")

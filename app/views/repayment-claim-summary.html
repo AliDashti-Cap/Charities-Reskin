@@ -22,6 +22,7 @@
 
 {% block content%}
 
+<!-- Functions for data passthrough for task list logic -->
 <body onload="giftAidTaskListOnLoad(); otherIncomeTaskListOnLoad(); gasdsTaskListDonationDetailsOnLoad();gasdsTaskListCommunityBuildingsOnLoad(); gasdsTaskListConnectedCharitiesOnLoad()">
 
 <div class="govuk-grid-row">
@@ -41,17 +42,18 @@
     <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2> -->
     <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-7">You must complete all sections before you can submit your claim.</h2> -->
     <!-- <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 5 sections.</p> -->
+    <p>You can <a href="https://www.gov.uk/government/publications/gift-aid-schedule-spreadsheets-to-claim-back-tax-on-donations">download and complete the appropriate spreadsheet</a>, based on what you want to claim for. </p>
+
+    <p>Guidance is available on <a href="https://www.gov.uk/claim-gift-aid">claiming Gift Aid as a charity or community amateur sports club (CASC)</a>. </p>
+
     <p class="govuk-body govuk-!-margin-bottom-7">You must complete all sections before you can submit your claim.
     </p>
 
+    <!-- Data passthrough for task list logic -->
     <input id="gift-aid-task-show" name="gift-aid-task-show" value="{{ data['claiming-gift-aid-select'] }}" style="display: none;">
-
     <input id="other-income-task-show" name="other-income-task-show" value="{{ data['other-income-select'] }}" style="display: none;">
-
     <input id="gasds-details-task-show" name="gasds-details-task-show" value="{{ data['top-up-gasds-community-building-select'] }}" style="display: none;"> 
-
     <input id="gasds-community-buildings-task-show" name="gasds-community-buildings-task-show" value="{{ data['claiming-community-building-select'] }}" style="display: none;">
-
     <input id="gasds-connected-charities-task-show" name="gasds-connected-charities-task-show" value="{{ data['connected-charities-select'] }}" style="display: none;">
 
 
@@ -172,29 +174,7 @@
     </div>
   </div>
 
-  <div class="govuk-grid-column-one-third">
 
-    <h2 class="govuk-heading-m" id="subsection-title">
-      Charity repayment claim
-    </h2>
-    <aside class="app-related-items" role="complementary">
-    <nav role="navigation" aria-labelledby="subsection-title">
-      <ul class="govuk-list govuk-!-font-size-16">
-        <li>
-          <a href="" class="govuk-link govuk-link--no-visited-state"><p class="govuk-!-font-size-16 govuk-!-font-weight-bold">
-            Repayment claim summary
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
-            FAQs
-          </a>
-        </li>
-      </ul>
-    </nav>
-    </aside>
-  </div>
 </div>
 </body>
 
