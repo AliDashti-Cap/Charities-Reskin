@@ -30,13 +30,13 @@
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#title-format">The title you have supplied is in an invalid format. You can only enter a maximum of four valid characters. Please amend your entry.</a>
+          <a href="#earliest-donation-date">Enter the earliest donation date in the period of claim</a>
         </li>
         <li>
-          <a href="#postcode-format">The postcode you have supplied is in an invalid format.</a>
+          <a href="#postcode-format">Postcode must be capitalised with a space in the middle. For example S19 2BD.</a>
         </li>
         <li>
-          <a href="#aggregated-donations">You cannot provide both a title and an entry for an aggregated donation box. Please amend your entry.</a>
+          <a href="#donation-date-format">Donation date format must be DD/MM/YY</a>
         </li>
       </ul>
     </div>
@@ -51,52 +51,32 @@
         XR4010</span>
     </dl>
 
-    <h1 class="govuk-heading-xl">Attach Gift Aid spreadsheet</h1>
-
-      <h2 class="govuk-heading-m">
-        Gift Aid spreadsheet - Errors
-      </h2>
+    <h1 class="govuk-heading-xl">Gift Aid spreadsheet - Errors</h1>
 
       <!-- Item 1 -->
 
-      <p class="govuk-error-message" id="title-format">The title you have supplied is in an invalid format. You can only enter a maximum of four valid characters. Please amend your entry.</p>
+      <p class="govuk-error-message" id="earliest-donation-date">Enter the earliest donation date in the period of claim</p>
 
-      <p>This error can be found in row(s) <strong>1</strong>, <strong>2</strong>, <strong>3</strong>. Below is the error on row <strong>1</strong>.</p>
+      <p>This error is found in row <strong>13</strong>.</p>
 
       <table class="govuk-table govuk-!-margin-bottom-9">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Title</th>
-            <th scope="col" class="govuk-table__header">First name</th>
-            <th scope="col" class="govuk-table__header">Last name</th>
-            <th scope="col" class="govuk-table__header">House name or number</th>
-            <th scope="col" class="govuk-table__header">Postcode</th>
-            <th scope="col" class="govuk-table__header">Aggregated donations</th>
-            <th scope="col" class="govuk-table__header">Sponsored event</th>
-            <th scope="col" class="govuk-table__header">Donation date</th>
-            <th scope="col" class="govuk-table__header">Amount (£)</th>
+            <th scope="col" class="govuk-table__header">Enter the earliest donation date in the period of claim</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell" style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR) Mr.</p></td>
-            <td class="govuk-table__cell">Sam</td>
-            <td class="govuk-table__cell">White</td>
-            <td class="govuk-table__cell">Flat 14</td>
-            <td class="govuk-table__cell">NW11AA</td>
-            <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell">14/11/2022</td>
-            <td class="govuk-table__cell">1432.00</td>
+            <td class="govuk-table__cell" style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR)</p></td>
           </tr>
         </tbody>
       </table>
 
       <!-- Error 2 -->
 
-      <p class="govuk-error-message" id="postcode-format">The postcode you have supplied is in an invalid format.</p>
+      <p class="govuk-error-message" id="postcode-format">Postcode must be capitalised with a space in the middle. For example S19 2BD.</p>
 
-      <p>This error can be found in row(s) <strong>1</strong>, <strong>2</strong>, <strong>3</strong>. Below is the error on row <strong>1</strong>.</p>
+      <p>This error is found in rows <strong>25</strong> and <strong>26</strong>. Below is the error in row <strong>25</strong>. </p>
 
       <table class="govuk-table govuk-!-margin-bottom-9">
         <thead class="govuk-table__head">
@@ -118,10 +98,10 @@
             <td class="govuk-table__cell">Sam</td>
             <td class="govuk-table__cell">White</td>
             <td class="govuk-table__cell">Flat 14</td>
-            <td class="govuk-table__cell" style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR) NW11AA</p></td>
+            <td class="govuk-table__cell" style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR) nw11aA</p></td>
             <td class="govuk-table__cell"></td>
             <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell">14/11/2022</td>
+            <td class="govuk-table__cell">14/11/22</td>
             <td class="govuk-table__cell">1432.00</td>
           </tr>
         </tbody>
@@ -129,9 +109,9 @@
 
       <!-- Error 3 -->
 
-      <p class="govuk-error-message" id="aggregated-donations">You cannot provide both a title and an entry for an aggregated donation box. Please amend your entry.</p>
+      <p class="govuk-error-message" id="donation-date-format">Donation date format must be DD/MM/YY</p>
 
-      <p>This error can be found in row(s) <strong>1</strong>, <strong>2</strong>, <strong>3</strong>. Below is the error on row <strong>1</strong>.</p>
+      <p>This error is found in rows <strong>27-30</strong>. Below is the error in row <strong>27</strong>.</p>
 
       <table class="govuk-table govuk-!-margin-bottom-9">
         <thead class="govuk-table__head">
@@ -154,9 +134,9 @@
             <td class="govuk-table__cell">A. Gaines</td>
             <td class="govuk-table__cell">4 The Pines</td>
             <td class="govuk-table__cell">GU29NW</td>
-            <td class="govuk-table__cell" style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR) 123</p></td>
             <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell">24/11/2022</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell" style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR) 24/11/2022</p></td>
             <td class="govuk-table__cell">3674.00</td>
           </tr>
         </tbody>
