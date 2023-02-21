@@ -43,24 +43,21 @@
     <!-- Data passthrough for Adjustment for Gift Aid previously over-claimed fields -->
     <input id="adjustment-to-gasds-task-show" name="adjustment-to-gasds-task-show" value="{{ data['adjustment-to-gasds-select'] }}" style="display: none;">
 
-    <h2 class="govuk-heading-m">
-      Donation details
-    </h2>
-
     <p class="govuk-body">
-      Use this page to claim for payments under the Gift Aid Small Donations Scheme (GASDS). This is separate from your Gift Aid claim.
+      You have selected to claim a repayment of tax on GASDS donations. This is separate from your Gift Aid claim.
     </p>
 
     <p class="govuk-body">
-      The GASDS is for small cash donations of £20 or less that the charity or Community Amateur Sports Club that you do not have a Gift Aid declaration for. It only applies to donations you have received since 6 April 2013.
+      If you do not want to complete this type of claim, you can remove it by going to the <a href="/about-the-charity" class="govuk-link">Claim details</a> page and answering ‘No’ to either:
     </p>
 
-    <p class="govuk-body">
-      If you are only claiming under Gift Aid you must not complete any of the boxes on this page. You should return to the 'Repayment Claim Details' screen and answer 'No' to the question' Are you claiming under GASDS?'
-    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>‘Are you claiming a top up payment under GASDS for donations that were not collected in a community building?’</li>
+      <li>‘Are you claiming a top up payment for small cash donations under Gift Aid Small Donations Scheme (GASDS)?’</li>
+    </ul>
 
     <p class="govuk-body">
-      If you have claimed too much under GASDS in a previous claim, you can enter the amount of overclaimed top-up payment here. This amount will be deducted from this claim.*
+      The GASDS is for small donations of £30 or less that the charity or community amateur sports club (CASC) has received that you do not have a Gift Aid declaration for. It only applies to donations you have received within 2 years of the end of the tax year that the donations were collected in.
     </p>
 
     <form class="form" action="/repayment-claim-summary" method="post" id="gasds-details-form">
@@ -75,7 +72,7 @@
           <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
         </p>
         <div id="event-name-hint" class="govuk-hint">
-          eg yyyy
+          For example, 2020
         </div>
         <input class="govuk-input" id="tax-year-one-end-input" name="tax-year-one-end-input" type="text" aria-describedby="event-name-hint" maxlength="4" minlength="4">
         <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
