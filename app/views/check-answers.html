@@ -23,11 +23,11 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds-from-desktop">
-    <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+    <h1 class="govuk-heading-l">Check your answers before sending your claim</h1>
 
     <div class="govuk-grid-row govuk-!-margin-bottom-1">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Repayment claim details</h2>
+        <h2 class="govuk-heading-m">Claim details</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" href="/about-the-charity">
@@ -139,7 +139,7 @@
     <!-- Gift Aid Spreadsheet upload -->
     <div class="govuk-grid-row govuk-!-margin-bottom-1">
       <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">Repayment claim details</h2>
+        <h2 class="govuk-heading-m">Gift Aid claim</h2>
       </div>
       <div class="govuk-grid-column-one-third">
         <a class="govuk-link govuk-link--no-visited-state govuk-!-font-size-19" href="/gas-schedule-upload">
@@ -161,8 +161,6 @@
     </dl>
 
 
-    <h2 class="govuk-heading-m">Now send your application</h2>
-    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
     <form action="/submission-declaration" method="post" novalidate>
       <input type="hidden" name="answers-checked" value="true">
       <button class="govuk-button" data-module="govuk-button">
