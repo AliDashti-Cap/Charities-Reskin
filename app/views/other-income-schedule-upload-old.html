@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Attach other income schedule – {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ey78wl1udc");
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference:
+        XR4010</span>
+    </dl>
+    <h1 class="govuk-heading-xl">Attach other income schedule</h1>
+  </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">
+        Other income schedule
+      </h2>
+
+    <p class="govuk-body govuk-!-font-weight-bold">Donwload an other income schedule</p>
+
+      <p class="govuk-body">
+        You have indicated that you want to claim a repayment of tax that has been deducted on other income received by your organisation. Your claim must be supported by details of each payer, the gross value of the payment and the tax deducted from each payment.
+      </p>
+
+      <p class="govuk-body">
+        You must have already completed and saved an HM Revenue & Customs (HMRC) other income schedul on your computed with details of your other taxed income on to support this claim.
+      </p>
+
+      <p class="govuk-body">
+        <strong>Please note:</strong> If you haven't already done so please follow the link below to download the HMRC other income schedule.
+      </p>
+
+      <p class="govuk-body">
+        To complete the schedule now you will need to log out of this service. Any information you have already entered will be saved.
+      </p>
+
+      <p class="govuk-body">
+        Once you have completed the schedule you will be able to log back into this service and attach it to your claim.
+      </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="https://www.gov.uk/guidance/schedule-spreadsheet-to-claim-back-tax-on-gift-aid-donations" class="govuk-link">Download other income schedule</a></li>
+        </ul>
+
+        <p class="govuk-body">
+          Further information about Gift Aid schedules can be found in the online guidance. HMRC recommend you read this guidance before you complete and save your schedule.
+        </p>
+
+        <form class="form" action="/gasds-details" method="post">
+
+        <p class="govuk-body govuk-!-font-weight-bold">Attach your other income schedule</p>
+
+        <p class="govuk-body">
+          When you are ready to attach your other income schedule to this claim, click on the 'Browse' button below to find and select the completed schedule on your computer.
+        </p>
+
+        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+        {{ govukFileUpload({
+          id: "file-upload-1",
+          name: "file-upload-1",
+          label: {
+            text: "Other income schedule"
+          }
+        }) }}
+
+
+        <p class="govuk-body">
+          If you do not want to attach an other income schedule now please tick the checkbox below then, click the 'Next' button to continue.
+        </p>
+
+        <p class="govuk-body">
+          <strong>Please note:</strong> You must attach another income schedule before you can submit your charity repayment claim.
+        </p>
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          name: "agree",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          items: [
+            {
+              value: "no-attach",
+              text: "I do not want to attach an other income schedule at this time.",
+              hint: {
+                text: ""
+              }
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Next
+          </button>
+
+          <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment claim summary</a>
+          <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="repayment-claim-summary">
+          Repayment Claim Summary
+          </button> -->
+        </form>
+        </div>
+
+
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,14 +1,14 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Attach community buildings schedule - {{ serviceName }}
+  Attach Gift Aid schedule – {{ serviceName }}
 {% endblock %}
 
 {% block header %}
   {{ govukHeader({
     serviceName: serviceName
   }) }}
-  
+
   <!-- Microsoft Clarity Script -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -20,7 +20,6 @@
 
 {% endblock %}
 
-
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -29,134 +28,54 @@
       <span class="govuk-caption-xl">HMRC charities reference:
         XR4010</span>
     </dl>
-    <h1 class="govuk-heading-xl">Attach community buildings schedule</h1>
+    <h1 class="govuk-heading-xl">Attach community buildings spreadsheet</h1>
   </div>
-</div>
+  </div>
 
-
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h2 class="govuk-heading-m">
-        Community buildings schedule
-      </h2>
-
-      <p class="govuk-body govuk-!-font-weight-bold">
-        Download a community buildings schedule
-      </p>
-
       <p class="govuk-body">
-        You've indicated that you want to make a claim for a top-up payment under the Gift Aid Small Donations Scheme (GASDS) on small donations you've collected in your community building(s). Your claim must be supported by details of the community building(s) in which the donations were collected and the amounts collected. This is the only place in this claim that you should include these amounts. </p>
-
-      <p class="govuk-body">
-        You must have already completed and saved an HM Revenue and Customs (HMRC) community buildings schedule on your computer with details of your community building(s) on to support this claim.
-      </p>
-
-      <p class="govuk-body">
-        <strong>Please note:</strong> If you haven't already done so follow the link below to download the HMRC community buildings schedule.
-      </p>
-
-      <p class="govuk-body">
-        To complete the schedule now you'll need to sign out of this service. Any information you have already entered will be saved.
-      </p>
-
-      <p class="govuk-body">
-        Once you've completed the schedule you'll be able to sign back into this service and attach it to your claim.
-      </p>
-
-      <p class="govuk-body govuk-!-font-weight-bold">Download a Gift Aid schedule</p>
-
-      <p class="govuk-body">
-        You have indicated that you want to claim a repayment of tax on Gift Aid donations. Your claim must include full details of the donors and their donations on which you are claiming a repayment of tax.
-      </p>
-
-      <p class="govuk-body">
-        You must have already completed and saved an HM Revenue & Customs (HMRC) Gift Aid schedule on your computer with details of your Gift Aid donations to support this claim.
-      </p>
-
-      <p class="govuk-body">
-        <strong>Please note:</strong> If you haven't already done so please follow the link below to download the HMRC Gift Aid schedule.
-      </p>
-
-      <p class="govuk-body">
-        To complete the schedule now you will need to log out of this service. Any information you have already entered will be saved.
-      </p>
-
-      <p class="govuk-body">
-        Once you have completed the schedule you will be able to log back into this service and attach it to your claim.
-      </p>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="https://www.gov.uk/guidance/schedule-spreadsheet-for-community-building-gasds-claims" class="govuk-link">Download a community buildings schedule</a></li>
-        </ul>
-
         <p class="govuk-body">
-          Further information about community buildings schedules can be found in the online guidance. HMRC recommend you read this guidance before you complete and save your schedule.
-        </p>
+          You have selected to claim a repayment of tax on Gift Aid Small Donations Scheme (GASDS) donations collected in your community building(s). If you do not want to make this type of claim, you can remove it by answering ‘No’ to the question 'Are you claiming for donations collected in community buildings?’ in the <a href="http://localhost:3000/about-the-charity" class="govuk-link">Claim details</a> page.
+      </p>
 
-        <form class="form" action="/repayment-claim-summary" method="post">
+      <p class="govuk-body">
+         The community buildings schedule is for small donations of £30 or less that were collected by a charity in a <a href="https://www.gov.uk/government/publications/charities-detailed-guidance-notes/chapter-8-the-gift-aid-small-donations-scheme#community-buildings" class="govuk-link">community building</a>. CASCs cannot claim under the community buildings rules.
+      </p>
 
-        <p class="govuk-body govuk-!-font-weight-bold">Attach your community buildings schedule</p>
+      <p class="govuk-body">
+         To make a claim, you must fill out a GASDS community buildings spreadsheet. Your claim spreadsheet must include details of the community building(s) in which the donations were collected and the amounts collected.
+      </p>
 
-        <p class="govuk-body">
-          When you are ready to attach your community buildings schedule to this claim, click on the 'Browse' button below to find and select the completed schedule on your computer.
-        </p>
+      <p class="govuk-body">
+        We recommend you read the <a href="https://www.gov.uk/guidance/schedule-spreadsheet-for-community-building-gasds-claims" class="govuk-link">commnuity buildings spreadsheet guidance</a> before you complete and save your spreadsheet.
+      </p>
+
+      <h2 class="govuk-heading-m">Complete and attach a spreadsheet</h2>
+
+      <ol class="govuk-list govuk-list--number">
+         <li>Download a <a href="https://www.gov.uk/government/publications/gift-aid-schedule-spreadsheets-to-claim-back-tax-on-donations" class="govuk-link">community buildings spreadsheet</a>.</li>
+         <li>Complete the spreadsheet and save it as an Open Document Spreadsheet (.ods) file to your computer.</li>
+         <li>Select ‘Choose file’ and select the saved spreadsheet file from your computer to attach it to this claim.</li>
+         <li>Select ‘Next’.</li>
+      </ol>
 
         {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 
         {{ govukFileUpload({
-          id: "community-building-schedule-upload",
-          name: "ommunity-building-schedule-upload",
+          id: "file-upload-1",
+          name: "file-upload-1",
           label: {
-            text: "Community building schedule"
+            text: "Attach a file"
           }
         }) }}
 
-
-        <p class="govuk-body">
-          If you don't want to attach a community buildings schedule now please tick the checkbox below, then click the 'Next' button to continue.
-        </p>
-
-        <p class="govuk-body">
-          <strong>Please note:</strong> You must attach a community buildings schedule before you can submit your charity repayment claim.
-        </p>
-
-        {{ govukCheckboxes({
-          name: "agree",
-          fieldset: {
-            legend: {
-              text: "",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          hint: {
-            text: ""
-          },
-          items: [
-            {
-              value: "no-attach",
-              text: "I do not want to attach a community schedule schedule at this time.",
-              hint: {
-                text: ""
-              }
-            }
-          ]
-        }) }}
-
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Next
-          </button>
+          <a class="govuk-button govuk-button--primary" href="community-buildings-schedule-check">Next</a>
 
           <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment claim summary</a>
-          <!-- <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="repayment-claim-summary">
-          Repayment Claim Summary
-          </button> -->
-     </form>
         </div>
-
-
 
     </div>
   </div>
