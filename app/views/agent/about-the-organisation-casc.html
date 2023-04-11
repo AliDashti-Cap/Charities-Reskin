@@ -31,13 +31,8 @@
     <span class="govuk-caption-xl">HMRC charities reference: XR4010
     </span>
   </dl>
-  <h1 class="govuk-heading-xl">Organisation details</h1>
-    <p class="govuk-body">
-      <strong>[REMOVE?]</strong> To make this claim, you must be a recognised authorised official or corporate trustee that has already been notified to HMRC as the authorised official.
-    </p>
-    <p class="govuk-body">
-      <strong>[REMOVE?]</strong> You need to provide details about the charity or Community Amateur Sports Club (CASC) you are claiming on behalf of.
-    </p>
+  <h1 class="govuk-heading-xl">Organisation and agent details</h1>
+  <h2 class="govuk-heading-l">Organisation details</h2>
 
   <form class="form" action="/repayment-claim-summary" method="post" id="about-organisation-form">
 
@@ -68,25 +63,38 @@
       </fieldset>
       <details class="govuk-details govuk-!-margin-top-1" data-module="govuk-details">
         <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">Help about: Who should HMRC send the payment to?
+          <span class="govuk-details__summary-text">Help about: Who should the payment be sent to?
           </span>
         </summary>
       <div class="govuk-details__text">
+
         <p class="govuk-!-font-weight-bold">
-          Payment to the agent or nominee
+          Payment to a charity or CASC
         </p>
         <p>
-          The repayment will be paid, via Bacs (Bankers Automated Clearing System), into the account that HM Revenue & Customs (HMRC) currently has on record for the charity or CASC you are claiming on behalf of. If the bank account details have changed then the charity or CASC must tell HMRC about their new account before you make this claim. They must complete the change of details form at least 30 days before this claim is made. If they do not, this could delay the payment or could result in the payment going into the wrong bank account.
-        </p>
-        <p class="govuk-!-font-weight-bold">
-          Payment to the charity or CASC
+          HMRC will make the payment via Bacs into the account that they currently have on record for the organisation you are making the claim for.
         </p>
         <p>
-          A payment can only be made by Bacs into the account of an agent or nominee if the charity has authorised HMRC to do this. If not then the payment will be made into the charity's or CASC's bank account.
+          If the bank account details of an organisation are not the same as the details in HMRC records, the organisation must update the details before you make the claim. An organisation can do this by submitting <a href="https://www.gov.uk/government/publications/charities-change-of-details-form-chv1">a change of details form (ChV1)</a> at least 30 days before you make the claim.
+        </p>
+        <p>
+          If bank account details are not up to date, this could delay the payment or result in the payment going into the wrong bank account.
+        </p>
+
+        <p class="govuk-!-font-weight-bold">
+          Payment to an agent or nominee
+        </p>
+        <p>
+          HMRC can only make a payment into the account of an agent or nominee if the organisation has authorised it.
+        </p>
+        <p>
+          If not, then the payment will be made into the organisations bank account.
         </p>
       </div>
       </details>
     </div>
+
+      <h2 class="govuk-heading-l govuk-!-static-padding-top-5">Agent details</h2>
 
     <!-- Phone number -->
 
@@ -98,18 +106,18 @@
         <span class="govuk-visually-hidden">ERROR:</span> You must enter a telephone number for your organisation.
       </p>
       <div id="postcode-hint" class="govuk-hint">
-        For international numbers include the country code.
+        Include international dialing code if telephone number is outside of the UK
       </div>
       <input class="govuk-input" id="phone-number-input" name="tphone-number-group-input" type="text">
       <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
         <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-                Help about: Telephone number
+                Why give a telephone number?
             </span>
         </summary>
         <div class="govuk-details__text">
         <p>
-          You must provide a phone number that HMRC can use to discuss any queries that they may have with your claim.
+          HMRC needs your telephone number in order to discuss any queries that they may have with your claim.
         </p>
         </div>
       </details>
@@ -124,10 +132,13 @@
         <span class="govuk-visually-hidden">ERROR:</span> You must enter your postcode or indicate if your address is not in the UK.
       </p>
       <div id="postcode-hint" class="govuk-hint">
-        This should be the postcode of the office in which your organisation is based if it is in the UK.
+        This should be the postcode of the office in which your organisation is based, if it is in the UK.
+      </div>
+      <div id="postcode-hint" class="govuk-hint">
+        For example, AB12 3YZ
       </div>
       <input class="govuk-input" id="postcode-input" name="postcode-input" type="text">
-  
+
       <div class="govuk-form-group govuk-!-margin-top-6">
         <fieldset class="govuk-fieldset" aria-describedby="declaration-confirmation">
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -154,29 +165,6 @@
 
 </div>
 
-<div class="govuk-grid-column-one-third">
-
-  <h2 class="govuk-heading-m" id="subsection-title">
-    Charity repayment claim
-  </h2>
-  <aside class="app-related-items" role="complementary">
-    <nav role="navigation" aria-labelledby="subsection-title">
-      <ul class="govuk-list govuk-!-font-size-16">
-        <li>
-          <a href="/repayment-claim-summary" class="govuk-link govuk-link--no-visited-state">
-            Repayment claim summary
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.development.tax.service.gov.uk/information/faqs/charities" class="govuk-link govuk-link--no-visited-state">
-            FAQs
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
-</div>
 
 </div>
 {% endblock %}
