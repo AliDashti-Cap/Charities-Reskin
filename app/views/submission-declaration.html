@@ -38,7 +38,7 @@
 
       <form class="form" action="/security-check" method="post">
 
-        <p class="govuk-body govuk-!-font-weight-bold">Your charities repayment claim is now ready for submission.</p>
+        <p class="govuk-body govuk-!-font-weight-bold">Your organisation's repayment claim is now ready for submission.</p>
 
         <p>Before your repayment claim can be accepted by HM Revenue & Customs (HMRC), you must indicate your agreement to the statements below by ticking the checkbox.</p>
 
@@ -64,10 +64,18 @@
           </fieldset>
         </div>
 
+        <h2 class="govuk-heading-m">Adjustment explanation or claim information</h2>
+
         <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="350">
           <div class="govuk-form-group">
             <label class="govuk-label" for="adjustment-reason">
-              If you have included any adjustments in this claim, you must enter an explanation below. You can also provide any other information regarding your charity's repayment claim.
+              If you have included any adjustments in this claim, you must explain the reason below.
+            </label>
+            <label class="govuk-label" for="adjustment-reason">
+            Explaining the reason for previous overclaiming will help verify if a repayment needs to be made to HMRC. An unclear explanation could increase the time to process a claim.
+            </label>
+            <label class="govuk-label" for="adjustment-reason">
+              You can also provide any other information regarding your organisation’s claim.
             </label>
             <textarea class="govuk-textarea govuk-js-character-count" id="label-as-page-heading" name="adjustment-reason" rows="5" aria-describedby="declaration"></textarea>
           </div>
@@ -78,13 +86,16 @@
           <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Help about: Explain adjustment
+                Examples of adjustment reasons
               </span>
             </summary>
             <div class="govuk-details__text">
-            <p>Enter your explanation of any adjustments that you have made to this claim or additional information that will be useful to HM Revenue & Customs in this box. Additional lines will automatically appear as you enter your information.</p>
-
-            <p><strong>Please note:</strong> You cannot attach any letters or other files to your claim here.</p>
+              <p>Common explanations for adjusting a claim are if:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>a donor withdrew their Gift Aid declaration</li>
+                <li>a donor has ceased paying tax</li>
+                <li>an organisation has previously claimed on donations</li>
+              </ul>
             </div>
           </details>
         </div>

@@ -59,7 +59,7 @@
         </select>
       <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
         <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">Help about: Charity regulator
+          <span class="govuk-details__summary-text">What if I am a CASC?
           </span>
         </summary>
       <div class="govuk-details__text">
@@ -88,7 +88,7 @@
       <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Help about: Charity registration number
+            Help about: Charity regulator's number
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -98,7 +98,7 @@
           <p> If the charity is dual registered, you can either:</p>
           <ul class="govuk-list govuk-list--bullet">
              <li>include a registration number used in previous correspondence with HMRC</li>
-             <li>complete and submit <a href="https://www.gov.uk/government/publications/charities-change-of-details-form-chv1">a change of details form (ChV1)</a> with this information before making your claim.</li>
+             <li>complete and submit <a href="https://www.gov.uk/government/publications/charities-change-of-details-form-chv1" target="_blank">a change of details form (ChV1) (opens in a new tab)</a> with this information before making your claim.</li>
           </ul>
         </div>
       </details>
@@ -126,18 +126,10 @@
         <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Help about: No registration with regulator
+              Who is eligible for no registration with a charity regulator?
             </span>
           </summary>
           <div class="govuk-details__text">
-            <p>
-              You can apply directly to HMRC for recognition as a charity for tax purposes, if you are:
-            </p>
-            <ul class="govuk-list govuk-list--bullet">
-               <li>excepted from registration with a charity regulator</li>
-               <li>exempt from registration with a charity regulator</li>
-               <li>your organisation is established in a country where there is no charity regulator</li>
-            </ul>
             <p>
               You are excepted if income is £100,000 or less and your charity is in one of the following groups:
             </p>
@@ -156,37 +148,36 @@
                <li>a museum or gallery, as defined in the Charities Act</li>
                <li>a housing association registered under the Industrial and Provident Societies Act 1965</li>
             </ul>
+            <p>
+              You can apply directly to HMRC for recognition as a charity for tax purposes, if you are:
+            </p>
+            <ul class="govuk-list govuk-list--bullet">
+               <li>excepted from registration with a charity regulator</li>
+               <li>exempt from registration with a charity regulator</li>
+               <li>your organisation is established in a country where there is no charity regulator</li>
+            </ul>
           </div>
         </details>
     </div>
   </div>
 
-    <!-- Is this claim being made by a corporate trustee such as the Trust Department of a bank, a Trust Company or a Trust Corporation? -->
+    <!-- Is this claim being made by an authorised official? -->
 
     <div class="govuk-form-group" id="corporate-trustee-group">
         <label class="govuk-label govuk-label--s" for="corporate-trustee-select">
-          Is this claim being made by a corporate trustee such as the Trust Department of a bank, a Trust Company or a Trust Corporation?
+          Is this claim being made by an authorised official?
         </label>
+        <div id="subject-hint" class="govuk-hint">
+          An authorised official is an official you have told HMRC is authorised to make this repayment claim.
+        </div>
         <p class="govuk-error-message" id="corporate-trustee-error-message" style="display: none">
-          <span class="govuk-visually-hidden">ERROR:</span> Select if this claim is being made by a corporate trustee
+          <span class="govuk-visually-hidden">ERROR:</span> Select if this claim is being made by an authorised official
         </p>
           <select class="govuk-select" id="corporate-trustee-select" name="corporate-trustee-select" onchange="nameCorporateTrusteeGroupOnChange(this)">
             <option value="default" selected>Please select</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
-        <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
-            <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                    Help about: Corporate trustee
-                </span>
-            </summary>
-          <div class="govuk-details__text">
-            <p>
-              A corporate trustee is responsible for looking after the day-to-day administration of the charity. Only a charity managed by a trust company, or trust department of a bank can have a corporate trustee.
-            </p>
-        </div>
-      </details>
     </div>
 
     <!-- Name of corporate trustee  -->
@@ -195,13 +186,25 @@
       <label class="govuk-label govuk-label--s" for="name-corporate-trustee-input">
         Name of corporate trustee
       </label>
+      <div id="subject-hint" class="govuk-hint">
+        This is the name of the company that looks after the day-to-day administration of the charity.
+      </div>
       <p class="govuk-error-message" id="name-corporate-trustee-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> Enter the name of the corporate trustee for your organisation
       </p>
-      <div id="event-name-hint" class="govuk-hint">
-        This is the name of the company that looks after the day-to-day administration of the charity.
-      </div>
       <input class="govuk-input" id="name-corporate-trustee-input" name="name-corporate-trustee" type="text">
+      <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
+          <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                  Who is eligible to be a corporate trustee?
+              </span>
+          </summary>
+        <div class="govuk-details__text">
+          <p>
+            Only a charity managed by a trust company, a trust corporation, or trust department of a bank can have a corporate trustee.
+          </p>
+      </div>
+    </details>
     </div>
 
   <div id="authorised-official-fields" style="display: none">
@@ -256,7 +259,7 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>the charity applied to be recognised by HMRC, or</li>
             <li>when the CASC submitted its registration, or</li>
-            <li>when the details were amended by submitting a  <a href="https://www.gov.uk/government/publications/charities-change-of-details-form-chv1">change of details form (ChV1)</a>.</li>
+            <li>when the details were amended by submitting a  <a href="https://www.gov.uk/government/publications/charities-change-of-details-form-chv1" target="_blank">change of details form (ChV1) (opens in a new tab)</a>.</li>
           </ul>
 
           <p>
@@ -310,7 +313,7 @@
     <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
       <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-              Help about: Telephone number
+              Why give a telephone number?
           </span>
       </summary>
       <div class="govuk-details__text">
