@@ -25,6 +25,12 @@
   <div class="govuk-grid-column-two-thirds-from-desktop">
     <h1 class="govuk-heading-l">Check your answers before sending your claim</h1>
 
+    <div class="govuk-!-margin-bottom-6">
+      <a href="javascript:if(window.print)window.print()" class="govuk-link govuk-link--no-visited-state"> <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><title>icon-print</title><path d="M13.412 6.147H4.47v-4.47C4.47.75 5.22 0 6.147 0h5.588c.926 0 1.677.75 1.677 1.676v4.47zm4.47-.559v7.265c0 .926-.75 1.676-1.676 1.676h-1.118v1.677c0 .925-.75 1.676-1.676 1.676H4.47c-.926 0-1.677-.75-1.677-1.676v-1.677H1.676C.751 14.53 0 13.78 0 12.853V5.588c0-.926.75-1.676 1.676-1.676h1.118v3.911h12.294V3.912h1.118c.925 0 1.676.75 1.676 1.676zm-5.03 6.147H5.03v3.912h7.824v-3.912z"/></svg>
+        Print or save page
+      </a>
+    </div>
+
     <div class="govuk-grid-row govuk-!-margin-bottom-1">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">Claim details</h2>
@@ -88,7 +94,7 @@
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Name of charity regulator:
+          Name of charity regulator
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['name-charity-regulator-select'] }}
@@ -96,7 +102,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Charity regulator's number:
+          Charity regulator number
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['number-charity-regulator'] }}
@@ -112,7 +118,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Authorised official name:
+          Authorised official name
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['authorised-official-title-input'] }} {{ data['authorised-official-first-name-input'] }} {{ data['authorised-official-last-name'] }}
@@ -120,7 +126,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Postcode:
+          Postcode
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['postcode-input'] }}
@@ -128,7 +134,7 @@
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key govuk-!-width-one-half">
-          Telephone number:
+          Telephone number
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['tphone-number-group-input'] }}

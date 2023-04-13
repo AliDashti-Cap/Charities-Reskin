@@ -45,7 +45,7 @@
 
     <div class="govuk-form-group" id="name-charity-regulator-group">
       <label class="govuk-label govuk-label--s" for="name-charity-regulator-select">
-        Name of charity regulator:
+        Name of charity regulator
       </label>
       <p class="govuk-error-message" id="name-charity-regulator-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> Select the charity regulator you are registered with, or if you are not registered
@@ -76,7 +76,7 @@
 
     <div class="govuk-form-group" id="number-charity-regulator-group">
       <label class="govuk-label govuk-label--s" for="number-charity-regulator">
-        Charity regulator's number:
+        Charity regulator number
         </label>
         <p class="govuk-error-message" id="number-charity-regulator-error-message" style="display: none">
           <span class="govuk-visually-hidden">ERROR:</span> Enter the charity registration number for your organisation
@@ -88,7 +88,7 @@
       <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Help about: Charity regulator's number
+            Help about: Charity regulator number
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -111,7 +111,7 @@
 
     <div class="govuk-form-group" id="reason-not-registered-regulator-group">
       <label class="govuk-label govuk-label--s" for="reason-not-registered-regulator-select">
-        Provide a reason for not being registered with a regulator:
+        Provide a reason for not being registered with a regulator
       </label>
       <p class="govuk-error-message" id="reason-not-registered-regulator-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> Select a reason for not being registered with a regulator
@@ -214,7 +214,7 @@
     <!-- Authorised Official Title -->
 
     <div class="govuk-form-group" id="authorised-official-title-group">
-      <label class="govuk-label govuk-label--s" for="authorised-official-title-input"> Title (optional):
+      <label class="govuk-label govuk-label--s" for="authorised-official-title-input"> Title (optional)
       </label>
       <input class="govuk-input" id="authorised-official-title-input" name="authorised-official-title-input" type="text">
     </div>
@@ -222,7 +222,7 @@
       <!-- Authorised Official First name -->
 
     <div class="govuk-form-group" id="authorised-official-first-name-group">
-      <label class="govuk-label govuk-label--s" for="authorised-official-first-name-input name"> First name:
+      <label class="govuk-label govuk-label--s" for="authorised-official-first-name-input name"> First name
       </label>
       <p class="govuk-error-message" id="authorised-official-first-name-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> Enter the first name of the authorised person for your organisation
@@ -233,7 +233,7 @@
       <!-- Authorised Official Last name -->
 
       <div class="govuk-form-group" id="authorised-official-last-name-group">
-        <label class="govuk-label govuk-label--s"     for="authorised-official-last-name-input"> Last name:
+        <label class="govuk-label govuk-label--s"     for="authorised-official-last-name-input"> Last name
         </label>
         <p class="govuk-error-message" id="authorised-official-last-name-error-message" style="display: none">
           <span class="govuk-visually-hidden">ERROR:</span> Enter the last name of the authorised person for your organisation
@@ -273,7 +273,7 @@
   <!-- Postcode-->
 
   <div class="govuk-form-group" id="postcode-group" style="display: none">
-    <label class="govuk-label govuk-label--s" for="postcode-input"> Postcode:
+    <label class="govuk-label govuk-label--s" for="postcode-input"> Postcode
     </label>
     <p class="govuk-error-message" id="postcode-error-message" style="display: none">
       <span class="govuk-visually-hidden">ERROR:</span> Enter your postcode or indicate if your address is not in the UK
@@ -281,7 +281,9 @@
     <div id="postcode-hint" class="govuk-hint">
       This should be the postcode of the office in which your organisation is based if it is in the UK.
     </div>
-    <input class="govuk-input" id="postcode-input" name="postcode-input" type="text">
+    <div class="govuk-form-group">
+      <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+    </div>
 
     <div class="govuk-form-group govuk-!-margin-top-6">
       <fieldset class="govuk-fieldset" aria-describedby="declaration-confirmation">
@@ -301,7 +303,7 @@
 
   <div class="govuk-form-group" id="phone-number-group">
     <label class="govuk-label govuk-label--s" for="phone-number-group-input">
-      Telephone number:
+      Telephone number
     </label>
     <p class="govuk-error-message" id="phone-number-error-message" style="display: none">
       <span class="govuk-visually-hidden">ERROR:</span> Enter a telephone number for your organisation

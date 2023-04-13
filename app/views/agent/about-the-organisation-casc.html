@@ -100,13 +100,13 @@
 
     <div class="govuk-form-group" id="phone-number-group">
       <label class="govuk-label govuk-label--s" for="phone-number-group-input">
-        Agent's telephone number:
+        Agent telephone number
       </label>
       <p class="govuk-error-message" id="phone-number-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> You must enter a telephone number for your organisation.
       </p>
       <div id="postcode-hint" class="govuk-hint">
-        Include international dialing code if telephone number is outside of the UK
+        Include international dialing code if telephone number is outside of the UK.
       </div>
       <input class="govuk-input" id="phone-number-input" name="tphone-number-group-input" type="text">
       <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px">
@@ -126,7 +126,7 @@
     <!-- Postcode-->
 
     <div class="govuk-form-group" id="postcode-group">
-      <label class="govuk-label govuk-label--s" for="postcode-input"> Agent's postcode:
+      <label class="govuk-label govuk-label--s" for="postcode-input"> Agent office postcode
       </label>
       <p class="govuk-error-message" id="postcode-error-message" style="display: none">
         <span class="govuk-visually-hidden">ERROR:</span> You must enter your postcode or indicate if your address is not in the UK.
@@ -135,9 +135,11 @@
         This should be the postcode of the office in which your organisation is based, if it is in the UK.
       </div>
       <div id="postcode-hint" class="govuk-hint">
-        For example, AB12 3YZ
+        For example, AB12 3YZ.
       </div>
-      <input class="govuk-input" id="postcode-input" name="postcode-input" type="text">
+      <div class="govuk-form-group">
+    <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+  </div>
 
       <div class="govuk-form-group govuk-!-margin-top-6">
         <fieldset class="govuk-fieldset" aria-describedby="declaration-confirmation">

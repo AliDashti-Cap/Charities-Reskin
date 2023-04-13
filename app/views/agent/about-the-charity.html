@@ -174,7 +174,7 @@
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--s" for="claim-reference-number">
-            Your claim reference (optional):
+            Your claim reference (optional)
           </label>
           <div id="subject-hint" class="govuk-hint">
           This is your own reference for this claim.
@@ -346,18 +346,21 @@
 
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="hmrc-charities-reference">
-          HMRC charities reference:
+          HMRC charities reference
         </label>
+        <div id="subject-hint" class="govuk-hint">
+        For example, AB12345 or A1.
+        </div>
         <input class="govuk-input" id="hmrc-charities-reference" name="hmrc-charities-reference" type="text">
         <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
-              Help about: HMRC charities reference
+              What is the format of a charities reference?
             </span>
           </summary>
           <div class="govuk-details__text">
           <p>
-            Enter your client's Charity HM Revenue & Customs reference number here. The reference will start with either one or two letters and will include up to 5 numbers.
+            A charities reference will start with one or 2 letters followed by up to 5 numbers.
           </p>
           </div>
         </details>
@@ -366,21 +369,12 @@
       <!-- Name of charity or CASC: -->
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--s" for="name-of-charity">
-          Name of charity or CASC:
+          Name of charity or CASC
         </label>
+        <div id="subject-hint" class="govuk-hint">
+        The name you enter must be the same as the name your client has registered with HMRC. If the name is different, your claim may be rejected.
+        </div>
         <textarea class="govuk-textarea" id="name-of-charity" name="name-of-charity" rows="5" maxlength="160" style="margin-bottom: 0px;"></textarea>
-        <details class="govuk-details" data-module="govuk-details" style="margin-top: 5px;">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Help about: Name of charity
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-          <p>
-            Enter your client's full name here. Please make sure this is correct (the same name your client registered with HM Revenue & Customs) or your claim may be rejected.
-          </p>
-          </div>
-        </details>
       </div>
 
 
