@@ -495,13 +495,13 @@ if (aboutOrganisationForm) {
   const authorisedOfficialFields = document.getElementById("authorised-official-fields")
   function nameCorporateTrusteeGroupOnChange(e){
     if (e.value === "yes") {
-      nameCorporateTrusteeGroup.style.display = "block"
-      authorisedOfficialFields.style.display = "none"
+      nameCorporateTrusteeGroup.style.display = "none"
+      authorisedOfficialFields.style.display = "block"
       postcodeGroup.style.display = "block"
     }
     else if (e.value === "no")  {
-      nameCorporateTrusteeGroup.style.display = "none"
-      authorisedOfficialFields.style.display = "block"
+      nameCorporateTrusteeGroup.style.display = "block"
+      authorisedOfficialFields.style.display = "none"
       postcodeGroup.style.display = "block"
     }
     else {
