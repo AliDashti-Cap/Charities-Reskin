@@ -32,7 +32,7 @@
       <span class="govuk-caption-xl">HMRC charities reference:
         XR4010</span>
     </dl>
-    <h1 class="govuk-heading-xl">Make a Gift Aid Small Donations Scheme (GASDS) claim</h1>
+    <h1 class="govuk-heading-xl">Gift Aid Small Donations Scheme (GASDS) details</h1>
   </div>
 </div>
 
@@ -69,7 +69,7 @@
           Tax year 1 ending 5 April:
         </label>
         <p class="govuk-error-message" id="tax-year-one-end-error-message" style="display: none">
-          <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+          <span class="govuk-visually-hidden">ERROR:</span> Enter a year for tax year 1. For example 2022.
         </p>
         <div id="event-name-hint" class="govuk-hint">
           For example, 2022
@@ -96,7 +96,7 @@
           Amount of donations on which you are claiming a top up payment under GASDS.
           </label>
           <p class="govuk-error-message" id="donation-top-up-amount-year-one-error-message" style="display: none">
-            <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+            <span class="govuk-visually-hidden">ERROR:</span> Enter amount for tax year 1
           </p>
           <div id="account-number-hint" class="govuk-hint">
             Do not include any donations collected in a community building
@@ -121,10 +121,10 @@
 
       <div class="govuk-form-group" id="claim-second-tax-year-group">
         <label class="govuk-label govuk-label--s" for="claim-second-year-tax-select">
-          Do you want to make a claim for second tax year?
+          Do you want to make a claim for a second tax year?
         </label>
         <p class="govuk-error-message" id="claim-second-tax-year-error-message" style="display: none">
-          <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+          <span class="govuk-visually-hidden">ERROR:</span> Select if you are claiming for a second tax year
         </p>
         <select class="govuk-select" id="claim-second-tax-year-select" name="claim-second-tax-year-select" onchange="secondTaxYearOnChange(this)">
           <option value="default" selected>Please select</option>
@@ -153,7 +153,7 @@
             Tax year 2 ending 5 April:
           </label>
           <p class="govuk-error-message" id="tax-year-two-end-error-message" style="display: none">
-            <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+            <span class="govuk-visually-hidden">ERROR:</span> Enter a year for tax year 2. For example 2021.
           </p>
           <div id="event-name-hint" class="govuk-hint">
             For example, 2021
@@ -180,7 +180,7 @@
             Amount of donations on which you are claiming a top up payment under GASDS.
             </label>
             <p class="govuk-error-message" id="donation-top-up-amount-year-two-error-message" style="display: none">
-              <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              <span class="govuk-visually-hidden">ERROR:</span> Enter amount for tax year 2
             </p>
             <div id="account-number-hint" class="govuk-hint">
               Do not include any donations collected in a community building:
@@ -205,10 +205,10 @@
 
         <div class="govuk-form-group" id="claim-third-tax-year-group">
           <label class="govuk-label govuk-label--s" for="claim-third-tax-year-select">
-            Do you want to make a claim for third tax year?
+            Do you want to make a claim for a third tax year?
           </label>
           <p class="govuk-error-message" id="claim-third-tax-year-error-message" style="display: none">
-            <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+            <span class="govuk-visually-hidden">ERROR:</span> Select if you are claiming for a third tax year
           </p>
           <select class="govuk-select" id="claim-third-tax-year-select" name="claim-third-tax-year-select" onchange="thirdTaxYearOnChange(this)">
             <option value="default" selected>Please select</option>
@@ -237,7 +237,7 @@
           Tax year 3 ending 5 April:
         </label>
         <p class="govuk-error-message" id="tax-year-three-end-error-message" style="display: none">
-          <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+          <span class="govuk-visually-hidden">ERROR:</span> Enter a year for tax year 3. For example 2020.
         </p>
         <div id="event-name-hint" class="govuk-hint">
           For example, 2020
@@ -264,7 +264,7 @@
             Amount of donations on which you are claiming a top up payment under GASDS.
             </label>
             <p class="govuk-error-message" id="donation-top-up-amount-year-three-error-message" style="display: none">
-              <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              <span class="govuk-visually-hidden">ERROR:</span> Enter amount for tax year 3
             </p>
             <div id="account-number-hint" class="govuk-hint">
               Do not include any donations collected in a community building:
@@ -297,7 +297,7 @@
             Adjustment for Gift Aid previously over-claimed:
             </label>
             <p class="govuk-error-message" id="adjustment-for-gift-aid-error-message" style="display: none">
-              <span class="govuk-visually-hidden">ERROR:</span> You must make a selection.
+              <span class="govuk-visually-hidden">ERROR:</span> Enter the previously overclaimed amount  
             </p>
             <div id="account-number-hint" class="govuk-hint">
               This amount will be deducted from this claim. Only enter the amount of tax overclaimed, not the total value of donations.

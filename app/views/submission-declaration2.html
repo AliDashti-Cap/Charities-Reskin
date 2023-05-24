@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Declaration – {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ey78wl1udc");
+</script>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference:
+        XR4010</span>
+    </dl>
+    <h1 class="govuk-heading-xl">Declaration</h1>
+  </div>
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/security-check" method="post">
+
+        <p>Your organisation's repayment claim is now ready for submission.</p>
+
+        <p>Before your repayment claim can be accepted by HM Revenue & Customs (HMRC), you must indicate your agreement to the following statements.</p>
+
+        <ol class="govuk-list govuk-list--number">
+           <li>The information I have given in this claim is complete and correct to the best of my knowledge and belief.</li>
+           <br>
+           <li>I confirm that I have read the HMRC notes and guidance on claiming Gift Aid and/or top-up payments under the Gift Aid Small Donations Scheme.</li>
+           <br>
+           <li>Where this claim wholly or partly relates to Gift Aid I claim exemption from tax for this charity or Community Amateur Sports Club for the period covered by the claim.</li>
+        </ol>
+
+      <p class="govuk-body govuk-!-font-weight-bold">I understand that false statements can lead to prosecution.</p>
+          <br>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+          I agree – submit my claim
+          </button>
+
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back
+          </button>
+        </div>
+
+      </form>
+
+  </div>
+
+</div>
+
+{% endblock %}
