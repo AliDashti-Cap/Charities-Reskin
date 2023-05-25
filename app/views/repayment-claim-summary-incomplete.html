@@ -1,0 +1,198 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Repayment claim summary - {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ey78wl1udc");
+</script>
+
+{% endblock %}
+
+{% block content%}
+
+<!-- Functions for data passthrough for task list logic -->
+<body onload="giftAidTaskListOnLoad(); otherIncomeTaskListOnLoad(); gasdsTaskListDonationDetailsOnLoad();gasdsTaskListCommunityBuildingsOnLoad(); gasdsTaskListConnectedCharitiesOnLoad()">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+         <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#">You must complete all sections before you can submit your claim</a>
+                </li>
+           </ul>
+      </div>
+
+      </div>
+   </div>
+
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference: XR4010
+        </span>
+    </dl>
+    <h1 class="govuk-heading-xl">Repayment claim summary</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2> -->
+    <!-- <h2 class="govuk-heading-s govuk-!-margin-bottom-7">You must complete all sections before you can submit your claim.</h2> -->
+    <!-- <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 5 sections.</p> -->
+    <p>Before you submit a claim, you must <a href="https://www.gov.uk/government/publications/gift-aid-schedule-spreadsheets-to-claim-back-tax-on-donations">download and complete the appropriate spreadsheet</a>. A completed spreadsheet should be attached to the relevant spreadsheet page. </p>
+
+    <p>Guidance is available on <a href="https://www.gov.uk/claim-gift-aid">claiming Gift Aid as a charity or community amateur sports club (CASC)</a>. For further guidance, contact the Charities helpline telephone number 0300 123 1073.</p>
+
+    <div class="govuk-form-group govuk-form-group--error">
+      <h3 class="govuk-heading-s">Application incomplete</h3>
+      <p>You have completed 3 of 7 sections.</p>
+      <p id="national-insurance-number-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> You must complete all sections before you can submit your claim
+      </p>
+    </div>
+
+    <!-- Data passthrough for task list logic -->
+    <input id="gift-aid-task-show" name="gift-aid-task-show" value="{{ data['claiming-gift-aid-select'] }}" style="display: none;">
+    <input id="other-income-task-show" name="other-income-task-show" value="{{ data['other-income-select'] }}" style="display: none;">
+    <input id="gasds-details-task-show" name="gasds-details-task-show" value="{{ data['top-up-gasds-community-building-select'] }}" style="display: none;">
+    <input id="gasds-community-buildings-task-show" name="gasds-community-buildings-task-show" value="{{ data['claiming-community-building-select'] }}" style="display: none;">
+    <input id="gasds-connected-charities-task-show" name="gasds-connected-charities-task-show" value="{{ data['connected-charities-select'] }}" style="display: none;">
+
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          Questions about this claim
+        </h2>
+        <ul class="app-task-list__items" style="padding-left: 0px;">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/about-the-charity" aria-describedby="repayment-claim-details" class="govuk-link govuk-link--no-visited-state">
+                Claim details
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="about-charity-tag-incomplete">Incomplete</strong>
+            <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="about-charity-tag-compelete" style="display: none;">Complete</strong>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <h2 class="app-task-list__section">
+          About the organisation
+        </h2>
+        <ul class="app-task-list__items" style="padding-left: 0px;">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="about-the-organisation" aria-describedby="organisation-details" class="govuk-link govuk-link--no-visited-state">
+                Organisation details
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="about-organisation-tag-incomplete">Incomplete</strong>
+            <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="about-organisation-tag-compelete" style="display: none;">Complete</strong>
+          </li>
+        </ul>
+      </li>
+
+      <li style="display: none" id="gift-aid-task-list">
+        <h2 class="app-task-list__section">
+          Gift Aid claim
+        </h2>
+        <ul class="app-task-list__items" style="padding-left: 0px;">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="/gas-schedule-upload" aria-describedby="attach-gift-aid-schedule" class="govuk-link govuk-link--no-visited-state">
+                Attach Gift Aid spreadsheet
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-gift-aid-schedule-tag-incomplete">Incomplete</strong>
+            <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="attach-gift-aid-schedule-tag-complete" style="display: none;">Complete</strong>
+          </li>
+        </ul>
+      </li>
+
+      <li style="display: none" id="other-income-task-list">
+        <h2 class="app-task-list__section">
+          Other income claim
+        </h2>
+        <ul class="app-task-list__items" style="padding-left: 0px;">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="other-income-schedule-upload" aria-describedby="attach-other-income-schedule" class="govuk-link govuk-link--no-visited-state">
+                Attach other income spreadsheet
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-other-income-schedule">Incomplete</strong>
+          </li>
+        </ul>
+      </li>
+
+      <li id="gasds-task-list-title" style="display: none">
+        <h2 class="app-task-list__section">
+        Gift Aid Small Donations Scheme claim
+        </h2>
+        <ul class="app-task-list__items" style="padding-left: 0px;">
+          <li class="app-task-list__item" style="padding-left: 0px; display: none;" id="gasds-task-list-donation-details">
+            <span class="app-task-list__task-name">
+              <a href="gasds-details" aria-describedby="donation-details" class="govuk-link govuk-link--no-visited-state">
+                Donation details
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="donation-details">Incomplete</strong>
+          </li>
+
+          <li class="app-task-list__item" style="padding-left: 0px; display: none;" id="gasds-task-list-community-buildings">
+            <span class="app-task-list__task-name">
+              <a href="/community-buildings-schedule-upload" aria-describedby="attach-community-buildings-schedule" class="govuk-link govuk-link--no-visited-state">
+                Attach community buildings spreadsheet
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-community-buildings-schedule">Incomplete</strong>
+          </li>
+
+          <li class="app-task-list__item" style="padding-left: 0px; display: none;" id="gasds-task-list-connected-charities">
+            <span class="app-task-list__task-name">
+              <a href="/connected-charities-schedule-upload" aria-describedby="attach-connected-charities-schedule" class="govuk-link govuk-link--no-visited-state">
+                Attach connected charities spreadsheet
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="attach-connected-charities-schedule">Incomplete</strong>
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="govuk-button-group">
+        <a href="/check-answers" role="button" draggable="false" class="govuk-button govuk-button--primary" data-module="govuk-button">
+          Submit claim
+        </a>
+        <a href="/delete-claim" role="button" draggable="false" class="govuk-button govuk-button--warning" data-module="govuk-button">
+          Delete claim
+        </a>
+    </div>
+
+
+</div>
+</body>
+
+{% endblock %}

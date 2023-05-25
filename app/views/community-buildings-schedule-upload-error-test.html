@@ -1,0 +1,231 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Attach Gift Aid schedule – {{ serviceName }}
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    serviceName: serviceName
+  }) }}
+
+  <!-- Microsoft Clarity Script -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ey78wl1udc");
+</script>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-error-summary" data-module="govuk-error-summary" id="gas-errors-top">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#postcode-format">Postcode must be capitalised with a space in the middle. For example S19 2BD.</a>
+        </li>
+        <li>
+          <a href="#postcode-format">Tax Year 1 ending 5 April must be in the format YYYY</a>
+        </li>
+        <li>
+          <a href="#donation-date-format">Amount of donations received in tax year 1 must only include numbers or a full stop</a>
+        </li>
+        <li>
+          <a href="#aggregated-donations-error">Enter amount of donations received in tax year 2</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference:
+        XR4010</span>
+    </dl>
+
+    <h1 class="govuk-heading-xl">Errors in Community buildings spreadsheet</h1>
+
+      <p>Correct all the errors shown below in the Community buildings spreadsheet saved on your computer. Then select the 'Attach an updated Community buildings spreadsheet' button below to continue with your claim. This will replace the incorrect Community buildings spreadsheet you previously attached.</p>
+
+      <div class="govuk-!-margin-bottom-6">
+        <a href="javascript:if(window.print)window.print()" class="govuk-link govuk-link--no-visited-state"> <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><title>icon-print</title><path d="M13.412 6.147H4.47v-4.47C4.47.75 5.22 0 6.147 0h5.588c.926 0 1.677.75 1.677 1.676v4.47zm4.47-.559v7.265c0 .926-.75 1.676-1.676 1.676h-1.118v1.677c0 .925-.75 1.676-1.676 1.676H4.47c-.926 0-1.677-.75-1.677-1.676v-1.677H1.676C.751 14.53 0 13.78 0 12.853V5.588c0-.926.75-1.676 1.676-1.676h1.118v3.911h12.294V3.912h1.118c.925 0 1.676.75 1.676 1.676zm-5.03 6.147H5.03v3.912h7.824v-3.912z"/></svg>
+          Print or save page
+        </a>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6">
+        <a href="#gas-errors-bottom" class="govuk-link govuk-link--no-visited-state"><svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" style="transform: rotate(180deg)">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>
+          Skip to bottom
+        </a>
+      </div>
+
+      <h2 class="govuk-heading-m">Error details</h2>
+
+      <!-- Error 2 -->
+
+      <p class="govuk-error-message" id="postcode-format">Postcode must be capitalised with a space in the middle. For example S19 2BD.</p>
+
+      <p>This error is found in rows <strong>25</strong> and <strong>26</strong>. Below is the error in row <strong>25</strong>. </p>
+
+      <table class="govuk-table govuk-!-margin-bottom-9">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Item</th>
+            <th scope="col" class="govuk-table__header">Building name</th>
+            <th scope="col" class="govuk-table__header">First line of address</th>
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">Tax year 1 ending April 5</th>
+            <th scope="col" class="govuk-table__header">Amount of donations received in tax year 1 (£)</th>
+            <th scope="col" class="govuk-table__header">Tax year 2 ending 5 April</th>
+            <th scope="col" class="govuk-table__header">Amount of donations received in tax year 2 (£)</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1</td>
+            <td class="govuk-table__cell">The 20% Building</td>
+            <td class="govuk-table__cell">22, Oxford</td>
+            <td class="govuk-table__cell"style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR) abc123</p></td>
+            <td class="govuk-table__cell">22</td>
+            <td class="govuk-table__cell">55,1</td>
+            <td class="govuk-table__cell">2021</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <!-- Error 3 -->
+
+      <p class="govuk-error-message" id="donation-date-format">Tax Year 1 ending 5 April must be in the format YYYY</p>
+
+        <p>This error is found in row <strong>25</strong>. Below is the error in row <strong>25</strong>.</p>
+
+      <table class="govuk-table govuk-!-margin-bottom-9">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Item</th>
+            <th scope="col" class="govuk-table__header">Building name</th>
+            <th scope="col" class="govuk-table__header">First line of address</th>
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">Tax year 1 ending April 5</th>
+            <th scope="col" class="govuk-table__header">Amount of donations received in tax year 1 (£)</th>
+            <th scope="col" class="govuk-table__header">Tax year 2 ending 5 April</th>
+            <th scope="col" class="govuk-table__header">Amount of donations received in tax year 2 (£)</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1</td>
+            <td class="govuk-table__cell">The 20% Building</td>
+            <td class="govuk-table__cell">22, Oxford</td>
+            <td class="govuk-table__cell">abc123</td>
+            <td class="govuk-table__cell"style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR) 22</p></td>
+            <td class="govuk-table__cell">55,1</td>
+            <td class="govuk-table__cell">2021</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Error 4 -->
+
+      <p class="govuk-error-message" id="aggregated-donations-error">Amount of donations received in tax year 1 must only include numbers or a full stop</p>
+
+      <p>This error is found in row <strong>25</strong>. Below is the error in row <strong>25</strong>.</p>
+
+      <table class="govuk-table govuk-!-margin-bottom-9">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Item</th>
+            <th scope="col" class="govuk-table__header">Building name</th>
+            <th scope="col" class="govuk-table__header">First line of address</th>
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">Tax year 1 ending April 5</th>
+            <th scope="col" class="govuk-table__header">Amount of donations received in tax year 1 (£)</th>
+            <th scope="col" class="govuk-table__header">Tax year 2 ending 5 April</th>
+            <th scope="col" class="govuk-table__header">Amount of donations received in tax year 2 (£)</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1</td>
+            <td class="govuk-table__cell">The 20% Building</td>
+            <td class="govuk-table__cell">22, Oxford</td>
+            <td class="govuk-table__cell">abc123</td>
+            <td class="govuk-table__cell">22</td>
+            <td class="govuk-table__cell"style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR) 55,1</p></td>
+            <td class="govuk-table__cell">2021</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Error 5 -->
+
+      <p class="govuk-error-message" id="aggregated-donations-error">Enter amount of donations received in tax year 2</p>
+
+      <p>This error is found in row <strong>25</strong>. Below is the error in row <strong>25</strong>.</p>
+
+      <table class="govuk-table govuk-!-margin-bottom-9">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Item</th>
+            <th scope="col" class="govuk-table__header">Building name</th>
+            <th scope="col" class="govuk-table__header">First line of address</th>
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">Tax year 1 ending April 5</th>
+            <th scope="col" class="govuk-table__header">Amount of donations received in tax year 1 (£)</th>
+            <th scope="col" class="govuk-table__header">Tax year 2 ending 5 April</th>
+            <th scope="col" class="govuk-table__header">Amount of donations received in tax year 2 (£)</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1</td>
+            <td class="govuk-table__cell">The 20% Building</td>
+            <td class="govuk-table__cell">22, Oxford</td>
+            <td class="govuk-table__cell">abc123</td>
+            <td class="govuk-table__cell">22</td>
+            <td class="govuk-table__cell">55,1</td>
+            <td class="govuk-table__cell">2021</td>
+            <td class="govuk-table__cell"style="border-width: .25rem; border-color: #d4351c"><p class="govuk-error-message">(ERROR)</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="govuk-button-group">
+        <a href="/gas-schedule-upload-2" role="button" draggable="false" class="govuk-button govuk-button--primary" data-module="govuk-button">
+          Attach an updated Gift Aid schedule
+        </a>
+
+        <a href="/repayment-claim-summary" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Repayment claim summary
+        </a>
+      </div>
+
+      <div id="gas-errors-bottom">
+        <a href="#gas-errors-top" class="govuk-link govuk-link--no-visited-state"><svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>
+          Back to top
+        </a>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}
