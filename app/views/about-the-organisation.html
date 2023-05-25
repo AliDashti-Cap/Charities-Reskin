@@ -8,16 +8,6 @@
   {{ govukHeader({
     serviceName: serviceName
   }) }}
-
-  <!-- Microsoft Clarity Script -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ey78wl1udc");
-</script>
-
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,13 +15,50 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-xl">CHARITY TC088</span>
-  <dl>
-    <span class="govuk-caption-xl">HMRC charities reference: XR4010
-    </span>
-  </dl>
-  <h1 class="govuk-heading-xl">Organisation details</h1>
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+    <div role="alert">
+      <h2 class="govuk-error-summary__title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#name-charity-regulator-error-message">Select the charity regulator you are registered with, or if you are not registered</a>
+          </li>
+          <li>
+            <a href="#number-charity-regulator-error-message">Enter the charity registration number for your organisation</a>
+          </li>
+          <li>
+            <a href="#reason-not-registered-regulator-error-message">Select a reason for not being registered with a regulator</a>
+          </li>
+          <li>
+            <a href="#corporate-trustee-error-message">Select if this claim is being made by an authorised official</a>
+          </li>
+          <li>
+            <a href="#name-corporate-trustee-error-message">Enter the name of the corporate trustee for your organisation</a>
+          </li>
+          <li>
+            <a href="#authorised-official-last-name-error-message">Enter the last name of the authorised person for your organisation</a>
+          </li>
+          <li>
+            <a href="#postcode-error-message">Enter your postcode or indicate if your address is not in the UK</a>
+          </li>
+          <li>
+            <a href="#phone-number-error-message">Enter a telephone number for your organisation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+    <span class="govuk-caption-xl">CHARITY TC088</span>
+    <dl>
+      <span class="govuk-caption-xl">HMRC charities reference: XR4010
+      </span>
+    </dl>
+    <h1 class="govuk-heading-xl">Organisation details</h1>
     <p class="govuk-body">
       To make this claim, you must be a recognised authorised official or corporate trustee that has already been notified to HMRC as the authorised official.
     </p>

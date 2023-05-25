@@ -8,46 +8,36 @@
   {{ govukHeader({
     serviceName: serviceName
   }) }}
-
-  <!-- Microsoft Clarity Script -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ey78wl1udc");
-</script>
-
 {% endblock %}
 
 
 {% block content %}
-<div class="govuk-error-summary" data-module="govuk-error-summary" id="gas-errors-top">
-  <div role="alert">
-    <h2 class="govuk-error-summary__title">
-      There is a problem
-    </h2>
-    <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="#earliest-donation-date">Enter the earliest donation date in the period of claim</a>
-        </li>
-        <li>
-          <a href="#postcode-format">Postcode must be capitalised with a space in the middle. For example S19 2BD.</a>
-        </li>
-        <li>
-          <a href="#donation-date-format">Donation date format must be DD/MM/YY</a>
-        </li>
-        <li>
-          <a href="#aggregated-donations-error">For an aggregated donation entry, do not provide donor title, first name, last name, house name or number or postcode details</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <div class="govuk-error-summary" data-module="govuk-error-summary" id="gas-errors-top">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#earliest-donation-date">Enter the earliest donation date in the period of claim</a>
+            </li>
+            <li>
+              <a href="#postcode-format">Postcode must be capitalised with a space in the middle. For example S19 2BD.</a>
+            </li>
+            <li>
+              <a href="#donation-date-format">Donation date format must be DD/MM/YY</a>
+            </li>
+            <li>
+              <a href="#aggregated-donations-error">For an aggregated donation entry, do not provide donor title, first name, last name, house name or number or postcode details</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <span class="govuk-caption-xl">CHARITY TC088</span>
     <dl>
       <span class="govuk-caption-xl">HMRC charities reference:

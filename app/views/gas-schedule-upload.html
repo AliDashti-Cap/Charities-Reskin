@@ -8,76 +8,74 @@
   {{ govukHeader({
     serviceName: serviceName
   }) }}
-
-  <!-- Microsoft Clarity Script -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ey78wl1udc");
-</script>
-
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
     <span class="govuk-caption-xl">CHARITY TC088</span>
     <dl>
       <span class="govuk-caption-xl">HMRC charities reference:
         XR4010</span>
     </dl>
-    <h1 class="govuk-heading-xl">Attach Gift Aid spreadsheet</h1>
-  </div>
-  </div>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <p class="govuk-body">
-        You have selected to claim a repayment of tax on Gift Aid donations. If you do not want to make this type of claim, you can remove it by answering ‘No’ to the question ‘Are you claiming Gift Aid?’ in the <a href="http://localhost:3000/about-the-charity" class="govuk-link">Claim details</a> page.
-      </p>
-
-      <p class="govuk-body">
-        Gift Aid is a repayment of tax on donations from individuals who have made a <a href="https://www.gov.uk/guidance/gift-aid-declarations-claiming-tax-back-on-donations" class="govuk-link">valid Gift Aid declaration</a>.
-      </p>
-
-      <p class="govuk-body">
-      To make a claim, you must fill out a Gift Aid claim spreadsheet. Your claim spreadsheet must include full details of the donors and their donations.
-      </p>
-
-      <p class="govuk-body">
-        We recommend you read the <a href="https://www.gov.uk/guidance/schedule-spreadsheet-to-claim-back-tax-on-gift-aid-donations" class="govuk-link">Gift Aid spreadsheet guidance</a> before you complete and save your spreadsheet.
-      </p>
-
-      <h2 class="govuk-heading-m">Complete and attach a spreadsheet</h2>
-
-      <ol class="govuk-list govuk-list--number">
-         <li>Download a <a href="https://www.gov.uk/government/publications/gift-aid-schedule-spreadsheets-to-claim-back-tax-on-donations" class="govuk-link">Gift Aid spreadsheet</a>.</li>
-         <li>Complete the spreadsheet and save it as an Open Document Spreadsheet (.ods) file to your computer.</li>
-         <li>Select ‘Choose file’ and select the saved spreadsheet file from your computer to attach it to this claim.</li>
-         <li>Select ‘Next’.</li>
-      </ol>
-
-        {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
-
-        {{ govukFileUpload({
-          id: "file-upload-1",
-          name: "file-upload-1",
-          label: {
-            text: "Attach a file"
-          }
-        }) }}
-
-  </div>
-</div>
-
-        <div class="govuk-button-group">
-          <a class="govuk-button govuk-button--primary" href="gas-schedule-upload-error-test">Next</a>
-
-          <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment claim summary</a>
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#">Attach a Gift Aid spreadsheet</a>
+            </li>
+          </ul>
         </div>
+      </div>
+      </div>
+
+    <h1 class="govuk-heading-xl">Attach Gift Aid spreadsheet</h1>
+
+    <p class="govuk-body">
+      You have selected to claim a repayment of tax on Gift Aid donations. If you do not want to make this type of claim, you can remove it by answering ‘No’ to the question ‘Are you claiming Gift Aid?’ in the <a href="http://localhost:3000/about-the-charity" class="govuk-link">Claim details</a> page.
+    </p>
+
+    <p class="govuk-body">
+      Gift Aid is a repayment of tax on donations from individuals who have made a <a href="https://www.gov.uk/guidance/gift-aid-declarations-claiming-tax-back-on-donations" class="govuk-link">valid Gift Aid declaration</a>.
+    </p>
+
+    <p class="govuk-body">
+    To make a claim, you must fill out a Gift Aid claim spreadsheet. Your claim spreadsheet must include full details of the donors and their donations.
+    </p>
+
+    <p class="govuk-body">
+      We recommend you read the <a href="https://www.gov.uk/guidance/schedule-spreadsheet-to-claim-back-tax-on-gift-aid-donations" class="govuk-link">Gift Aid spreadsheet guidance</a> before you complete and save your spreadsheet.
+    </p>
+
+    <h2 class="govuk-heading-m">Complete and attach a spreadsheet</h2>
+
+    <ol class="govuk-list govuk-list--number">
+        <li>Download a <a href="https://www.gov.uk/government/publications/gift-aid-schedule-spreadsheets-to-claim-back-tax-on-donations" class="govuk-link">Gift Aid spreadsheet</a>.</li>
+        <li>Complete the spreadsheet and save it as an Open Document Spreadsheet (.ods) file to your computer.</li>
+        <li>Select ‘Choose file’ and select the saved spreadsheet file from your computer to attach it to this claim.</li>
+        <li>Select ‘Next’.</li>
+    </ol>
+
+    {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+    {{ govukFileUpload({
+      id: "file-upload-1",
+      name: "file-upload-1",
+      label: {
+        text: "Attach a file"
+      }
+    }) }}
+
+    <div class="govuk-button-group">
+      <a class="govuk-button govuk-button--primary" href="gas-schedule-upload-error-test">Next</a>
+
+      <a class="govuk-button govuk-button--secondary" href="repayment-claim-summary">Repayment claim summary</a>
+    </div>
 
     </div>
   </div>
